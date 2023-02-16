@@ -22,7 +22,9 @@
     "@eeacms/volto-datablocks",
     "@eeacms/volto-openlayers-map",
     "@eeacms/volto-addons-forest",
-    "@eeacms/volto-matomo"
+    "@eeacms/volto-matomo",
+    "@eeacms/volto-eea-design-system",
+    "@eeacms/volto-eea-website-theme"
   ],
   "dependencies": {
     "@eeacms/volto-addons-forest": "*",
@@ -31,6 +33,8 @@
     "@eeacms/volto-matomo": "*",
     "@eeacms/volto-openlayers-map": "0.1.4",
     "@eeacms/volto-plotlycharts": "*",
+    "@eeacms/volto-eea-design-system": "*",
+    "@eeacms/volto-eea-website-theme": "*",
     "@sentry/browser": "7.17.3",
     "react-highlight-words": "^0.16.0",
     "react-image-gallery": "1.2.7",
