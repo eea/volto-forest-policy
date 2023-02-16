@@ -1,11 +1,11 @@
 {
-  "name": "@eeacms/volto-addon-template",
+  "name": "@eeacms/volto-forest-policy",
   "version": "0.1.0",
-  "description": "@eeacms/volto-addon-template: Volto add-on",
+  "description": "@eeacms/volto-forest-policy: Volto add-on",
   "main": "src/index.js",
   "author": "European Environment Agency: IDM2 A-Team",
   "license": "MIT",
-  "homepage": "https://github.com/eea/volto-addon-template",
+  "homepage": "https://github.com/eea/volto-forest-policy",
   "keywords": [
     "volto-addon",
     "volto",
@@ -14,15 +14,37 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:eea/volto-addon-template.git"
+    "url": "git@github.com:eea/volto-forest-policy.git"
   },
-  "dependencies": {},
+  "addons": [
+    "@eeacms/volto-eea-map",
+    "@eeacms/volto-plotlycharts",
+    "@eeacms/volto-datablocks",
+    "@eeacms/volto-openlayers-map",
+    "@eeacms/volto-addons-forest",
+    "@eeacms/volto-matomo"
+  ],
+  "dependencies": {
+    "@eeacms/volto-addons-forest": "*",
+    "@eeacms/volto-datablocks": "*",
+    "@eeacms/volto-eea-map": "*",
+    "@eeacms/volto-matomo": "*",
+    "@eeacms/volto-openlayers-map": "0.1.4",
+    "@eeacms/volto-plotlycharts": "*",
+    "@sentry/browser": "7.17.3",
+    "react-highlight-words": "^0.16.0",
+    "react-image-gallery": "1.2.7",
+    "react-lazy-load-image-component": "^1.5.0",
+    "react-stickynode": "^2.1.1",
+    "redux-connect": "10.0.0"
+  },
   "devDependencies": {
-    "@plone/scripts": "*",
     "@cypress/code-coverage": "^3.10.0",
-    "cypress-fail-fast": "^5.0.1",
+    "@plone/scripts": "*",
     "babel-plugin-transform-class-properties": "^6.24.1",
-    "md5": "^2.3.0"
+    "cypress-fail-fast": "^5.0.1",
+    "md5": "^2.3.0",
+    "postcss-less": "6.0.0"
   },
   "scripts": {
     "release": "release-it",
