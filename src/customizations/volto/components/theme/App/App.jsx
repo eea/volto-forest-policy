@@ -23,7 +23,7 @@ import WorkingCopyToastsFactory from '@plone/volto/components/manage/WorkingCopy
 import Error from '@plone/volto/error';
 import { visitBlocks } from '@plone/volto/helpers/Blocks/Blocks';
 
-import ViewletsRenderer from '@eeacms/volto-addons-forest/Viewlets/Render';
+import ViewletsRenderer from '@eeacms/volto-forest-policy/components/manage/Blocks/Viewlets/Render';
 
 import {
   Footer,
@@ -46,7 +46,7 @@ import {
   getFrontpageSlides,
   getDefaultHeaderImage,
 } from '@eeacms/volto-forest-policy/actions';
-import { getPortlets } from '@eeacms/volto-addons-forest/actions';
+import { getPortlets } from '@eeacms/volto-forest-policy/actions';
 
 import clearSVG from '@plone/volto/icons/clear.svg';
 import * as Sentry from '@sentry/browser';

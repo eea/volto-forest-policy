@@ -22,7 +22,7 @@ import {
   getFrontpageSlides,
   getDefaultHeaderImage,
 } from '@eeacms/volto-forest-policy/actions';
-import { getPortlets } from '@eeacms/volto-addons-forest/actions';
+import { getPortlets } from '@eeacms/volto-forest-policy/actions';
 import config from '@plone/volto/registry';
 import * as Sentry from '@sentry/browser';
 
