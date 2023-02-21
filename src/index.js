@@ -26,6 +26,31 @@ import { linkDeserializer } from '@plone/volto-slate/editor/plugins/AdvancedLink
 import LinkEditSchema from '@plone/volto-slate/editor/plugins/AdvancedLink/schema';
 import { defineMessages } from 'react-intl'; // , defineMessages
 
+import chartIcon from '@plone/volto/icons/world.svg';
+
+import HiddenWidget from '@eeacms/volto-forest-policy/components/manage/Widgets/Hidden';
+import CollectionYears from '@eeacms/volto-forest-policy/components/manage/Widgets/CollectionYears';
+// import PickObject from './PickObject';
+
+import AlignBlockWidget from '@eeacms/volto-forest-policy/components/manage/Widgets/Align';
+
+import NewsView from '@eeacms/volto-forest-policy/components/manage/Blocks/News/NewsView';
+import NewsEdit from '@eeacms/volto-forest-policy/components/manage/Blocks/News/NewsEdit';
+
+import CollectionBlockView from '@eeacms/volto-forest-policy/components/manage/Blocks/Collection/BlockView';
+import CollectionBlockEdit from '@eeacms/volto-forest-policy/components/manage/Blocks/Collection/BlockEdit';
+import CollectionView from '@eeacms/volto-forest-policy/components/manage/Blocks/Collection/View';
+
+//import ImageCardsView from './ImageCards/ImageCardsView';
+//import ImageCardsEdit from './ImageCards/ImageCardsEdit';
+
+import {
+  NavigationPortlet,
+  DefaultPortlet,
+  PortletManagerRenderer,
+  ClassicPortlet,
+} from '@eeacms/volto-forest-policy/components/manage/Blocks/Portlets';
+
 const messages = defineMessages({
   edit: {
     id: 'Edit link',
@@ -37,8 +62,22 @@ const messages = defineMessages({
   },
 });
 
+function addCustomGroup(config) {
+  const hasCustomGroup = config.blocks.groupBlocksOrder.filter((el) => {
+    return el.id === 'custom_addons';
+  });
+  if (hasCustomGroup.length === 0) {
+    config.blocks.groupBlocksOrder.push({
+      id: 'custom_addons',
+      title: 'Custom addons',
+    });
+  }
+}
+
 export default function applyConfig(config) {
   // Add here your project's configuration here by modifying `config` accordingly
+  addCustomGroup(config);
+
   config = [
     installAppExtras,
     installFiseFrontend,
@@ -107,12 +146,39 @@ export default function applyConfig(config) {
     },
   };
 
+  config.views.contentTypesViews.Collection = CollectionView;
+
   config.widgets = {
     ...config.widgets,
     widget: {
       ...config.widgets.widget,
       object_list_inline: ObjectListInlineWidget,
     },
+  };
+
+  config.widgets.id.collection_years = CollectionYears;
+  config.widgets.id.blocks = HiddenWidget;
+  config.widgets.id.blocks_layout = HiddenWidget;
+
+  // config.widgets.widget.object_by_path = PickObject;
+  config.widgets.widget.align = AlignBlockWidget;
+
+  config.blocks.blocksConfig.collection_block = {
+    id: 'collection_block',
+    title: 'Collection Listing',
+    view: CollectionBlockView,
+    edit: CollectionBlockEdit,
+    icon: chartIcon,
+    group: 'custom_addons',
+  };
+
+  config.blocks.blocksConfig.news = {
+    id: 'news',
+    title: 'News',
+    view: NewsView,
+    edit: NewsEdit,
+    icon: chartIcon,
+    group: 'custom_addons',
   };
 
   config.addonReducers = {
@@ -124,6 +190,19 @@ export default function applyConfig(config) {
   //   ...config.portlets,
   // };
 
+  config.settings.portlets = {
+    managers: {
+      ...config.portlets?.managers,
+      default: PortletManagerRenderer,
+    },
+    renderers: {
+      'portlets.Navigation': NavigationPortlet,
+      'portlets.Classic': ClassicPortlet,
+      default: DefaultPortlet,
+    },
+  };
+
+  config.settings.virtualHostedPaths = ['**/RSS'];
   config.settings.slate = config.settings.slate || {};
   config.settings.slate.styleMenu = config.settings.slate.styleMenu || {};
   config.settings.slate.styleMenu.inlineStyles = [
