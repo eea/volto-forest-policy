@@ -7,7 +7,7 @@ import { map } from 'lodash';
 import { flattenToAppURL } from '@plone/volto/helpers';
 
 //import { GET_NAVIGATION } from '../../constants/ActionTypes';
-import { GET_NAVSITEMAP } from '../constants/ActionTypes';
+import { GET_NAVSITEMAP } from '@eeacms/volto-forest-policy/constants/ActionTypes';
 
 const initialState = {
   error: null,

@@ -1,0 +1,119 @@
+.news-wrapper-view {
+  padding: 10px;
+}
+
+.news-wrapper-view > div {
+  position: relative;
+}
+
+.news-wrapper-view a.rss-feed {
+  display: flex;
+  align-items: center;
+}
+
+.news-wrapper-view a.rss-feed .icon {
+  margin: 0 0 0 4px;
+}
+
+.news-wrapper-view a.rss-feed.ui.teal {
+  background-color: #251 !important;
+}
+
+.news-wrapper-view a.rss-feed.ui.teal:hover {
+  background-color: #397326 !important;
+}
+
+.news-wrapper-view span.divider {
+  width: 1px;
+  height: 14px;
+  margin: 0 8px;
+  background: #e7e7e7;
+}
+
+.news-wrapper-view .headline {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin: 8px 0 !important;
+  font-size: 20px;
+}
+
+.news-wrapper-view article {
+  padding: 8px 0;
+}
+
+.news-wrapper-view article:not(:first-child) {
+  border-top: 1px solid #e6e6e6;
+}
+
+.news-wrapper-view article .article-headline {
+  display: flex;
+  align-items: center;
+  margin: 0 !important;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.news-wrapper-view article .article-headline .icon {
+  margin-right: 8px;
+}
+
+.news-wrapper-view article .article-body {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out, max-height 0.3s ease-in-out;
+}
+
+.news-wrapper-view article .article-body.expanded {
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.3s ease-in-out, max-height 0.3s ease-in-out;
+}
+
+.news-wrapper-view article .article-body .meta-data {
+  padding: 0;
+  font-size: 12px;
+}
+
+.news-wrapper-view article .article-body .meta-data .format-text {
+  color: #9a9a9a;
+}
+
+.news-wrapper-view article .article-body .meta-data .format-type {
+  color: #545454;
+}
+
+.news-wrapper-view article .article-body .meta-data .text-tab {
+  display: inline-block;
+  padding-right: 8px;
+}
+
+.news-wrapper-view article .article-body .article-content {
+  padding: 0;
+  font-size: 14px;
+}
+
+.news-wrapper-view article .article-body .article-content .block {
+  margin: 0.3em 0;
+}
+
+.news-wrapper-view .actions {
+  position: absolute;
+  right: 1em;
+  bottom: 1em;
+  color: #002d54;
+}
+
+.news-wrapper-view .headline a.rss-feed {
+  opacity: 0.7;
+}
+
+.news-wrapper-view .headline a.rss-feed:hover {
+  opacity: 1;
+}
+
+.news-wrapper-view .ui.bottom.attached.segment.tab {
+  border: none;
+}

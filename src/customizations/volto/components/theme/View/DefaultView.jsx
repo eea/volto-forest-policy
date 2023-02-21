@@ -19,7 +19,7 @@ import {
   getBaseUrl,
 } from '@plone/volto/helpers';
 
-import renderPortletManager from '@eeacms/volto-addons-forest/Portlets/utils';
+import renderPortletManager from '@eeacms/volto-forest-policy/components/manage/Blocks/Portlets/utils';
 
 // const messages = defineMessages({
 //   unknownBlock: {
