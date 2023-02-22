@@ -4,11 +4,13 @@
  */
 
 import React from 'react';
-import { Dropdown, Image } from 'semantic-ui-react';
+import { Dropdown, Image, Container } from 'semantic-ui-react';
 import { connect, useDispatch, useSelector } from 'react-redux';
 
 import { withRouter } from 'react-router-dom';
-import { UniversalLink } from '@plone/volto/components';
+import { UniversalLink, Breadcrumbs } from '@plone/volto/components';
+import HeaderImage from '@eeacms/volto-forest-policy/components/theme/Header/HeaderImage';
+import HomepageSlider from '@eeacms/volto-forest-policy/components/theme/Header/HomepageSlider';
 import {
   getBaseUrl,
   hasApiExpander,
@@ -25,6 +27,13 @@ import config from '@plone/volto/registry';
 import { compose } from 'recompose';
 import { BodyClass } from '@plone/volto/helpers';
 
+import HeaderBackground from './header-bg.png';
+
+import {
+  getBasePath,
+  getNavigationByParent,
+} from '@eeacms/volto-forest-policy/components/manage/Blocks/NavigationBlock/helpers';
+
 import cx from 'classnames';
 
 function removeTrailingSlash(path) {
@@ -34,7 +43,15 @@ function removeTrailingSlash(path) {
 /**
  * EEA Specific Header component.
  */
-const EEAHeader = ({ pathname, token, items, history, subsite }) => {
+const EEAHeader = (props) => {
+  const { pathname, token, items, history, subsite, extraData = {} } = props;
+  const {
+    inheritLeadingData,
+    parentData,
+    leadNavigation,
+    bigLeading,
+    leadImageCaption,
+  } = extraData;
   const currentLang = useSelector((state) => state.intl.locale);
   const translations = useSelector(
     (state) => state.content.data?.['@components']?.translations?.items,
@@ -68,6 +85,44 @@ const EEAHeader = ({ pathname, token, items, history, subsite }) => {
     currentLang || eea.defaultLanguage,
   );
 
+  const [isHomepage, setIsHomePage] = React.useState(
+    props.actualPathName === '/',
+  );
+  const [inheritedImage, setInheritedImage] = React.useState('');
+  const [leadCaptionText, setLeadCaptionText] = React.useState('');
+  const [navigationItems, setNavigationItems] = React.useState('');
+
+  React.useEffect(() => {
+    if (leadNavigation || inheritLeadingData) {
+      if (!props.parentItems || props.parentItems.length === 0) {
+        props.getParentFolderData(getBasePath(parentData['@id']));
+      }
+      if (props.parentItems && props.parentItems.length > 0) {
+        const parentItems = getNavigationByParent(
+          props.navItems,
+          getBasePath(parentData['@id']),
+        );
+        if (leadNavigation) setNavigationItems(parentItems.items);
+      }
+      if (inheritLeadingData) {
+        if (props.parentImg && props.parentImg.download)
+          setInheritedImage(props.parentImg.download);
+        if (props.leadCaption) setLeadCaptionText(props.leadCaption);
+      }
+      if (!inheritLeadingData) {
+        setLeadCaptionText(leadImageCaption.data);
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [
+    props.parentItems,
+    props.parentImg,
+    inheritLeadingData,
+    props.leadCaption,
+    parentData,
+    leadNavigation,
+  ]);
+
   React.useEffect(() => {
     const { settings } = config;
     const base_url = getBaseUrl(pathname);
@@ -85,6 +140,17 @@ const EEAHeader = ({ pathname, token, items, history, subsite }) => {
       }
     }
   }, [token, dispatch, pathname, previousToken]);
+
+  React.useEffect(() => {
+    if (props.actualPathName) {
+      setIsHomePage(props.actualPathName === '/');
+    }
+  }, [props.actualPathName, props.frontPageSlides]);
+
+  const defaultHeaderImage = props.defaultHeaderImage;
+  let headerImageUrl = defaultHeaderImage?.image || defaultHeaderImage;
+  const pathName = props.pathname;
+  const hideSearch = ['/header', '/head', '/footer'].includes(pathName);
 
   return (
     <Header menuItems={items}>
@@ -209,7 +275,6 @@ const EEAHeader = ({ pathname, token, items, history, subsite }) => {
               alt={eea.organisationName}
               url={eea.logoTargetUrl}
             />
-
             {!!subsite && subsite.title && (
               <UniversalLink item={subsite} className="subsite-logo">
                 {subsite.title}
@@ -245,6 +310,28 @@ const EEAHeader = ({ pathname, token, items, history, subsite }) => {
           </UniversalLink>
         )}
       ></Header.Main>
+      <Container>
+        <div className={`header-bg ${isHomepage ? 'homepage' : 'contentpage'}`}>
+          <img src={HeaderBackground} alt="" />
+        </div>
+
+        {isHomepage ? (
+          <HomepageSlider items={props.frontpage_slides} />
+        ) : (
+          <div style={{ position: 'relative' }}>
+            <Breadcrumbs pathname={props.pathname} />
+            <HeaderImage
+              bigImage={bigLeading}
+              leadNavigation={leadNavigation}
+              navigationItems={navigationItems}
+              metadata={
+                inheritLeadingData || leadImageCaption ? leadCaptionText : ''
+              }
+              url={inheritLeadingData ? inheritedImage : headerImageUrl}
+            />
+          </div>
+        )}
+      </Container>
     </Header>
   );
 };
