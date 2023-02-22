@@ -149,8 +149,6 @@ const EEAHeader = (props) => {
 
   const defaultHeaderImage = props.defaultHeaderImage;
   let headerImageUrl = defaultHeaderImage?.image || defaultHeaderImage;
-  const pathName = props.pathname;
-  const hideSearch = ['/header', '/head', '/footer'].includes(pathName);
 
   return (
     <Header menuItems={items}>

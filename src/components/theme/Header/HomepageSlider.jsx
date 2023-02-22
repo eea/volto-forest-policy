@@ -99,7 +99,6 @@ class HomepageSlider extends Component {
     const linkText = this.props.items.extra?.linkText;
 
     const hasHeaderData = this.props.items.extra ? true : false;
-    console.log('should be loading sliding stuff');
     return hasHeaderData ? (
       <div>
         <div className="slider-wrapper">
