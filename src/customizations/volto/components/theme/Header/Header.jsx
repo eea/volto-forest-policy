@@ -26,6 +26,7 @@ import eeaFlag from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/
 import config from '@plone/volto/registry';
 import { compose } from 'recompose';
 import { BodyClass } from '@plone/volto/helpers';
+import { getParentFolderData } from '@eeacms/volto-forest-policy/actions';
 
 import HeaderBackground from './header-bg.png';
 
@@ -99,7 +100,7 @@ const EEAHeader = (props) => {
       }
       if (props.parentItems && props.parentItems.length > 0) {
         const parentItems = getNavigationByParent(
-          props.navItems,
+          props.items,
           getBasePath(parentData['@id']),
         );
         if (leadNavigation) setNavigationItems(parentItems.items);
@@ -341,7 +342,10 @@ export default compose(
       token: state.userSession.token,
       items: state.navigation.items,
       subsite: state.content.data?.['@components']?.subsite,
+      parentItems: state.parent_folder_data?.items?.items,
+      parentImg: state.parent_folder_data?.items?.image,
+      leadCaption: state.parent_folder_data?.items?.lead_image_caption?.data,
     }),
-    { getNavigation },
+    { getNavigation, getParentFolderData },
   ),
 )(EEAHeader);

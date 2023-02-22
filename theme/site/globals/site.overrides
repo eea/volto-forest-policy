@@ -2685,6 +2685,10 @@ main {
   }
 }
 
+.extra-header a {
+  color: #047a79;
+}
+
 .print-button {
   position: absolute;
   top: 0;
