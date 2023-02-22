@@ -148,7 +148,6 @@ class App extends Component {
       leadNavigation,
       leadImageCaption,
     };
-
     return (
       <PluggablesProvider>
         <BodyClass className={`view-${action}view`} />
@@ -168,6 +167,7 @@ class App extends Component {
             [trim(join(split(this.props.pathname, '/'), ' section-'))]:
               this.props.pathname !== '/',
             siteroot: this.props.pathname === '/',
+            'wf-state-published': this.props.pathname === '/',
             'is-authenticated': !!this.props.token,
             'is-anonymous': !this.props.token,
             'cms-ui': isCmsUI,
