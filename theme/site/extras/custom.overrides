@@ -18,19 +18,7 @@
     word-break: unset !important;
   }
 
-  svg.default {
-    width: 100% !important;
-    display: block;
-  }
-  svg.primary {
-    width: 100% !important;
-    display: block;
-  }
-  svg.secondary {
-    width: 100% !important;
-    display: block;
-  }
-  svg.tertiary {
+  svg {
     width: 100% !important;
     display: block;
   }
