@@ -2685,6 +2685,10 @@ main {
   }
 }
 
+.extra-header a {
+  color: #047a79;
+}
+
 .print-button {
   position: absolute;
   top: 0;
@@ -3648,4 +3652,11 @@ body.mosaic-view .content-area main {
   color: #999;
   font-size: 12px;
   line-height: normal;
+}
+
+[class~="wide_view"] [id="page-document"] > *,
+#main .wide_width,
+#main .has--size--wide_width
+{
+  max-width: 100% !important;
 }

@@ -38,7 +38,6 @@ const DefaultView = (props) => {
   const { content, location } = props;
   const blocksFieldname = getBlocksFieldname(content);
   const blocksLayoutFieldname = getBlocksLayoutFieldname(content);
-
   return (
     <Grid columns="equal" className="zero-margin">
       {renderPortletManager('plone.leftcolumn', 2, { ...props })}

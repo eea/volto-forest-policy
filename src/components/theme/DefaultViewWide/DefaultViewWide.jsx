@@ -53,8 +53,7 @@ const DefaultViewWide = (props) => {
   // if (!shouldRenderRoutes) return <Spinner />;
   return (
     <>
-      <BodyClass className={`document_wide_view`} />
-
+      <BodyClass className={`wide_view`} />
       <Grid columns="equal" className="zero-margin">
         {hasBlocksData(content) ? (
           <div id="page-document" className="ui container">

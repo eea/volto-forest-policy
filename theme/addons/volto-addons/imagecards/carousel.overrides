@@ -194,7 +194,7 @@
     border-width: 1px;
     border-style: solid;
     border-color: #ffffffa3;
-    color: white;
+    color: white !important;
     font-weight: normal;
 
     @media (min-width: 1201px) {
