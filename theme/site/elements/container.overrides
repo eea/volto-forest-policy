@@ -15,8 +15,6 @@
 .contentWidthMedia(@width, @gutter, @offset) {
   .ui.container {
     width: 100% !important;
-    padding-right: 2rem;
-    padding-left: 2rem;
     margin-right: @gutter !important;
     margin-left: @gutter !important;
   }

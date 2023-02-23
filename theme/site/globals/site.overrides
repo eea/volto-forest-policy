@@ -3653,3 +3653,10 @@ body.mosaic-view .content-area main {
   font-size: 12px;
   line-height: normal;
 }
+
+[class~="wide_view"] [id="page-document"] > *,
+#main .wide_width,
+#main .has--size--wide_width
+{
+  max-width: 100% !important;
+}
