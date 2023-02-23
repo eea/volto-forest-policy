@@ -6,3 +6,32 @@
   @import 'toolbar';
   // @import 'utils';
 }
+
+.style-select-widget {
+   .ui.card {
+    min-width: unset;
+  }
+
+  .extra.content {
+    justify-content: center !important;
+    color: rgba(0,0,0,.4) !important;
+    word-break: unset !important;
+  }
+
+  svg.default {
+    width: 100% !important;
+    display: block;
+  }
+  svg.primary {
+    width: 100% !important;
+    display: block;
+  }
+  svg.secondary {
+    width: 100% !important;
+    display: block;
+  }
+  svg.tertiary {
+    width: 100% !important;
+    display: block;
+  }
+}

@@ -194,6 +194,8 @@ export function applyConfig(config) {
   ];
 
   // border-tile
+  config.settings.previewText = 'Block content';
+
   config.settings.pluggableStyles = [
     ...(config.settings.pluggableStyles || []),
     {
