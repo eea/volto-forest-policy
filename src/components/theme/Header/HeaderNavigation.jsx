@@ -144,11 +144,7 @@ const HeaderNavigation = ({ items, pageWidth }) => {
       {isMobile ? (
         <MobileNav activeItem={activeItem} items={items} />
       ) : (
-        <Sticky
-          enabled={true}
-          top={isTablet ? 75 : 102}
-          className="sticky-header-nav"
-        >
+        <Sticky enabled={true} className="sticky-header-nav">
           <div className="header-navigation-lead">
             {displayedItems.length > 0 &&
               displayedItems.map((item, index) => (

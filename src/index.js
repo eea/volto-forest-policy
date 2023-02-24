@@ -34,12 +34,12 @@ import CollectionYears from '@eeacms/volto-forest-policy/components/manage/Widge
 
 import AlignBlockWidget from '@eeacms/volto-forest-policy/components/manage/Widgets/Align';
 
-import NewsView from '@eeacms/volto-forest-policy/components/manage/Blocks/News/NewsView';
-import NewsEdit from '@eeacms/volto-forest-policy/components/manage/Blocks/News/NewsEdit';
+import NewsView from '@eeacms/volto-forest-policy/components/theme/News/NewsView';
+import NewsEdit from '@eeacms/volto-forest-policy/components/theme/News/NewsEdit';
 
-import CollectionBlockView from '@eeacms/volto-forest-policy/components/manage/Blocks/Collection/BlockView';
-import CollectionBlockEdit from '@eeacms/volto-forest-policy/components/manage/Blocks/Collection/BlockEdit';
-import CollectionView from '@eeacms/volto-forest-policy/components/manage/Blocks/Collection/View';
+import CollectionBlockView from '@eeacms/volto-forest-policy/components/theme/Collection/BlockView';
+import CollectionBlockEdit from '@eeacms/volto-forest-policy/components/theme/Collection/BlockEdit';
+import CollectionView from '@eeacms/volto-forest-policy/components/theme/Collection/View';
 
 //import ImageCardsView from './ImageCards/ImageCardsView';
 //import ImageCardsEdit from './ImageCards/ImageCardsEdit';
@@ -49,7 +49,7 @@ import {
   DefaultPortlet,
   PortletManagerRenderer,
   ClassicPortlet,
-} from '@eeacms/volto-forest-policy/components/manage/Blocks/Portlets';
+} from '@eeacms/volto-forest-policy/components/theme/Portlets';
 
 const messages = defineMessages({
   edit: {

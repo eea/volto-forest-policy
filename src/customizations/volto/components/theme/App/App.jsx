@@ -23,7 +23,7 @@ import WorkingCopyToastsFactory from '@plone/volto/components/manage/WorkingCopy
 import Error from '@plone/volto/error';
 import { visitBlocks } from '@plone/volto/helpers/Blocks/Blocks';
 
-import ViewletsRenderer from '@eeacms/volto-forest-policy/components/manage/Blocks/Viewlets/Render';
+import ViewletsRenderer from '@eeacms/volto-forest-policy/components/theme/Viewlets/Render';
 
 import {
   Footer,
