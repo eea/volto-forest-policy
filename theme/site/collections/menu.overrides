@@ -27,6 +27,12 @@
   border-bottom: none !important;
 }
 
+.tabs-wrapper {
+  .ui.secondary.pointing.menu {
+    overflow: unset;
+  }
+}
+
 .navigation .ui.secondary.pointing.menu > .item.dropdown {
   position: relative;
 
