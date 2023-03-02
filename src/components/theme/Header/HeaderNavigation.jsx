@@ -70,7 +70,6 @@ const MobileNav = ({ items, activeItem }) => {
 const HeaderNavigation = ({ items, pageWidth }) => {
   const [activeItem, setActiveItem] = React.useState('');
   const [isMobile, setIsMobile] = React.useState(false);
-  const [isTablet, setIsTablet] = React.useState(false);
   const [itemsIncrement, setItemsIncrement] = React.useState(0);
   const [itemsPerPage, setItemsPerPage] = React.useState(
     items && items.length < 4 ? items.length : 4,
@@ -109,16 +108,9 @@ const HeaderNavigation = ({ items, pageWidth }) => {
     }
     if (pageWidth && pageWidth <= 768) {
       setIsMobile(true);
-      setIsTablet(false);
     }
     if (pageWidth && pageWidth > 768) {
       setIsMobile(false);
-    }
-    if (pageWidth && pageWidth <= 1300 && pageWidth > 768) {
-      setIsTablet(true);
-    }
-    if (pageWidth && pageWidth > 1300) {
-      setIsTablet(false);
     }
     if (pageWidth && pageWidth > 1240) {
       if (items.length >= 6) {
@@ -144,11 +136,7 @@ const HeaderNavigation = ({ items, pageWidth }) => {
       {isMobile ? (
         <MobileNav activeItem={activeItem} items={items} />
       ) : (
-        <Sticky
-          enabled={true}
-          top={isTablet ? 75 : 102}
-          className="sticky-header-nav"
-        >
+        <Sticky enabled={true} className="sticky-header-nav">
           <div className="header-navigation-lead">
             {displayedItems.length > 0 &&
               displayedItems.map((item, index) => (

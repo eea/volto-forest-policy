@@ -318,7 +318,7 @@ const EEAHeader = (props) => {
           <HomepageSlider items={props.frontpage_slides} />
         ) : (
           <div style={{ position: 'relative' }}>
-            <Breadcrumbs pathname={props.pathname} />
+            <div id="page-header" />
             <HeaderImage
               bigImage={bigLeading}
               leadNavigation={leadNavigation}
@@ -328,6 +328,7 @@ const EEAHeader = (props) => {
               }
               url={inheritLeadingData ? inheritedImage : headerImageUrl}
             />
+            <Breadcrumbs pathname={props.pathname} />
           </div>
         )}
       </Container>

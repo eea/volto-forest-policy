@@ -18,28 +18,31 @@
   }
 }
 
-body
-  .ui.vertical.segment.breadcrumbs:not(aside .ui.vertical.segment.breadcrumbs) {
-  position: absolute !important;
-  z-index: 1;
-  top: 0;
-  overflow: hidden;
-  padding: 0;
-  border-bottom: none;
-  background: none;
-  border-top-left-radius: 1rem;
+.ui.breadcrumb {
+  margin-top: @breadcrumbMarginTop !important;
+  margin-bottom: @breadcrumbMarginBottom !important;
 
-  .ui.container {
-    padding: 0;
+  .section {
+    overflow: hidden;
+
+    /* Max breadcrumb length */
+    min-height: @breadcrumbItemMinHeight;
+    max-width: @breadcrumbItemMaxWidth;
+    padding: @mobileBreadcrumbPadding;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    &.active {
+      color: @activeColor;
+    }
+
+    img {
+      width: @breadcrumbImgWidth;
+    }
   }
 
-  .breadcrumb {
-    display: inline-flex;
-    padding: 5px;
-    background: black;
-  }
-
-  .ui.breadcrumb .section {
-    color: white;
+  i.icon {
+    width: @breadcrumbIconWidth;
+    font-size: @breadcrumbIconFontSize;
   }
 }
