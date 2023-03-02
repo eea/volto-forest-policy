@@ -1,0 +1,2 @@
+@searchBoxBackgroundGradient  : linear-gradient(13.69deg, @primaryColor 1.17%, @secondaryColor 80%);
+@megaMenuBackgroundColor      : @secondaryColor;

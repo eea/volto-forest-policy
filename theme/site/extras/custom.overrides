@@ -23,3 +23,12 @@
     display: block;
   }
 }
+
+.blocks-chooser {
+  .searchbox div.input {
+    height: 60px;
+    padding: 0;
+    border: none;
+    font-weight: 400;
+  }
+}
