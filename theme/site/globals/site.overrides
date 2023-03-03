@@ -3666,3 +3666,13 @@ body.mosaic-view .content-area main {
 {
   max-width: 100% !important;
 }
+
+#style-menu.ui.dropdown .menu {
+  span.text {
+      color: inherit !important;
+      font-size: inherit !important;
+  }
+  .white-text {
+    color: #e6e6e6 !important;
+  }
+}

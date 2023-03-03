@@ -15,159 +15,159 @@
 /* blue set */
 
 .blue-powder-text {
-  color: #bbdbec;
+  color: #bbdbec !important;
 }
 
 .blue-lightsteel-text {
-  color: #9dc6d4;
+  color: #9dc6d4 !important;
 }
 
 .blue-cadet-text {
-  color: #5a93aa;
+  color: #5a93aa !important;
 }
 
 .blue-teal-text {
-  color: #005d7b;
+  color: #005d7b !important;
 }
 
 .blue-darkslate-text {
-  color: #003d53;
+  color: #003d53 !important;
 }
 
 /* green set */
 .green-blanchedalmond-text {
-  color: #ebefc6;
+  color: #ebefc6 !important;
 }
 
 .green-tan-text {
-  color: #bdd494;
+  color: #bdd494 !important;
 }
 
 .green-olivedrab-text {
-  color: #6bb535;
+  color: #6bb535 !important;
 }
 
 .green-forest-text {
-  color: #1e8339;
+  color: #1e8339 !important;
 }
 
 .green-darkslate-text {
-  color: #025e37;
+  color: #025e37 !important;
 }
 
 /* army set */
 .army-darkolivegreen-text {
-  color: #464b0b;
+  color: #464b0b !important;
 }
 
 .army-yellowgreen-text {
-  color: #b5c234;
+  color: #b5c234 !important;
 }
 
 .army-olivedrab-text {
-  color: #777b1a;
+  color: #777b1a !important;
 }
 
 .army-moccasin-text {
-  color: #f4f1bc;
+  color: #f4f1bc !important;
 }
 
 .army-khaki-text {
-  color: #e1e070;
+  color: #e1e070 !important;
 }
 
 .blue-text {
-  color: #0070ae;
+  color: #0070ae !important;
 }
 
 .red-text {
-  color: #ed1834;
+  color: #ed1834 !important;
 }
 
 .yellow-text {
-  color: #f2a70e;
+  color: #f2a70e !important;
 }
 
 .grey-text {
-  color: #8d8d8d;
+  color: #8d8d8d !important;
 }
 
 /* red set */
 
 .red-mistyrose-text {
-  color: #fce6dc;
+  color: #fce6dc !important;
 }
 
 .red-darksalmon-text {
-  color: #f39a86;
+  color: #f39a86 !important;
 }
 
 .red-indian-text {
-  color: #e73d5c;
+  color: #e73d5c !important;
 }
 
 .red-brown-text {
-  color: #b92f47;
+  color: #b92f47 !important;
 }
 
 .red-dark-text {
-  color: #8e1206;
+  color: #8e1206 !important;
 }
 
 /* orange set */
 
 .orange-pale-text {
-  color: #fff6a6;
+  color: #fff6a6 !important;
 }
 
 .orange-gold-text {
-  color: #ffe525;
+  color: #ffe525 !important;
 }
 
 .orange-text {
-  color: #f7a600;
+  color: #f7a600 !important;
 }
 
 .orange-sienna-text {
-  color: #b94b19;
+  color: #b94b19 !important;
 }
 
 .orange-saddle-text {
-  color: #8d4107;
+  color: #8d4107 !important;
 }
 
 /* black set */
 
 .black-text {
-  color: black;
+  color: black !important;
 }
 
 .black-dimgray-text {
-  color: #6f6f6e;
+  color: #6f6f6e !important;
 }
 
 .black-gray-text {
-  color: #929291;
+  color: #929291 !important;
 }
 
 .black-silver-text {
-  color: #bcbcbc;
+  color: #bcbcbc !important;
 }
 
 .black-gainsboro-text {
-  color: #e3e3e3;
+  color: #e3e3e3 !important;
 }
 
 /* font sizes */
 
 .x-large {
-  font-size: x-large;
+  font-size: x-large !important;
 }
 
 .xx-large {
-  font-size: xx-large;
+  font-size: xx-large !important;
 }
 
 .xxx-large {
-  font-size: xxx-large;
+  font-size: xxx-large !important;
 }
