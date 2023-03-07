@@ -26,6 +26,7 @@ import { visitBlocks } from '@plone/volto/helpers/Blocks/Blocks';
 import ViewletsRenderer from '@eeacms/volto-forest-policy/components/theme/Viewlets/Render';
 
 import {
+  Breadcrumbs,
   Footer,
   Header,
   Icon,
@@ -36,6 +37,7 @@ import {
 } from '@plone/volto/components';
 import { BodyClass, getBaseUrl, getView, isCmsUi } from '@plone/volto/helpers';
 import {
+  getBreadcrumbs,
   getContent,
   getNavigation,
   getTypes,
@@ -183,6 +185,7 @@ class App extends Component {
           navigationItems={this.props.navigation}
           frontpage_slides={this.props.frontpage_slides}
         />
+        <Breadcrumbs pathname={path} />
         <Segment basic className="content-area">
           <Container>
             <main>
@@ -280,6 +283,11 @@ export const fetchContent = async ({ store, location }) => {
 };
 export default compose(
   asyncConnect([
+    {
+      key: 'breadcrumbs',
+      promise: ({ location, store: { dispatch } }) =>
+        __SERVER__ && dispatch(getBreadcrumbs(getBaseUrl(location.pathname))),
+    },
     {
       key: 'content',
       promise: ({ location, store }) =>

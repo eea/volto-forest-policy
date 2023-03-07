@@ -1,5 +1,5 @@
-@type : 'global';
-@element : 'site';
+@type: 'global';
+@element: 'site';
 
 // @import (multiple) '../../theme.config';
 
@@ -13,24 +13,24 @@
 
 html,
 body {
-    height: 100%;
+  height: 100%;
 }
 
 html {
-    font-size: @emSize;
+  font-size: @emSize;
 }
 
 body {
-    margin: 0px;
-    padding: 0px;
-    overflow-x: @pageOverflowX;
-    min-width: @pageMinWidth;
-    background: @pageBackground;
-    font-family: @pageFont;
-    font-size: @fontSize;
-    line-height: @lineHeight;
-    color: @textColor;
-    font-smoothing: @fontSmoothing;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: @pageOverflowX;
+  min-width: @pageMinWidth;
+  background: @pageBackground;
+  font-family: @pageFont;
+  font-size: @fontSize;
+  line-height: @lineHeight;
+  color: @textColor;
+  font-smoothing: @fontSmoothing;
 }
 
 /*******************************
@@ -42,12 +42,12 @@ h2,
 h3,
 h4,
 h5 {
-    font-family: @headerFont;
-    line-height: @headerLineHeight;
-    margin: @headerMargin;
-    font-weight: @headerFontWeight;
-    padding: 0em;
-    color: @headingColor;
+  font-family: @headerFont;
+  line-height: @headerLineHeight;
+  margin: @headerMargin;
+  font-weight: @headerFontWeight;
+  padding: 0em;
+  color: @headingColor;
 }
 
 @h1: 28px;
@@ -55,32 +55,30 @@ h5 {
 @h3: 20px;
 
 h1 {
-    min-height: 1rem;
-    font-size: @h1;
+  min-height: 1rem;
+  font-size: @h1;
 }
 
 h2 {
-    font-size: @h2;
+  font-size: @h2;
 }
 
 h3 {
-    font-size: @h3;
+  font-size: @h3;
 }
 
 h4 {
-    font-size: @h4;
+  font-size: @h4;
 }
 
 h5 {
-    font-size: @h5;
+  font-size: @h5;
 }
 
 #page-document {
-
-
-    p {
-        margin-bottom: 1em;
-    }
+  p {
+    margin-bottom: 1em;
+  }
 }
 
 // h1:first-child,
@@ -99,16 +97,15 @@ h5 {
 //     margin-bottom: 0em;
 // }
 
-
 /*******************************
              Text
 *******************************/
 
 p {
-    font-size: @fontSize;
-    margin: @paragraphMargin;
-    line-height: @paragraphLineHeight;
-    // color:
+  font-size: @fontSize;
+  margin: @paragraphMargin;
+  line-height: @paragraphLineHeight;
+  // color:
 }
 
 // p:first-child {
@@ -124,40 +121,39 @@ p {
 --------------------*/
 
 a {
-    color: @linkColor;
-    text-decoration: @linkUnderline;
+  color: @linkColor;
+  text-decoration: @linkUnderline;
 }
 
 a:hover {
-    color: @linkHoverColor;
-    text-decoration: @linkHoverUnderline;
-}
-
-
-#page-document {
-    h1 {
-        border-bottom: none;
-
-        &:before {
-            display: none;
-        }
-    }
+  color: @linkHoverColor;
+  text-decoration: @linkHoverUnderline;
 }
 
 #page-document {
-    ul {
-        list-style-type: none;
-        padding-left: 15px;
+  h1 {
+    border-bottom: none;
 
-        li {
-            &:before {
-                content: '►';
-                color: @headingColor;
-                font-size: .8rem;
-                margin-right: 7px;
-                margin-left: -1rem;
-                position: absolute;
-            }
-        }
+    &:before {
+      display: none;
     }
+  }
+}
+
+#page-document {
+  ul {
+    list-style-type: none;
+    padding-left: 15px;
+
+    li {
+      &:before {
+        content: '►';
+        color: @headingColor;
+        font-size: 0.8rem;
+        margin-right: 7px;
+        margin-left: -1rem;
+        position: absolute;
+      }
+    }
+  }
 }

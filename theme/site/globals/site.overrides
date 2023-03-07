@@ -1,7 +1,7 @@
 @import './site.less';
 
 body {
-  background-color: #f4f4f1;
+  //background-color: #f4f4f1;
   color: @textColor;
 }
 
@@ -56,11 +56,6 @@ body {
   background: white;
 }
 
-.ui.basic.segment.content-area {
-  padding-top: 0;
-  margin-top: 0;
-}
-
 body.has-toolbar {
   .content-area main {
     width: 100%;
@@ -73,7 +68,6 @@ body.has-toolbar {
   // margin-left        : -3rem;
   // margin-right       : -3rem;
   // padding            : 1em;
-  padding: 3rem 1rem;
   margin: auto;
   background-color: #fff;
 }
@@ -1207,16 +1201,6 @@ h5 {
 
 .folderWithContent {
   padding: 0 100px !important;
-}
-
-.breadcrumbs:not(aside .breadcrumbs) {
-  @media (min-width: 700px) {
-    padding: 0 100px !important;
-  }
-
-  @media (max-width: 700px) {
-    border-top-left-radius: 0 !important;
-  }
 }
 
 .folderWithContent {
@@ -3143,12 +3127,6 @@ article.tileItem {
   }
 }
 
-body .content-area main {
-  @media (min-width: 1200px) {
-    padding: 3rem calc(1rem + 10px);
-  }
-}
-
 body.mosaic-view .content-area main {
   .tabs-view-menu {
     padding: 0 10px;
@@ -3665,14 +3643,4 @@ body.mosaic-view .content-area main {
 #main .has--size--wide_width
 {
   max-width: 100% !important;
-}
-
-#style-menu.ui.dropdown .menu {
-  span.text {
-      color: inherit !important;
-      font-size: inherit !important;
-  }
-  .white-text {
-    color: #e6e6e6 !important;
-  }
 }

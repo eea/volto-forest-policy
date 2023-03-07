@@ -381,6 +381,7 @@ export default function applyConfig(config) {
       label: 'xxx-large',
     },
   ];
+
   // config.settings.slate.styleMenu.blockStyles = [
   //   ...config.settings.slate.styleMenu.blockStyles,
   //   { cssClass: 'green-block-text', label: 'Green Text' },
