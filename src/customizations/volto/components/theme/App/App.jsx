@@ -4,12 +4,12 @@
  */
 
 import React, { Component } from 'react';
+import jwtDecode from 'jwt-decode';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import jwtDecode from 'jwt-decode';
 import { compose } from 'redux';
-import { asyncConnect } from '@plone/volto/helpers';
-import { Segment, Container } from 'semantic-ui-react';
+import { asyncConnect, Helmet } from '@plone/volto/helpers';
+import { Segment } from 'semantic-ui-react';
 import { renderRoutes } from 'react-router-config';
 import { Slide, ToastContainer, toast } from 'react-toastify';
 import split from 'lodash/split';
@@ -18,12 +18,10 @@ import trim from 'lodash/trim';
 import cx from 'classnames';
 import config from '@plone/volto/registry';
 import { PluggablesProvider } from '@plone/volto/components/manage/Pluggable';
-import LockingToastsFactory from '@plone/volto/components/manage/LockingToastsFactory/LockingToastsFactory';
-import WorkingCopyToastsFactory from '@plone/volto/components/manage/WorkingCopyToastsFactory/WorkingCopyToastsFactory';
-import Error from '@plone/volto/error';
 import { visitBlocks } from '@plone/volto/helpers/Blocks/Blocks';
+import { injectIntl } from 'react-intl';
 
-import ViewletsRenderer from '@eeacms/volto-forest-policy/components/theme/Viewlets/Render';
+import Error from '@plone/volto/error';
 
 import {
   Breadcrumbs,
@@ -33,32 +31,33 @@ import {
   OutdatedBrowser,
   AppExtras,
   SkipLinks,
-  Messages,
 } from '@plone/volto/components';
-import { BodyClass, getBaseUrl, getView, isCmsUi } from '@plone/volto/helpers';
+import {
+  BodyClass,
+  getBaseUrl,
+  getView,
+  hasApiExpander,
+  isCmsUi,
+} from '@plone/volto/helpers';
 import {
   getBreadcrumbs,
   getContent,
   getNavigation,
   getTypes,
   getWorkflow,
-  purgeMessages,
 } from '@plone/volto/actions';
-import {
-  getFrontpageSlides,
-  getDefaultHeaderImage,
-} from '@eeacms/volto-forest-policy/actions';
-import { getPortlets } from '@eeacms/volto-forest-policy/actions';
 
 import clearSVG from '@plone/volto/icons/clear.svg';
-import * as Sentry from '@sentry/browser';
+import MultilingualRedirector from '@plone/volto/components/theme/MultilingualRedirector/MultilingualRedirector';
+import WorkingCopyToastsFactory from '@plone/volto/components/manage/WorkingCopyToastsFactory/WorkingCopyToastsFactory';
+import LockingToastsFactory from '@plone/volto/components/manage/LockingToastsFactory/LockingToastsFactory';
 
 /**
  * @export
  * @class App
  * @extends {Component}
  */
-class App extends Component {
+export class App extends Component {
   /**
    * Property types.
    * @property {Object} propTypes Property types.
@@ -66,7 +65,6 @@ class App extends Component {
    */
   static propTypes = {
     pathname: PropTypes.string.isRequired,
-    purgeMessages: PropTypes.func.isRequired,
   };
 
   state = {
@@ -75,6 +73,11 @@ class App extends Component {
     errorInfo: null,
   };
 
+  constructor(props) {
+    super(props);
+    this.mainRef = React.createRef();
+  }
+
   /**
    * @method componentWillReceiveProps
    * @param {Object} nextProps Next properties
@@ -82,7 +85,6 @@ class App extends Component {
    */
   UNSAFE_componentWillReceiveProps(nextProps) {
     if (nextProps.pathname !== this.props.pathname) {
-      this.props.purgeMessages();
       if (this.state.hasError) {
         this.setState({ hasError: false });
       }
@@ -98,12 +100,17 @@ class App extends Component {
    */
   componentDidCatch(error, info) {
     this.setState({ hasError: true, error, errorInfo: info });
-    if (__CLIENT__) {
-      if (window?.env?.RAZZLE_SENTRY_DSN || __SENTRY__?.SENTRY_DSN) {
-        Sentry.captureException(error);
+    config.settings.errorHandlers.forEach((handler) => handler(error));
+  }
+
+  dispatchContentClick = (event) => {
+    if (event.target === event.currentTarget) {
+      const rect = this.mainRef.current.getBoundingClientRect();
+      if (event.clientY > rect.bottom) {
+        document.dispatchEvent(new Event('voltoClickBelowContent'));
       }
     }
-  }
+  };
 
   /**
    * Render method.
@@ -116,42 +123,17 @@ class App extends Component {
     const action = getView(this.props.pathname);
     const isCmsUI = isCmsUi(this.props.pathname);
     const ConnectionRefusedView = views.errorViews.ECONNREFUSED;
-    const headerImage =
-      this.props.content?.image?.download || this.props.defaultHeaderImage;
 
-    const leadImageCaption =
-      this.props.content?.lead_image_caption &&
-      this.props.content.lead_image_caption !== null
-        ? this.props.content.lead_image_caption
-        : '';
+    const language =
+      this.props.content?.language?.token ?? this.props.intl?.locale;
 
-    const bigLeading =
-      this.props.content?.big_leading_image &&
-      this.props.content.big_leading_image !== null
-        ? this.props.content.big_leading_image
-        : false;
-
-    const inheritLeadingData =
-      this.props.content?.inherit_leading_data &&
-      this.props.content.inherit_leading_data !== null
-        ? this.props.content.inherit_leading_data
-        : false;
-
-    const leadNavigation =
-      this.props.content?.lead_navigation &&
-      this.props.content.lead_navigation !== null
-        ? this.props.content.lead_navigation
-        : false;
-
-    const extraHeaderData = {
-      bigLeading,
-      inheritLeadingData,
-      parentData: this.props.content?.parent,
-      leadNavigation,
-      leadImageCaption,
-    };
     return (
       <PluggablesProvider>
+        {language && (
+          <Helmet>
+            <html lang={language} />
+          </Helmet>
+        )}
         <BodyClass className={`view-${action}view`} />
 
         {/* Body class depending on content type */}
@@ -177,21 +159,19 @@ class App extends Component {
           })}
         />
         <SkipLinks />
-        <Header
-          actualPathName={this.props.pathname}
-          pathname={path}
-          extraData={extraHeaderData}
-          defaultHeaderImage={headerImage}
-          navigationItems={this.props.navigation}
-          frontpage_slides={this.props.frontpage_slides}
-        />
+        <Header pathname={path} />
         <Breadcrumbs pathname={path} />
-        <Segment basic className="content-area">
-          <Container>
-            <main>
+        <MultilingualRedirector
+          pathname={this.props.pathname}
+          contentLanguage={this.props.content?.language?.token}
+        >
+          <Segment
+            basic
+            className="content-area"
+            onClick={this.dispatchContentClick}
+          >
+            <main ref={this.mainRef}>
               <OutdatedBrowser />
-              <Messages />
-              <div className="editor-toolbar-wrapper" />
               {this.props.connectionRefused ? (
                 <ConnectionRefusedView />
               ) : this.state.hasError ? (
@@ -200,16 +180,13 @@ class App extends Component {
                   stackTrace={this.state.errorInfo.componentStack}
                 />
               ) : (
-                <>
-                  {renderRoutes(this.props.route.routes, {
-                    staticContext: this.props.staticContext,
-                  })}
-                  <ViewletsRenderer {...this.props} />
-                </>
+                renderRoutes(this.props.route.routes, {
+                  staticContext: this.props.staticContext,
+                })
               )}
             </main>
-          </Container>
-        </Segment>
+          </Segment>
+        </MultilingualRedirector>
         <Footer />
         <LockingToastsFactory
           content={this.props.content}
@@ -243,7 +220,7 @@ export const __test__ = connect(
     apiError: state.apierror.error,
     connectionRefused: state.apierror.connectionRefused,
   }),
-  { purgeMessages },
+  {},
 )(App);
 
 export const fetchContent = async ({ store, location }) => {
@@ -265,6 +242,7 @@ export const fetchContent = async ({ store, location }) => {
         location,
         id,
         data,
+        blocksConfig,
       });
       if (!p?.length) {
         throw new Error(
@@ -281,93 +259,77 @@ export const fetchContent = async ({ store, location }) => {
 
   return content;
 };
-export default compose(
-  asyncConnect([
-    {
-      key: 'breadcrumbs',
-      promise: ({ location, store: { dispatch } }) =>
-        __SERVER__ && dispatch(getBreadcrumbs(getBaseUrl(location.pathname))),
-    },
-    {
-      key: 'content',
-      promise: ({ location, store }) =>
-        __SERVER__ && fetchContent({ store, location }),
-    },
-    {
-      key: 'frontpage_slides',
-      promise: ({ store: { dispatch } }) =>
-        __SERVER__ && dispatch(getFrontpageSlides()),
-    },
-    {
-      key: 'defaultHeaderImage',
-      promise: ({ store: { dispatch } }) =>
-        __SERVER__ && dispatch(getDefaultHeaderImage()),
-    },
-    {
-      key: 'navigation',
-      promise: ({ location, store: { dispatch } }) =>
-        __SERVER__ &&
-        dispatch(
-          getNavigation(
-            getBaseUrl(location.pathname),
-            config.settings.navDepth,
-          ),
-        ),
-    },
-    {
-      key: 'types',
-      promise: ({ location, store: { dispatch } }) =>
-        __SERVER__ && dispatch(getTypes(getBaseUrl(location.pathname))),
-    },
-    {
-      key: 'workflow',
-      promise: ({ location, store: { dispatch } }) =>
-        __SERVER__ && dispatch(getWorkflow(getBaseUrl(location.pathname))),
-    },
-    {
-      key: 'portlets',
-      promise: ({ location, store: { dispatch } }) =>
-        __SERVER__ && dispatch(getPortlets(getBaseUrl(location.pathname))),
-    },
-    {
-      key: 'portlets_left',
-      promise: ({ location, store: { dispatch } }) =>
-        __SERVER__ &&
-        dispatch(
-          getPortlets(getBaseUrl(location.pathname), 'plone.leftcolumn'),
-        ),
-    },
-    {
-      key: 'portlets_right',
-      promise: ({ location, store: { dispatch } }) =>
-        __SERVER__ &&
-        dispatch(
-          getPortlets(getBaseUrl(location.pathname), 'plone.rightcolumn'),
-        ),
-    },
-    {
-      key: 'portlets_footer',
-      promise: ({ location, store: { dispatch } }) =>
-        __SERVER__ &&
-        dispatch(
-          getPortlets(getBaseUrl(location.pathname), 'plone.footerportlets'),
-        ),
-    },
-  ]),
-  connect(
-    (state, props) => ({
-      pathname: props.location.pathname,
-      userId: state.userSession.token
-        ? jwtDecode(state.userSession.token).sub
-        : '',
-      token: state.userSession.token,
-      content: state.content.data,
-      apiError: state.apierror.error,
-      connectionRefused: state.apierror.connectionRefused,
-      defaultHeaderImage: state.default_header_image.items?.[0],
-      frontpage_slides: state.frontpage_slides.items,
-      navigation: state.navigation.items,
-    }),
-    { purgeMessages },
-  ),
-)(App);
+
+export function connectAppComponent(AppComponent) {
+  return compose(
+    asyncConnect([
+      {
+        key: 'breadcrumbs',
+        promise: ({ location, store: { dispatch } }) => {
+          // Do not trigger the breadcrumbs action if the expander is present
+          if (
+            __SERVER__ &&
+            !hasApiExpander('breadcrumbs', getBaseUrl(location.pathname))
+          ) {
+            return dispatch(getBreadcrumbs(getBaseUrl(location.pathname)));
+          }
+        },
+      },
+      {
+        key: 'content',
+        promise: ({ location, store }) =>
+          __SERVER__ && fetchContent({ store, location }),
+      },
+      {
+        key: 'navigation',
+        promise: ({ location, store: { dispatch } }) => {
+          // Do not trigger the navigation action if the expander is present
+          if (
+            __SERVER__ &&
+            !hasApiExpander('navigation', getBaseUrl(location.pathname))
+          ) {
+            return dispatch(
+              getNavigation(
+                getBaseUrl(location.pathname),
+                config.settings.navDepth,
+              ),
+            );
+          }
+        },
+      },
+      {
+        key: 'types',
+        promise: ({ location, store: { dispatch } }) => {
+          // Do not trigger the types action if the expander is present
+          if (
+            __SERVER__ &&
+            !hasApiExpander('types', getBaseUrl(location.pathname))
+          ) {
+            return dispatch(getTypes(getBaseUrl(location.pathname)));
+          }
+        },
+      },
+      {
+        key: 'workflow',
+        promise: ({ location, store: { dispatch } }) =>
+          __SERVER__ && dispatch(getWorkflow(getBaseUrl(location.pathname))),
+      },
+    ]),
+    injectIntl,
+    connect(
+      (state, props) => ({
+        pathname: props.location.pathname,
+        token: state.userSession.token,
+        userId: state.userSession.token
+          ? jwtDecode(state.userSession.token).sub
+          : '',
+        content: state.content.data,
+        apiError: state.apierror.error,
+        connectionRefused: state.apierror.connectionRefused,
+      }),
+      null,
+    ),
+  )(AppComponent);
+}
+
+export default connectAppComponent(App);
