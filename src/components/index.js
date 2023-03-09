@@ -8,4 +8,3 @@
  *   Footer,
  * };
  */
-export CountryView from '@eeacms/volto-forest-policy/components/theme/CountryView/CountryView';
