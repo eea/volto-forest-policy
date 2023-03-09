@@ -34,9 +34,6 @@ import CollectionYears from '@eeacms/volto-forest-policy/components/manage/Widge
 
 import AlignBlockWidget from '@eeacms/volto-forest-policy/components/manage/Widgets/Align';
 
-import NewsView from '@eeacms/volto-forest-policy/components/theme/News/NewsView';
-import NewsEdit from '@eeacms/volto-forest-policy/components/theme/News/NewsEdit';
-
 import CollectionBlockView from '@eeacms/volto-forest-policy/components/theme/Collection/BlockView';
 import CollectionBlockEdit from '@eeacms/volto-forest-policy/components/theme/Collection/BlockEdit';
 import CollectionView from '@eeacms/volto-forest-policy/components/theme/Collection/View';
@@ -168,15 +165,6 @@ export default function applyConfig(config) {
     title: 'Collection Listing',
     view: CollectionBlockView,
     edit: CollectionBlockEdit,
-    icon: chartIcon,
-    group: 'custom_addons',
-  };
-
-  config.blocks.blocksConfig.news = {
-    id: 'news',
-    title: 'News',
-    view: NewsView,
-    edit: NewsEdit,
     icon: chartIcon,
     group: 'custom_addons',
   };
