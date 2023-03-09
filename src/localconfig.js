@@ -2,21 +2,13 @@ import { defineMessages } from 'react-intl';
 
 import TokenWidget from '@plone/volto/components/manage/Widgets/TokenWidget';
 
-// import CountryView from '@eeacms/volto-forest-policy/components/theme/CountryView/CountryView';
-// import CountryPageView from '~/components/theme/CountryPageView/CountryPageView';
-// import NewsView from '@eeacms/volto-forest-policy/components/theme/NewsView/NewsView';
-// import RefreshView from '@eeacms/volto-forest-policy/components/theme/RefreshView/RefreshView';
-
 import chartIcon from '@plone/volto/icons/world.svg';
-
-// import DefaultViewWide from '@eeacms/volto-forest-policy/components/theme/DefaultViewWide/DefaultViewWide';
 
 import ForestMetadata from '@eeacms/volto-forest-policy/components/theme/Viewlets/ForestMetadata';
 
 import NavigationBlockEdit from '@eeacms/volto-forest-policy/components/manage/Blocks/NavigationBlock/Edit';
 import NavigationBlockView from '@eeacms/volto-forest-policy/components/manage/Blocks/NavigationBlock/View';
 
-// import RedirectView from '@eeacms/volto-forest-policy/components/theme/View/RedirectView';
 import { uniqBy } from 'lodash';
 
 import './slate-inlineStyles.less';
