@@ -1,0 +1,6 @@
+
+/*******************************
+        Inpage Navigation
+*******************************/
+
+@navBackground: @secondaryColor;

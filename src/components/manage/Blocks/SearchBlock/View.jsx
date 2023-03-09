@@ -15,7 +15,6 @@ import {
   quickSearchContent,
 } from '@eeacms/volto-forest-policy/actions';
 import Highlighter from 'react-highlight-words';
-import './style.css';
 
 const messages = defineMessages({
   search: {
