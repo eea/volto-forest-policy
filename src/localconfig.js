@@ -2,12 +2,7 @@ import { defineMessages } from 'react-intl';
 
 import TokenWidget from '@plone/volto/components/manage/Widgets/TokenWidget';
 
-import chartIcon from '@plone/volto/icons/world.svg';
-
 import ForestMetadata from '@eeacms/volto-forest-policy/components/theme/Viewlets/ForestMetadata';
-
-import NavigationBlockEdit from '@eeacms/volto-forest-policy/components/manage/Blocks/NavigationBlock/Edit';
-import NavigationBlockView from '@eeacms/volto-forest-policy/components/manage/Blocks/NavigationBlock/View';
 
 import { uniqBy } from 'lodash';
 
@@ -124,14 +119,6 @@ export function applyConfig(config) {
     ],
 
     blocksConfig: {
-      navigation_tabs_block: {
-        id: 'navigation_tabs_block',
-        title: 'Navigation tabs block',
-        view: NavigationBlockView,
-        edit: NavigationBlockEdit,
-        icon: chartIcon,
-        group: 'forests_specific',
-      },
       ...Object.keys(config.blocks.blocksConfig).reduce((acc, blockKey) => {
         if (
           ['text', 'mostUsed', 'media', 'common'].includes(
