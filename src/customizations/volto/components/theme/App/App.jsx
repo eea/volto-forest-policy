@@ -152,7 +152,10 @@ export class App extends Component {
               this.props.pathname !== '/',
             siteroot: this.props.pathname === '/',
             'wf-state-published':
-              this.props.pathname === '/' || this.props.pathname === '/search',
+              this.props.pathname === '/' ||
+              this.props.pathname === '/search' ||
+              this.props.pathname === '/login' ||
+              this.props.pathname.startsWith('/controlpanel'),
             'is-authenticated': !!this.props.token,
             'is-anonymous': !this.props.token,
             'cms-ui': isCmsUI,
