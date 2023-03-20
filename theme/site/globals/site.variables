@@ -44,9 +44,9 @@
 /*-------------------
     Brand Colors
 --------------------*/
-@primaryColor   : @darkGreen;
+@primaryColor   : @fiseDarkGreen;
 
-@secondaryColor      : @brown;
+@secondaryColor      : @fiseGreen;
 
 @lightSecondaryColor : @lightGrey;
 
@@ -171,6 +171,8 @@
 @darkerGreen      : #005c30;
 @darkBrown        : #8e4313;
 @darkOrange       : #b94d1f;
+@fiseGreen        : #007B6C;
+@fiseDarkGreen    : #005248;
 
 // @textColor        : #002200;
 @textColor: #494e13;
