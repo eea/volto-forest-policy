@@ -160,7 +160,6 @@ export class App extends Component {
             'is-anonymous': !this.props.token,
             'cms-ui': isCmsUI,
             'public-ui': !isCmsUI,
-            homepage: this.props.pathname === '/',
           })}
         />
         <SkipLinks />
