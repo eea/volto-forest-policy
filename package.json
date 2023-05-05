@@ -44,6 +44,7 @@
     "draft-js-resizeable-plugin": "^2.0.9",
     "draft-js-video-plugin": "^2.0.2",
     "esri-loader": "^2.14.0",
+    "razzle-plugin-scss": "4.2.18",
     "react-component-queries": "2.3.0",
     "react-highlight-words": "^0.16.0",
     "react-image-gallery": "1.2.7",
@@ -52,8 +53,7 @@
     "react-sizeme": "3.0.1",
     "react-stickynode": "^2.1.1",
     "redraft": "^0.10.2",
-    "redux-connect": "10.0.0",
-    "razzle-plugin-scss": "4.2.18"
+    "redux-connect": "10.0.0"
   },
   "devDependencies": {
     "@cypress/code-coverage": "^3.10.0",
