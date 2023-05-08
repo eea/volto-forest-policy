@@ -10,6 +10,14 @@ const getProviderDataLength = (provider_data) => {
     : 0;
 };
 
+const getAlignmentOfColumn = (col, idx) => {
+  return typeof col !== 'string' && col.textAlign
+    ? col.textAlign
+    : idx === 0
+    ? 'left'
+    : 'right';
+};
+
 const PopupTable = ({ rowData, providerUrl, provider_data, tableColumns }) => {
   const [tableData, setTableData] = React.useState([]);
 
@@ -43,8 +51,8 @@ const PopupTable = ({ rowData, providerUrl, provider_data, tableColumns }) => {
           <Table.Row>
             {tableColumns &&
               tableColumns.length > 0 &&
-              tableColumns.map((col) => (
-                <Table.HeaderCell>
+              tableColumns.map((col, i) => (
+                <Table.HeaderCell className={getAlignmentOfColumn(col, i)}>
                   {col.title ? col.title : col.column}
                 </Table.HeaderCell>
               ))}
@@ -59,7 +67,10 @@ const PopupTable = ({ rowData, providerUrl, provider_data, tableColumns }) => {
                 return (
                   <Table.Row key={i}>
                     {tableColumns.map((col, j) => (
-                      <Table.Cell key={j}>
+                      <Table.Cell
+                        textAlign={getAlignmentOfColumn(col, j)}
+                        key={j}
+                      >
                         <RenderComponent
                           tableData={tableData}
                           colDef={col}
