@@ -1,9 +1,29 @@
 .expandable-table {
   .ui.search .ui.icon.input {
     width: 100%;
+    margin: 2rem 0;
 
     > input {
-      padding-left: 1rem;
+      padding: 0;
+      border: none;
+      border-bottom: 2px solid #007b6c;
+      border-radius: 0;
+      font-size: 40px;
+
+      &::placeholder {
+        color: #3d5265 !important;
+        font-weight: 200;
+      }
+    }
+
+    > input:focus {
+      border-bottom: 3px solid #0083e0;
+      outline: none !important;
+    }
+
+    .search.icon::before {
+      color: #007b6c;
+      font-size: 30px;
     }
   }
 

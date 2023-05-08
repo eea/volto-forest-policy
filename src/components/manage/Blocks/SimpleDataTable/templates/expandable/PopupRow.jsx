@@ -184,6 +184,7 @@ const PopupRow = ({
     <Modal
       className="expandable-modal"
       closeIcon
+      size="fullscreen"
       onClose={() => handleClose()}
       onOpen={() => handleExpand()}
       open={expand}
