@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-noninteractive-tabindex */
 import React from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
@@ -189,7 +190,7 @@ const PopupRow = ({
       onOpen={() => handleExpand()}
       open={expand}
       trigger={
-        <div className="popup-trigger-container">
+        <div className="popup-trigger-container" tabIndex={0}>
           <ValidImage imageUrl={rowData[tableData.image_url]} />
           <p className="popup-trigger-title">
             {rowData &&
