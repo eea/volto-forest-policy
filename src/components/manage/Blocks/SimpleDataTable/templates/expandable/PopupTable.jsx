@@ -52,7 +52,7 @@ const PopupTable = ({ rowData, providerUrl, provider_data, tableColumns }) => {
             {tableColumns &&
               tableColumns.length > 0 &&
               tableColumns.map((col, i) => (
-                <Table.HeaderCell className={getAlignmentOfColumn(col, i)}>
+                <Table.HeaderCell textAlign={getAlignmentOfColumn(col, i)}>
                   {col.title ? col.title : col.column}
                 </Table.HeaderCell>
               ))}
