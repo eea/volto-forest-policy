@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/no-noninteractive-tabindex */
 import React from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
@@ -180,6 +182,12 @@ const PopupRow = ({
     }
   };
 
+  const handleKeyDown = (e) => {
+    if (e.keyCode === 13) {
+      handleExpand();
+    }
+  };
+
   return (
     <Modal
       className="expandable-modal"
@@ -189,7 +197,11 @@ const PopupRow = ({
       onOpen={() => handleExpand()}
       open={expand}
       trigger={
-        <div className="popup-trigger-container">
+        <div
+          className="popup-trigger-container"
+          tabIndex={0}
+          onKeyDown={(e) => handleKeyDown(e)}
+        >
           <ValidImage imageUrl={rowData[tableData.image_url]} />
           <p className="popup-trigger-title">
             {rowData &&

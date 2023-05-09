@@ -214,7 +214,7 @@ const View = (props) => {
                 selectedColumns.map((colDef, j) => (
                   <Table.HeaderCell
                     key={getNameOfColumn(colDef)}
-                    className={getAlignmentOfColumn(colDef, j)}
+                    textAlign={getAlignmentOfColumn(colDef, j)}
                   >
                     <p
                       role="presentation"
