@@ -23,16 +23,20 @@
     "@eeacms/volto-openlayers-map",
     "@eeacms/volto-matomo",
     "@eeacms/volto-eea-design-system",
-    "@eeacms/volto-eea-website-theme"
+    "@eeacms/volto-eea-website-theme",
+    "@eeacms/volto-globalsearch",
+    "@eeacms/volto-searchlib"
   ],
   "dependencies": {
     "@eeacms/volto-datablocks": "*",
     "@eeacms/volto-eea-design-system": "*",
     "@eeacms/volto-eea-map": "*",
     "@eeacms/volto-eea-website-theme": "*",
+    "@eeacms/volto-globalsearch": "*",
     "@eeacms/volto-matomo": "*",
     "@eeacms/volto-openlayers-map": "0.1.4",
     "@eeacms/volto-plotlycharts": "*",
+    "@eeacms/volto-searchlib": "*",
     "@sentry/browser": "7.17.3",
     "dompurify": "^2.0.12",
     "draft-js-alignment-plugin": "^2.0.6",
