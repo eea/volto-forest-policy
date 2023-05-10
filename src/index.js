@@ -38,9 +38,6 @@ import CollectionBlockView from '@eeacms/volto-forest-policy/components/theme/Co
 import CollectionBlockEdit from '@eeacms/volto-forest-policy/components/theme/Collection/BlockEdit';
 import CollectionView from '@eeacms/volto-forest-policy/components/theme/Collection/View';
 
-//import ImageCardsView from './ImageCards/ImageCardsView';
-//import ImageCardsEdit from './ImageCards/ImageCardsEdit';
-
 import {
   NavigationPortlet,
   DefaultPortlet,
@@ -120,15 +117,13 @@ export default function applyConfig(config) {
     headerSearchBox: [
       {
         isDefault: true,
-        path: '/advanced-search',
-        placeholder: 'Search...',
-      },
-      {
-        path: 'datahub',
-        placeholder: 'Search Datahub...',
+        // to replace search path change path to whatever you want and match with the page in volto website
+        path: '/fisesearch',
+        placeholder: 'Search FISE...',
         description:
           'Looking for more information? Try searching the full EEA website content',
-        buttonTitle: 'Go to full site search',
+        buttonTitle: 'Go to advanced search',
+        buttonUrl: 'https://www.eea.europa.eu/en/advanced-search',
       },
     ],
     logoTargetUrl: '/',
@@ -142,6 +137,13 @@ export default function applyConfig(config) {
       '401': Unauthorized,
     },
   };
+
+  // // Custom Homepage layouts
+  // config.views.layoutViews = {
+  //   ...(config.views.layoutViews || {}),
+  //   homepage_view: HomePageView,
+  //   homepage_inverse_view: HomePageInverseView,
+  // };
 
   config.views.contentTypesViews.Collection = CollectionView;
 
@@ -369,12 +371,6 @@ export default function applyConfig(config) {
       label: 'xxx-large',
     },
   ];
-
-  // config.settings.slate.styleMenu.blockStyles = [
-  //   ...config.settings.slate.styleMenu.blockStyles,
-  //   { cssClass: 'green-block-text', label: 'Green Text' },
-  //   { cssClass: 'underline-block-text', label: 'Underline Text' },
-  // ];
 
   //advancedlink is currently not working properly/not recognized in fise, so we add it to config manually
   const { slate } = config.settings;
