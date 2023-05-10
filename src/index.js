@@ -38,7 +38,6 @@ import CollectionBlockView from '@eeacms/volto-forest-policy/components/theme/Co
 import CollectionBlockEdit from '@eeacms/volto-forest-policy/components/theme/Collection/BlockEdit';
 import CollectionView from '@eeacms/volto-forest-policy/components/theme/Collection/View';
 
-
 import {
   NavigationPortlet,
   DefaultPortlet,
@@ -399,8 +398,6 @@ export default function applyConfig(config) {
 
   const [installLinkEditor] = makeInlineElementPlugin(opts);
   config = installLinkEditor(config);
-
-  console.log(config?.views?.layoutViews, 'config.views.layoutViews');
 
   return config;
 }
