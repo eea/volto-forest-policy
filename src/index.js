@@ -38,8 +38,6 @@ import CollectionBlockView from '@eeacms/volto-forest-policy/components/theme/Co
 import CollectionBlockEdit from '@eeacms/volto-forest-policy/components/theme/Collection/BlockEdit';
 import CollectionView from '@eeacms/volto-forest-policy/components/theme/Collection/View';
 
-import HomePageView from '@eeacms/volto-eea-website-theme/components/theme/Homepage/HomePageView';
-import HomePageInverseView from '@eeacms/volto-eea-website-theme/components/theme/Homepage/HomePageInverseView';
 
 import {
   NavigationPortlet,
