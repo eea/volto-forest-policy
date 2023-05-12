@@ -110,13 +110,14 @@ export function applyConfig(config) {
   config.blocks = {
     ...config.blocks,
 
-    groupBlocksOrder: [
-      { id: 'common_blocks', title: 'Common blocks' },
-      { id: 'forests_specific', title: 'Forests Specific Blocks' },
-      ...uniqBy(config.blocks.groupBlocksOrder, 'id').filter(
-        (block) => !['text', 'mostUsed', 'media', 'common'].includes(block.id),
-      ),
-    ],
+    // comment block order because it removes most used grouping
+    // groupBlocksOrder: [
+    //   { id: 'common_blocks', title: 'Common blocks' },
+    //   { id: 'forests_specific', title: 'Forests Specific Blocks' },
+    //   ...uniqBy(config.blocks.groupBlocksOrder, 'id').filter(
+    //     (block) => !['text', 'mostUsed', 'media', 'common'].includes(block.id),
+    //   ),
+    // ],
 
     blocksConfig: {
       ...Object.keys(config.blocks.blocksConfig).reduce((acc, blockKey) => {
