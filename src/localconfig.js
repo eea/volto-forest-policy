@@ -4,7 +4,7 @@ import TokenWidget from '@plone/volto/components/manage/Widgets/TokenWidget';
 
 import ForestMetadata from '@eeacms/volto-forest-policy/components/theme/Viewlets/ForestMetadata';
 
-import { uniqBy } from 'lodash';
+// import { uniqBy } from 'lodash';
 
 import './slate-inlineStyles.less';
 
