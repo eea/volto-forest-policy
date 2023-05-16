@@ -134,33 +134,6 @@
 
 
 /*-------------------
-     Breakpoints
---------------------*/
-
-@mobileBreakpoint                  : 320px;
-@tabletBreakpoint                  : 768px;
-@computerBreakpoint                : 1200px;
-@largeMonitorBreakpoint            : 1600px;
-@widescreenMonitorBreakpoint       : 1720px;
-
-
-// not used
-@widescreenlaptopBreakpoint        : 1366;
-@widescreenlaptopBigBreakpoint     : 1440;
-@widescreenmonitorSmallBreakpoint  : 1626;
-
-
-/* Responsive */
-@largestMobileScreen        : (@tabletBreakpoint - 1px);
-@largestTabletScreen        : (@computerBreakpoint - 1px);
-@largestSmallMonitor        : (@largeMonitorBreakpoint - 1px);
-@largestLargeMonitor        : (@widescreenMonitorBreakpoint - 1px);
-@widescreenlaptopSize       : (@widescreenlaptopBreakpoint - 1px);
-@widescreenlaptopBigSize    : (@widescreenlaptopBigBreakpoint - 1px);
-@widescreenmonitorSmallSize : (@widescreenmonitorSmallBreakpoint - 1px);
-@widescreenMonitorSize      : (@widescreenMonitorBreakpoint - 1px);
-
-/*-------------------
       Site Colors
 --------------------*/
 
