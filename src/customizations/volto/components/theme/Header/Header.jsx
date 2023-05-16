@@ -7,7 +7,7 @@ import React from 'react';
 import { Dropdown, Image } from 'semantic-ui-react';
 import { connect, useDispatch, useSelector } from 'react-redux';
 
-import { withRouter, useLocation } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { UniversalLink } from '@plone/volto/components';
 import {
   getBaseUrl,
@@ -34,7 +34,14 @@ function removeTrailingSlash(path) {
 /**
  * EEA Specific Header component.
  */
-const EEAHeader = ({ pathname, token, items, history, subsite }) => {
+const EEAHeader = ({
+  pathname,
+  token,
+  items,
+  history,
+  subsite,
+  pathLocation,
+}) => {
   const currentLang = useSelector((state) => state.intl.locale);
   const translations = useSelector(
     (state) => state.content.data?.['@components']?.translations?.items,
@@ -46,13 +53,7 @@ const EEAHeader = ({ pathname, token, items, history, subsite }) => {
 
   const isSubsite = subsite?.['@type'] === 'Subsite';
 
-  const isHomePath = pathname === '/' || pathname === '';
-  // const currentPath = useLocation();
-
-  //split above console in two consoles
-  // console.log(pathname, 'pathname');
-  // console.log(currentPath, 'routerLocation');
-  // console.log(statePath, ' statepath');
+  const isHomePath = pathLocation === '/';
 
   const isHomePageInverse = useSelector((state) => {
     const layout = state.content?.data?.layout;
@@ -273,7 +274,7 @@ export default compose(
   withRouter,
   connect(
     (state) => ({
-      // statePath: state?.router?.location?.pathname,
+      pathLocation: state?.router?.location?.pathname,
       token: state.userSession.token,
       items: state.navigation.items,
       subsite: state.content.data?.['@components']?.subsite,
