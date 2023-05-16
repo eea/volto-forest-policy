@@ -34,7 +34,14 @@ function removeTrailingSlash(path) {
 /**
  * EEA Specific Header component.
  */
-const EEAHeader = ({ pathname, token, items, history, subsite }) => {
+const EEAHeader = ({
+  pathname,
+  token,
+  items,
+  history,
+  subsite,
+  pathLocation,
+}) => {
   const currentLang = useSelector((state) => state.intl.locale);
   const translations = useSelector(
     (state) => state.content.data?.['@components']?.translations?.items,
@@ -46,7 +53,7 @@ const EEAHeader = ({ pathname, token, items, history, subsite }) => {
 
   const isSubsite = subsite?.['@type'] === 'Subsite';
 
-  const isHomePath = pathname === '/' || pathname === '';
+  const isHomePath = pathLocation === '/';
 
   const isHomePageInverse = useSelector((state) => {
     const layout = state.content?.data?.layout;
@@ -267,6 +274,7 @@ export default compose(
   withRouter,
   connect(
     (state) => ({
+      pathLocation: state?.router?.location?.pathname,
       token: state.userSession.token,
       items: state.navigation.items,
       subsite: state.content.data?.['@components']?.subsite,

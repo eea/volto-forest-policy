@@ -118,7 +118,7 @@ export default function applyConfig(config) {
       {
         isDefault: true,
         // to replace search path change path to whatever you want and match with the page in volto website
-        path: '/fisesearch',
+        path: '/advanced-search',
         placeholder: 'Search FISE...',
         description:
           'Looking for more information? Try searching the full EEA website content',
