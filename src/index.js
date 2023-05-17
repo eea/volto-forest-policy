@@ -26,16 +26,15 @@ import { linkDeserializer } from '@plone/volto-slate/editor/plugins/AdvancedLink
 import LinkEditSchema from '@plone/volto-slate/editor/plugins/AdvancedLink/schema';
 import { defineMessages } from 'react-intl'; // , defineMessages
 
-import chartIcon from '@plone/volto/icons/world.svg';
-
 import HiddenWidget from '@eeacms/volto-forest-policy/components/manage/Widgets/Hidden';
 import CollectionYears from '@eeacms/volto-forest-policy/components/manage/Widgets/CollectionYears';
 // import PickObject from './PickObject';
 
 import AlignBlockWidget from '@eeacms/volto-forest-policy/components/manage/Widgets/Align';
 
-import CollectionBlockView from '@eeacms/volto-forest-policy/components/theme/Collection/BlockView';
-import CollectionBlockEdit from '@eeacms/volto-forest-policy/components/theme/Collection/BlockEdit';
+// import chartIcon from '@plone/volto/icons/world.svg';
+// import CollectionBlockView from '@eeacms/volto-forest-policy/components/theme/Collection/BlockView';
+// import CollectionBlockEdit from '@eeacms/volto-forest-policy/components/theme/Collection/BlockEdit';
 import CollectionView from '@eeacms/volto-forest-policy/components/theme/Collection/View';
 
 import {
