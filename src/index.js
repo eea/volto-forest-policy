@@ -67,10 +67,21 @@ function addCustomGroup(config) {
     });
   }
 }
+function renamePlotlyGroup(config) {
+  const plotlyGroup = config.blocks.groupBlocksOrder.filter(
+    (el) => el.id === 'plotly',
+  );
+  if (plotlyGroup.length) {
+    plotlyGroup[0].title = 'Data visualizations';
+  }
+  return config;
+}
 
 export default function applyConfig(config) {
   // Add here your project's configuration here by modifying `config` accordingly
   addCustomGroup(config);
+
+  renamePlotlyGroup(config);
 
   config = [
     installAppExtras,
@@ -162,14 +173,19 @@ export default function applyConfig(config) {
   // config.widgets.widget.object_by_path = PickObject;
   config.widgets.widget.align = AlignBlockWidget;
 
-  config.blocks.blocksConfig.collection_block = {
-    id: 'collection_block',
-    title: 'Collection Listing',
-    view: CollectionBlockView,
-    edit: CollectionBlockEdit,
-    icon: chartIcon,
-    group: 'custom_addons',
-  };
+  // disabled as this block is not in the list of blocks to show
+  // config.blocks.blocksConfig.collection_block = {
+  //   id: 'collection_block',
+  //   title: 'Collection Listing',
+  //   view: CollectionBlockView,
+  //   edit: CollectionBlockEdit,
+  //   icon: chartIcon,
+  //   group: 'custom_addons',
+  // };
+
+  config.blocks.blocksConfig.embed_eea_tableau_block.group = 'plotly';
+  config.blocks.blocksConfig.embed_eea_map_block.group = 'plotly';
+  config.blocks.blocksConfig.simpleDataConnectedTable.group = 'custom_addons';
 
   config.addonReducers = {
     ...config.addonReducers,
