@@ -76,10 +76,16 @@ function renamePlotlyGroup(config) {
   return config;
 }
 
+function removeDataBlocksGroup(config) {
+  config.blocks.groupBlocksOrder = config.blocks.groupBlocksOrder.filter(
+    (el) => el.id !== 'data_blocks',
+  );
+  return config;
+}
 export default function applyConfig(config) {
   // Add here your project's configuration here by modifying `config` accordingly
   addCustomGroup(config);
-
+  removeDataBlocksGroup(config);
   renamePlotlyGroup(config);
 
   config = [
