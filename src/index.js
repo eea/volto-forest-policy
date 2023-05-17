@@ -82,10 +82,33 @@ function removeDataBlocksGroup(config) {
   );
   return config;
 }
+
+// cleanup blocks from available block chooser list that shouldn't be visible
+function cleanupAvailableBlocks(config) {
+  config.blocks.blocksConfig = {
+    ...Object.keys(config.blocks.blocksConfig).reduce((acc, blockKey) => {
+      if (
+        ![
+          'treemapChart',
+          'countryFlag',
+          'tableau_block',
+          'embed_visualization',
+          'plotly_chart',
+        ].includes(config.blocks.blocksConfig[blockKey].id)
+      ) {
+        acc[blockKey] = config.blocks.blocksConfig[blockKey];
+      }
+      return acc;
+    }, {}),
+  };
+  return config;
+}
+
 export default function applyConfig(config) {
   // Add here your project's configuration here by modifying `config` accordingly
   addCustomGroup(config);
   removeDataBlocksGroup(config);
+  cleanupAvailableBlocks(config);
   renamePlotlyGroup(config);
 
   config = [
