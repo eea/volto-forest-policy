@@ -26,17 +26,10 @@ import { linkDeserializer } from '@plone/volto-slate/editor/plugins/AdvancedLink
 import LinkEditSchema from '@plone/volto-slate/editor/plugins/AdvancedLink/schema';
 import { defineMessages } from 'react-intl'; // , defineMessages
 
-import chartIcon from '@plone/volto/icons/world.svg';
-
 import HiddenWidget from '@eeacms/volto-forest-policy/components/manage/Widgets/Hidden';
-import CollectionYears from '@eeacms/volto-forest-policy/components/manage/Widgets/CollectionYears';
 // import PickObject from './PickObject';
 
 import AlignBlockWidget from '@eeacms/volto-forest-policy/components/manage/Widgets/Align';
-
-import CollectionBlockView from '@eeacms/volto-forest-policy/components/theme/Collection/BlockView';
-import CollectionBlockEdit from '@eeacms/volto-forest-policy/components/theme/Collection/BlockEdit';
-import CollectionView from '@eeacms/volto-forest-policy/components/theme/Collection/View';
 
 import {
   NavigationPortlet,
@@ -67,10 +60,49 @@ function addCustomGroup(config) {
     });
   }
 }
+function renamePlotlyGroup(config) {
+  const plotlyGroup = config.blocks.groupBlocksOrder.filter(
+    (el) => el.id === 'plotly',
+  );
+  if (plotlyGroup.length) {
+    plotlyGroup[0].title = 'Data visualizations';
+  }
+  return config;
+}
+
+function removeDataBlocksGroup(config) {
+  config.blocks.groupBlocksOrder = config.blocks.groupBlocksOrder.filter(
+    (el) => el.id !== 'data_blocks',
+  );
+  return config;
+}
+
+// cleanup blocks from available block chooser list that shouldn't be visible
+function cleanupAvailableBlocks(config) {
+  config.blocks.blocksConfig = {
+    ...Object.keys(config.blocks.blocksConfig).reduce((acc, blockKey) => {
+      if (
+        ![
+          'treemapChart',
+          'countryFlag',
+          'tableau_block',
+          'plotly_chart',
+        ].includes(config.blocks.blocksConfig[blockKey].id)
+      ) {
+        acc[blockKey] = config.blocks.blocksConfig[blockKey];
+      }
+      return acc;
+    }, {}),
+  };
+  return config;
+}
 
 export default function applyConfig(config) {
   // Add here your project's configuration here by modifying `config` accordingly
   addCustomGroup(config);
+  removeDataBlocksGroup(config);
+  cleanupAvailableBlocks(config);
+  renamePlotlyGroup(config);
 
   config = [
     installAppExtras,
@@ -145,8 +177,6 @@ export default function applyConfig(config) {
   //   homepage_inverse_view: HomePageInverseView,
   // };
 
-  config.views.contentTypesViews.Collection = CollectionView;
-
   config.widgets = {
     ...config.widgets,
     widget: {
@@ -155,21 +185,15 @@ export default function applyConfig(config) {
     },
   };
 
-  config.widgets.id.collection_years = CollectionYears;
   config.widgets.id.blocks = HiddenWidget;
   config.widgets.id.blocks_layout = HiddenWidget;
 
   // config.widgets.widget.object_by_path = PickObject;
   config.widgets.widget.align = AlignBlockWidget;
 
-  config.blocks.blocksConfig.collection_block = {
-    id: 'collection_block',
-    title: 'Collection Listing',
-    view: CollectionBlockView,
-    edit: CollectionBlockEdit,
-    icon: chartIcon,
-    group: 'custom_addons',
-  };
+  config.blocks.blocksConfig.embed_eea_tableau_block.group = 'plotly';
+  config.blocks.blocksConfig.embed_eea_map_block.group = 'plotly';
+  config.blocks.blocksConfig.simpleDataConnectedTable.group = 'custom_addons';
 
   config.addonReducers = {
     ...config.addonReducers,

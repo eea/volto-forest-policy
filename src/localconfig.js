@@ -31,18 +31,6 @@ defineMessages({
   },
 });
 
-function addCustomGroup(config) {
-  const hasCustomGroup = config.blocks.groupBlocksOrder.filter(
-    (el) => el.id === 'custom_addons',
-  );
-  if (hasCustomGroup.length === 0) {
-    config.blocks.groupBlocksOrder.push({
-      id: 'custom_addons',
-      title: 'Custom addons',
-    });
-  }
-}
-
 function addViewlets(config) {
   if (config.viewlets && config.viewlets.length > 0) {
     config.viewlets.push({ path: '/', component: ForestMetadata });
@@ -56,7 +44,6 @@ function addViewlets(config) {
 }
 
 export function applyConfig(config) {
-  addCustomGroup(config);
   addViewlets(config);
 
   config.settings = {
