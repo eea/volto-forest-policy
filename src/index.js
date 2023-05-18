@@ -92,7 +92,6 @@ function cleanupAvailableBlocks(config) {
           'treemapChart',
           'countryFlag',
           'tableau_block',
-          'embed_visualization',
           'plotly_chart',
         ].includes(config.blocks.blocksConfig[blockKey].id)
       ) {
