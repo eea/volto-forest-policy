@@ -27,15 +27,9 @@ import LinkEditSchema from '@plone/volto-slate/editor/plugins/AdvancedLink/schem
 import { defineMessages } from 'react-intl'; // , defineMessages
 
 import HiddenWidget from '@eeacms/volto-forest-policy/components/manage/Widgets/Hidden';
-import CollectionYears from '@eeacms/volto-forest-policy/components/manage/Widgets/CollectionYears';
 // import PickObject from './PickObject';
 
 import AlignBlockWidget from '@eeacms/volto-forest-policy/components/manage/Widgets/Align';
-
-// import chartIcon from '@plone/volto/icons/world.svg';
-// import CollectionBlockView from '@eeacms/volto-forest-policy/components/theme/Collection/BlockView';
-// import CollectionBlockEdit from '@eeacms/volto-forest-policy/components/theme/Collection/BlockEdit';
-import CollectionView from '@eeacms/volto-forest-policy/components/theme/Collection/View';
 
 import {
   NavigationPortlet,
@@ -183,8 +177,6 @@ export default function applyConfig(config) {
   //   homepage_inverse_view: HomePageInverseView,
   // };
 
-  config.views.contentTypesViews.Collection = CollectionView;
-
   config.widgets = {
     ...config.widgets,
     widget: {
@@ -193,22 +185,11 @@ export default function applyConfig(config) {
     },
   };
 
-  config.widgets.id.collection_years = CollectionYears;
   config.widgets.id.blocks = HiddenWidget;
   config.widgets.id.blocks_layout = HiddenWidget;
 
   // config.widgets.widget.object_by_path = PickObject;
   config.widgets.widget.align = AlignBlockWidget;
-
-  // disabled as this block is not in the list of blocks to show
-  // config.blocks.blocksConfig.collection_block = {
-  //   id: 'collection_block',
-  //   title: 'Collection Listing',
-  //   view: CollectionBlockView,
-  //   edit: CollectionBlockEdit,
-  //   icon: chartIcon,
-  //   group: 'custom_addons',
-  // };
 
   config.blocks.blocksConfig.embed_eea_tableau_block.group = 'plotly';
   config.blocks.blocksConfig.embed_eea_map_block.group = 'plotly';
