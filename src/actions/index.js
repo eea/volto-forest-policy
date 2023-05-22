@@ -9,7 +9,6 @@ import {
   GET_PARENT_FOLDER_DATA,
   GET_LOCALNAVIGATION,
   GET_CHART_DATA_FROM_VISUALIZATION,
-  GET_NAVSITEMAP,
   SET_CURRENT_VERSION,
   GET_INDEX_VALUES,
   GET_CONTROLPANEL_FALLBACKS,
@@ -120,17 +119,6 @@ export function getChartDataFromVisualization(path) {
     request: {
       op: 'get',
       path,
-    },
-  };
-}
-
-export function getNavSiteMap(url, depth) {
-  // Note: Depth can't be 0 in plone.restapi
-  return {
-    type: GET_NAVSITEMAP,
-    request: {
-      op: 'get',
-      path: `${url}/@navigation?expand.navigation.depth=${depth || 3}`,
     },
   };
 }
