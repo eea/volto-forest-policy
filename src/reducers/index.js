@@ -10,7 +10,6 @@ import folder_tabs from '@eeacms/volto-forest-policy/reducers/folder_tabs';
 import default_header_image from '@eeacms/volto-forest-policy/reducers/default_header_image';
 import parent_folder_data from '@eeacms/volto-forest-policy/reducers/parent_folder_data';
 import localnavigation from '@eeacms/volto-forest-policy/reducers/localnavigation';
-import navSiteMap from '@eeacms/volto-forest-policy/reducers/sitemap';
 import current_version from '@eeacms/volto-forest-policy/reducers/current_version';
 import cloned_type from '@eeacms/volto-forest-policy/reducers/cloned_type';
 import attachments, {
@@ -40,7 +39,6 @@ const reducers = {
   folder_tabs,
   parent_folder_data,
   localnavigation,
-  navSiteMap,
   current_version,
   attachments,
   cloned_type,
