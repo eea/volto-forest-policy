@@ -75,8 +75,6 @@ class Edit extends Component {
     //set choices for the popup map
     schema.properties.popupLong.choices = mapChoices;
     schema.properties.popupLat.choices = mapChoices;
-    // schema.properties.popupCountryCode.choices = mapChoices;
-    // schema.properties.popupMapLabel.choices = mapChoices;
 
     return schema;
   };

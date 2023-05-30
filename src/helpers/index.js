@@ -10,7 +10,7 @@ export function getBasePath(url) {
 }
 
 export function getLocation(href) {
-  var match = href.match(
+  const match = href.match(
     /^(https?:)\/\/(([^:/?#]*)(?::([0-9]+))?)([/]{0,1}[^?#]*)(\?[^#]*|)(#.*|)$/,
   );
   return (
@@ -87,7 +87,6 @@ export function useCorsproxy(targetUrl) {
     allowed_cors_destinations.indexOf(parsed.host) === -1
       ? targetUrl
       : `/cors-proxy/${targetUrl}`;
-  // console.log('url is', nextUrl, parsed.host, allowed_cors_destinations);
   return nextUrl;
 }
 

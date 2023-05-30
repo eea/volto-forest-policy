@@ -75,13 +75,6 @@ const PopupMap = ({ rowData, provider_data, mapData }) => {
     /* eslint-disable-next-line */
   }, [provider_data, mapData]);
 
-  // const countries =
-  //   provider_data && provider_data[mapData.country]
-  //     ? provider_data[mapData.country]
-  //     : '';
-
-  //const uniqueCountries = [...new Set(countries)];
-
   const centerToPosition = (position, zoom) => {
     const { proj } = openlayers;
     return mapRef.current.getView().animate({
@@ -111,9 +104,6 @@ const PopupMap = ({ rowData, provider_data, mapData }) => {
             zoom: 2,
           }}
           renderer="webgl"
-          // onPointermove={this.onPointermove}
-          // onClick={this.onClick}
-          // onMoveend={this.onMoveend}
         >
           <Layers>
             <Layer.Tile

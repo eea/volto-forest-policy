@@ -28,7 +28,6 @@ export default function attachments(state = initialState, action = {}) {
         loading: true,
       };
     case `${GET_ALL_ATTACHMENTS}_SUCCESS`:
-      // console.log('Success getting attachments', action.result);
       return {
         ...state,
         error: null,
@@ -71,7 +70,6 @@ export function create_attachment(state = createInitialState, action = {}) {
         loading: true,
       };
     case `${CREATE_ATTACHMENT}_SUCCESS`:
-      // console.log('Success creating attachment', action.result);
       return {
         ...state,
         error: null,

@@ -3,7 +3,6 @@ import { GET_CONTENT } from '@plone/volto/constants/ActionTypes';
 
 import {
   GET_FRONTPAGESLIDES,
-  // SET_FOLDER_HEADER,
   GET_DEFAULT_HEADER_IMAGE,
   SET_FOLDER_TABS,
   GET_PARENT_FOLDER_DATA,
@@ -68,23 +67,6 @@ export function getLocalnavigation(folder) {
   };
 }
 
-// export function setFolderHeader(payload) {
-//   const actualPayload = {};
-//   for (const key in payload) {
-//     if (payload[key] !== null && payload[key] !== undefined) {
-//       actualPayload[key] = payload[key];
-//     }
-//   }
-
-//   if (Object.keys(actualPayload)) {
-//     return {
-//       type: SET_FOLDER_HEADER,
-//       payload: actualPayload,
-//     };
-//   }
-//   return;
-// }
-
 export function setFolderTabs(payload) {
   return {
     type: SET_FOLDER_TABS,
@@ -102,16 +84,6 @@ export function getParentFolderData(url) {
     },
   };
 }
-
-// export function getDataProviders() {
-//   return {
-//     type: GET_DATA_PROVIDERS,
-//     request: {
-//       op: 'get',
-//       path: `/@mosaic-settings`,
-//     },
-//   };
-// }
 
 export function getChartDataFromVisualization(path) {
   return {
@@ -258,7 +230,6 @@ export function cloneAsType(path, typeName) {
 
 export function changeMapData(mapData) {
   localStorage.setItem('mapData', JSON.stringify(mapData));
-  // console.log('coming her', mapData);
   return {
     type: CHANGE_MAP_DATA,
     mapData,
@@ -267,7 +238,6 @@ export function changeMapData(mapData) {
 
 export function getMapData() {
   const mapData = JSON.parse(localStorage.getItem('mapData'));
-  // console.log('got new data', mapData);
   return {
     type: GET_MAP_DATA,
     mapData,

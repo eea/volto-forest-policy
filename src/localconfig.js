@@ -4,8 +4,6 @@ import TokenWidget from '@plone/volto/components/manage/Widgets/TokenWidget';
 
 import ForestMetadata from '@eeacms/volto-forest-policy/components/theme/Viewlets/ForestMetadata';
 
-// import { uniqBy } from 'lodash';
-
 import './slate-inlineStyles.less';
 
 defineMessages({
@@ -65,20 +63,6 @@ export function applyConfig(config) {
     // ...['navigation', '&expand.navigation.depth=3'],
   };
 
-  // config.views = {
-  //   ...config.views,
-  //   layoutViews: {
-  //     ...config.views.layoutViews,
-  //     full_view: CountryView,
-  //     // country_tab_view: CountryPageView,
-  //     // ...layoutViews,
-  //     news_item_listing_view: NewsView,
-  //     refresh_view: RefreshView,
-  //     // document_view_wide: DefaultViewWide,
-  //     redirect_view: RedirectView,
-  //   },
-  // };
-
   delete config.views.contentTypesViews['News Item'];
   delete config.views.contentTypesViews['Event'];
 
@@ -125,11 +109,6 @@ export function applyConfig(config) {
     // },
   };
 
-  // config.viewlets = [
-  //   ...config.viewlets,
-  //   { path: '/', component: ForestMetadata },
-  // ];
-
   config.settings.plotlyCustomColors = [
     {
       title: 'Forest Default',
@@ -165,13 +144,6 @@ export function applyConfig(config) {
       label: 'Source formatting',
     },
   ];
-  // config.settings.search_portal_types = [
-  //   'Event',
-  //   'News Item',
-  //   'Document',
-  //   'templated_country_factsheet',
-  //   'basic_data_factsheet',
-  // ];
 
   return config;
 }

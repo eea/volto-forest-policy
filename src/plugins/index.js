@@ -1,5 +1,3 @@
-// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer');
-
 module.exports = function myRazzlePlugin(config, env, webpack, options) {
   const { dev } = env;
 

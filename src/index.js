@@ -27,7 +27,6 @@ import LinkEditSchema from '@plone/volto-slate/editor/plugins/AdvancedLink/schem
 import { defineMessages } from 'react-intl'; // , defineMessages
 
 import HiddenWidget from '@eeacms/volto-forest-policy/components/manage/Widgets/Hidden';
-// import PickObject from './PickObject';
 
 import AlignBlockWidget from '@eeacms/volto-forest-policy/components/manage/Widgets/Align';
 
@@ -171,13 +170,6 @@ export default function applyConfig(config) {
     },
   };
 
-  // // Custom Homepage layouts
-  // config.views.layoutViews = {
-  //   ...(config.views.layoutViews || {}),
-  //   homepage_view: HomePageView,
-  //   homepage_inverse_view: HomePageInverseView,
-  // };
-
   config.widgets = {
     ...config.widgets,
     widget: {
@@ -189,7 +181,6 @@ export default function applyConfig(config) {
   config.widgets.id.blocks = HiddenWidget;
   config.widgets.id.blocks_layout = HiddenWidget;
 
-  // config.widgets.widget.object_by_path = PickObject;
   config.widgets.widget.align = AlignBlockWidget;
 
   config.blocks.blocksConfig.embed_eea_tableau_block.group = 'plotly';
@@ -200,10 +191,6 @@ export default function applyConfig(config) {
     ...config.addonReducers,
     ...reducers,
   };
-
-  // export const portlets = {
-  //   ...config.portlets,
-  // };
 
   config.settings.portlets = {
     managers: {
