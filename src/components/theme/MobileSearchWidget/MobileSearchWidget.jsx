@@ -5,11 +5,10 @@
 
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-import { Form, Input } from 'semantic-ui-react';
+import { Form, Input, Popup } from 'semantic-ui-react';
 import { compose } from 'redux';
 import { PropTypes } from 'prop-types';
 import { defineMessages, injectIntl } from 'react-intl';
-import { Popup } from 'semantic-ui-react';
 import { Icon } from '@plone/volto/components';
 import zoomSVG from '@plone/volto/icons/zoom.svg';
 import { connect } from 'react-redux';

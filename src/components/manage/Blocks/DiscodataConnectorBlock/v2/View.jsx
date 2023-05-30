@@ -1,8 +1,7 @@
 import React from 'react';
 import { compose } from 'redux';
 import { connectToMultipleProviders } from '@eeacms/volto-datablocks/hocs';
-import { DataConnectedValue } from '@eeacms/volto-datablocks/Utils';
-import { Sources } from '@eeacms/volto-datablocks/Utils';
+import { DataConnectedValue, Sources } from '@eeacms/volto-datablocks/Utils';
 
 const ProviderView = ({ provider }) => {
   if (!provider) return '';

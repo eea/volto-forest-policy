@@ -13,6 +13,7 @@ import {
   getBaseUrl,
   hasApiExpander,
   flattenToAppURL,
+  BodyClass,
 } from '@plone/volto/helpers';
 import { getNavigation } from '@plone/volto/actions';
 import { Header, Logo } from '@eeacms/volto-eea-design-system/ui';
@@ -23,7 +24,6 @@ import eeaFlag from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/
 
 import config from '@plone/volto/registry';
 import { compose } from 'recompose';
-import { BodyClass } from '@plone/volto/helpers';
 
 import cx from 'classnames';
 
