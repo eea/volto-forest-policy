@@ -14,8 +14,6 @@ import fiseWhiteLogo from '@eeacms/volto-forest-policy/../theme/site/assets/imag
 import ObjectListInlineWidget from './components/manage/Widgets/ObjectListInlineWidget';
 import reducers from '@eeacms/volto-forest-policy/reducers';
 
-import './slate-styles.css';
-
 import linkSVG from '@plone/volto/icons/link.svg';
 import { makeInlineElementPlugin } from '@plone/volto-slate/elementEditor';
 
@@ -248,5 +246,6 @@ export default function applyConfig(config) {
   const [installLinkEditor] = makeInlineElementPlugin(opts);
   config = installLinkEditor(config);
 
+  console.log(config.settings.slate, 'slate');
   return config;
 }
