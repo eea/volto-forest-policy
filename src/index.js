@@ -190,7 +190,7 @@ export default function applyConfig(config) {
   // config.widgets.widget.object_by_path = PickObject;
   config.widgets.widget.align = AlignBlockWidget;
 
-  config.blocks.blocksConfig.embed_eea_tableau_block.group = 'plotly';
+  config.blocks.blocksConfig.embed_tableau_visualization.group = 'plotly';
   config.blocks.blocksConfig.embed_eea_map_block.group = 'plotly';
   config.blocks.blocksConfig.simpleDataConnectedTable.group = 'custom_addons';
 
