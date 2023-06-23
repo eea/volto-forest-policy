@@ -246,6 +246,5 @@ export default function applyConfig(config) {
   const [installLinkEditor] = makeInlineElementPlugin(opts);
   config = installLinkEditor(config);
 
-  console.log(config.settings.slate, 'slate');
   return config;
 }
