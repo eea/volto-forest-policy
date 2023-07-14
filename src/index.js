@@ -29,6 +29,8 @@ import HiddenWidget from '@eeacms/volto-forest-policy/components/manage/Widgets/
 
 import AlignBlockWidget from '@eeacms/volto-forest-policy/components/manage/Widgets/Align';
 
+import ecLogo from '@eeacms/volto-forest-policy/../theme/site/assets/images/Header/logo-ec.svg';
+
 import {
   NavigationPortlet,
   DefaultPortlet,
@@ -159,6 +161,22 @@ export default function applyConfig(config) {
     ],
     logoTargetUrl: '/',
   };
+
+  config.settings.eea.footerOpts.logosHeader = 'Managed by';
+  config.settings.eea.footerOpts.managedBy[1] = {
+    url: 'https://commission.europa.eu',
+    src: ecLogo,
+    alt: 'European commission Logo',
+    className: 'commission logo',
+    columnSize: {
+      mobile: 6,
+      tablet: 12,
+      computer: 4,
+    },
+  };
+
+  config.settings.eea.footerOpts.contacts = [];
+  config.settings.eea.footerOpts.social = [];
 
   config.views = {
     ...config.views,
