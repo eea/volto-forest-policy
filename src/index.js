@@ -162,7 +162,6 @@ export default function applyConfig(config) {
     logoTargetUrl: '/',
   };
 
-  config.settings.eea.footerOpts.logosHeader = 'Managed by';
   config.settings.eea.footerOpts.managedBy[1] = {
     url: 'https://commission.europa.eu',
     src: ecLogo,
@@ -174,9 +173,6 @@ export default function applyConfig(config) {
       computer: 4,
     },
   };
-
-  config.settings.eea.footerOpts.contacts = [];
-  config.settings.eea.footerOpts.social = [];
 
   config.views = {
     ...config.views,
@@ -247,6 +243,10 @@ export default function applyConfig(config) {
   ];
 
   slate.htmlTagsToSlate.A = linkDeserializer;
+
+  config.settings.eea.footerOpts.contacts = [];
+  config.settings.eea.footerOpts.social = [];
+  config.settings.eea.footerOpts.logosHeader = 'Managed by';
 
   const opts = {
     title: 'Link',
