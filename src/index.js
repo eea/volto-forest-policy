@@ -14,8 +14,6 @@ import fiseWhiteLogo from '@eeacms/volto-forest-policy/../theme/site/assets/imag
 import ObjectListInlineWidget from './components/manage/Widgets/ObjectListInlineWidget';
 import reducers from '@eeacms/volto-forest-policy/reducers';
 
-import './slate-styles.css';
-
 import linkSVG from '@plone/volto/icons/link.svg';
 import { makeInlineElementPlugin } from '@plone/volto-slate/elementEditor';
 
@@ -30,6 +28,8 @@ import HiddenWidget from '@eeacms/volto-forest-policy/components/manage/Widgets/
 // import PickObject from './PickObject';
 
 import AlignBlockWidget from '@eeacms/volto-forest-policy/components/manage/Widgets/Align';
+
+import ecLogo from '@eeacms/volto-forest-policy/../theme/site/assets/images/Header/logo-ec.svg';
 
 import {
   NavigationPortlet,
@@ -162,6 +162,22 @@ export default function applyConfig(config) {
     logoTargetUrl: '/',
   };
 
+  config.settings.eea.footerOpts.logosHeader = 'Managed by';
+  config.settings.eea.footerOpts.managedBy[1] = {
+    url: 'https://commission.europa.eu',
+    src: ecLogo,
+    alt: 'European commission Logo',
+    className: 'commission logo',
+    columnSize: {
+      mobile: 6,
+      tablet: 12,
+      computer: 4,
+    },
+  };
+
+  config.settings.eea.footerOpts.contacts = [];
+  config.settings.eea.footerOpts.social = [];
+
   config.views = {
     ...config.views,
     errorViews: {
@@ -192,7 +208,7 @@ export default function applyConfig(config) {
   // config.widgets.widget.object_by_path = PickObject;
   config.widgets.widget.align = AlignBlockWidget;
 
-  config.blocks.blocksConfig.embed_eea_tableau_block.group = 'plotly';
+  config.blocks.blocksConfig.embed_tableau_visualization.group = 'plotly';
   config.blocks.blocksConfig.embed_eea_map_block.group = 'plotly';
   config.blocks.blocksConfig.simpleDataConnectedTable.group = 'custom_addons';
 

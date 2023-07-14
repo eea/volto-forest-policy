@@ -6,8 +6,6 @@ import ForestMetadata from '@eeacms/volto-forest-policy/components/theme/Viewlet
 
 // import { uniqBy } from 'lodash';
 
-import './slate-inlineStyles.less';
-
 defineMessages({
   custom_addons: {
     id: 'custom_addons',
