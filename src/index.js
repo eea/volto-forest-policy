@@ -85,7 +85,6 @@ function restrictAvailableBlocks(config) {
         [
           'treemapChart',
           'countryFlag',
-          'tableau_block',
           'plotly_chart',
         ].includes(config.blocks.blocksConfig[blockKey].id)
       ) {
