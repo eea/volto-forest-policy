@@ -82,8 +82,8 @@ function restrictAvailableBlocks(config) {
   config.blocks.blocksConfig = {
     ...Object.keys(config.blocks.blocksConfig).reduce((acc, blockKey) => {
       if (
-        ['treemapChart', 'countryFlag', 'plotly_chart',].includes(
-          config.blocks.blocksConfig[blockKey].id)
+        ['treemapChart', 'countryFlag', 'plotly_chart',
+        ].includes(config.blocks.blocksConfig[blockKey].id)
       ) {
         config.blocks.blocksConfig[blockKey].restricted = true;
       }
