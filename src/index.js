@@ -49,6 +49,18 @@ const messages = defineMessages({
   },
 });
 
+const overrideBlocks = {
+  embed_tableau_visualization: {
+    group: 'data_visualizations',
+  },
+  tableau_block: {
+    group: 'data_visualizations',
+  },
+  embed_eea_map_block: {
+    group: 'data_visualizations',
+  },
+};
+
 function addCustomGroup(config) {
   const hasCustomGroup = config.blocks.groupBlocksOrder.filter((el) => {
     return el.id === 'custom_addons';
@@ -195,14 +207,22 @@ export default function applyConfig(config) {
     },
   };
 
+  // Override blocks config
+  Object.keys(overrideBlocks).forEach((block) => {
+    if (config.blocks.blocksConfig[block]) {
+      config.blocks.blocksConfig[block] = {
+        ...config.blocks.blocksConfig[block],
+        ...overrideBlocks[block],
+      };
+    }
+  });
+
   config.widgets.id.blocks = HiddenWidget;
   config.widgets.id.blocks_layout = HiddenWidget;
 
   // config.widgets.widget.object_by_path = PickObject;
   config.widgets.widget.align = AlignBlockWidget;
 
-  config.blocks.blocksConfig.embed_tableau_visualization.group = 'plotly';
-  config.blocks.blocksConfig.embed_eea_map_block.group = 'plotly';
   config.blocks.blocksConfig.simpleDataConnectedTable.group = 'custom_addons';
 
   config.addonReducers = {
