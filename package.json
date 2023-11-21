@@ -20,6 +20,7 @@
     "@eeacms/volto-eea-map",
     "@eeacms/volto-plotlycharts",
     "@eeacms/volto-datablocks",
+    "@eeacms/volto-embed",
     "@eeacms/volto-openlayers-map",
     "@eeacms/volto-matomo",
     "@eeacms/volto-eea-design-system",
@@ -29,6 +30,7 @@
   ],
   "dependencies": {
     "@eeacms/volto-datablocks": "*",
+    "@eeacms/volto-embed": "*",
     "@eeacms/volto-eea-design-system": "*",
     "@eeacms/volto-eea-map": "*",
     "@eeacms/volto-eea-website-theme": "*",
