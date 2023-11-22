@@ -15,7 +15,7 @@ import { Icon as VoltoIcon } from '@plone/volto/components';
 import deleteSVG from '@plone/volto/icons/delete.svg';
 import penSVG from '@plone/volto/icons/pen.svg';
 
-import ObjectWidget from './Object';
+import ObjectWidget from './ObjectItem';
 
 export const FlatObjectList = ({ id, value = [], schema, onChange }) => {
   return (
