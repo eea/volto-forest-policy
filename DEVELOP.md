@@ -1,4 +1,4 @@
-# volto-addon-template
+# volto-forest-policy
 
 ## Develop
 
@@ -22,7 +22,7 @@
     yarn prepare
     ```
 
-1.  Happy hacking!
+1. Happy hacking!
 
 ### Or add @eeacms/volto-forest-policy to your Volto project
 
@@ -34,15 +34,15 @@ Before starting make sure your development environment is properly set. See [Vol
 
 1.  Create new volto app
 
-        yo @plone/volto my-volto-project --addon @eeacms/volto-addon-template --skip-install
+        yo @plone/volto my-volto-project --addon @eeacms/volto-forest-policy --skip-install
         cd my-volto-project
 
 1.  Add the following to `mrs.developer.json`:
 
         {
-            "volto-addon-template": {
-                "url": "https://github.com/eea/volto-addon-template.git",
-                "package": "@eeacms/volto-addon-template",
+            "volto-forest-policy": {
+                "url": "https://github.com/eea/volto-forest-policy.git",
+                "package": "@eeacms/volto-forest-policy",
                 "branch": "develop",
                 "path": "src"
             }
@@ -69,7 +69,7 @@ Before starting make sure your development environment is properly set. See [Vol
 
 1.  Happy hacking!
 
-        cd src/addons/volto-addon-template/
+        cd src/addons/volto-forest-policy/
 
 ## Cypress
 
@@ -103,4 +103,6 @@ Or run it:
 
   ```Bash
   make cypress-run
+  ```
+
   ```
