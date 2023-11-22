@@ -16,6 +16,10 @@
     "type": "git",
     "url": "git@github.com:eea/volto-forest-policy.git"
   },
+  "resolutions": {
+    "react-countup/countup.js": "2.5.0",
+    "d3-array": "^2.12.1"
+  },
   "addons": [
     "@eeacms/volto-eea-map",
     "@eeacms/volto-plotlycharts",
@@ -40,6 +44,7 @@
     "@eeacms/volto-plotlycharts": "*",
     "@eeacms/volto-searchlib": "*",
     "@sentry/browser": "7.17.3",
+    "d3-array": "^2.12.1",
     "dompurify": "^2.0.12",
     "draft-js-alignment-plugin": "^2.0.6",
     "draft-js-focus-plugin": "^3.0.1",
