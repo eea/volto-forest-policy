@@ -1,6 +1,6 @@
 {
   "name": "@eeacms/volto-forest-policy",
-  "version": "0.1.25",
+  "version": "0.1.26",
   "description": "@eeacms/volto-forest-policy: Volto add-on",
   "main": "src/index.js",
   "author": "European Environment Agency: IDM2 A-Team",
@@ -16,10 +16,15 @@
     "type": "git",
     "url": "git@github.com:eea/volto-forest-policy.git"
   },
+  "resolutions": {
+    "react-countup/countup.js": "2.5.0",
+    "d3-array": "^2.12.1"
+  },
   "addons": [
     "@eeacms/volto-eea-map",
     "@eeacms/volto-plotlycharts",
     "@eeacms/volto-datablocks",
+    "@eeacms/volto-embed",
     "@eeacms/volto-openlayers-map",
     "@eeacms/volto-matomo",
     "@eeacms/volto-eea-design-system",
@@ -32,12 +37,14 @@
     "@eeacms/volto-eea-design-system": "*",
     "@eeacms/volto-eea-map": "*",
     "@eeacms/volto-eea-website-theme": "*",
+    "@eeacms/volto-embed": "*",
     "@eeacms/volto-globalsearch": "*",
     "@eeacms/volto-matomo": "*",
     "@eeacms/volto-openlayers-map": "0.1.4",
     "@eeacms/volto-plotlycharts": "*",
     "@eeacms/volto-searchlib": "*",
     "@sentry/browser": "7.17.3",
+    "d3-array": "^2.12.1",
     "dompurify": "^2.0.12",
     "draft-js-alignment-plugin": "^2.0.6",
     "draft-js-focus-plugin": "^3.0.1",
@@ -64,10 +71,10 @@
     "@plone/scripts": "*",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "cypress-fail-fast": "^5.0.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
     "md5": "^2.3.0",
-    "postcss-less": "6.0.0",
-    "husky": "*",
-    "lint-staged": "*"
+    "postcss-less": "6.0.0"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json}": [
