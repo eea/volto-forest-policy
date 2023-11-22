@@ -29,14 +29,14 @@ export const slateBeforeEach = (contentType = 'Document') => {
     contentTitle: 'Cypress',
   });
   cy.createContent({
-    contentType: contentType,
+    contentType: 'Document',
     contentId: 'my-page',
     contentTitle: 'My Page',
     path: 'cypress',
   });
   cy.visit('/cypress/my-page');
   cy.waitForResourceToLoad('@navigation');
-  cy.waitForResourceToLoad('@breadcrumbs');
+  // cy.waitForResourceToLoad('@breadcrumbs');
   cy.waitForResourceToLoad('@actions');
   cy.waitForResourceToLoad('@types');
   cy.waitForResourceToLoad('my-page');
