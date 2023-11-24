@@ -148,6 +148,25 @@ export default function applyConfig(config) {
     },
   };
 
+  // mega menu layout settings
+  config.settings.menuItemsLayouts = {
+    '/policy-and-reporting': {
+      hideChildrenFromNavigation: false,
+    },
+    '/topics': {
+      hideChildrenFromNavigation: false,
+    },
+    '/countries': {
+      menuItemColumns: ['eight wide column', 'four wide column'],
+      menuItemChildrenListColumns: [5, 2],
+      appendExtraMenuItemsToLastColumn: true,
+      hideChildrenFromNavigation: false,
+    },
+    '/resources': {
+      hideChildrenFromNavigation: false,
+    },
+  };
+
   // EEA customizations
   config.settings.eea = {
     ...(config.settings.eea || {}),
