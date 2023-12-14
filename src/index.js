@@ -59,6 +59,9 @@ const overrideBlocks = {
   embed_eea_map_block: {
     group: 'data_visualizations',
   },
+  countryFlag: {
+    group: 'custom_addons',
+  },
 };
 
 function addCustomGroup(config) {
@@ -94,7 +97,7 @@ function restrictAvailableBlocks(config) {
   config.blocks.blocksConfig = {
     ...Object.keys(config.blocks.blocksConfig).reduce((acc, blockKey) => {
       if (
-        ['treemapChart', 'countryFlag', 'plotly_chart'].includes(
+        ['treemapChart', 'plotly_chart'].includes(
           config.blocks.blocksConfig[blockKey].id,
         )
       ) {
