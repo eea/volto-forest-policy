@@ -6,73 +6,66 @@
        Fonts
 --------------------*/
 
-@fontName          : 'Poppins';
-@headerFontName    : 'Roboto';
+@fontName: 'Poppins';
+@headerFontName: 'Roboto';
 
 // @googleFontSizes   : '300,400,500,700,400italic,700italic';
 
-@headerFont        : 'Roboto', sans-serif;
-@pageFont          : 'Roboto', sans-serif;
+@headerFont: 'Roboto', sans-serif;
+@pageFont: 'Roboto', sans-serif;
 
-@googleFontName    : @fontName;
-@importGoogleFonts : true;
-@googleFontSizes   : '300,400,500,600,700,400italic,700italic';
-@googleSubset      : 'latin';
+@googleFontName: @fontName;
+@importGoogleFonts: true;
+@googleFontSizes: '300,400,500,600,700,400italic,700italic';
+@googleSubset: 'latin';
 
-@googleProtocol    : 'https://';
-@googleFontRequest : '@{googleFontName}:@{googleFontSizes}|@{headerFontName}:@{googleFontSizes}';
+@googleProtocol: 'https://';
+@googleFontRequest: '@{googleFontName}:@{googleFontSizes}|@{headerFontName}:@{googleFontSizes}';
 
-
-@bold              : bold;
-@normal            : normal;
+@bold: bold;
+@normal: normal;
 
 /*-------------------
       Base Sizes
 --------------------*/
 /* This is the single variable that controls them all */
-@emSize   : 16px;
+@emSize: 16px;
 
 /* The size of page text  */
-@fontSize : 16px;
-
+@fontSize: 16px;
 
 /*-------------------
     Border Radius
 --------------------*/
 
-
 /*-------------------
     Brand Colors
 --------------------*/
-@primaryColor   : @fiseDarkGreen;
+@primaryColor: @fiseDarkGreen;
 
-@secondaryColor      : @fiseGreen;
+@secondaryColor: @fiseGreen;
 
-@lightSecondaryColor : @lightGrey;
-
+@lightSecondaryColor: @lightGrey;
 
 /*--------------
   Page Heading
 ---------------*/
 
-@headerFontWeight : 500;
-
+@headerFontWeight: 500;
 
 /*--------------
    Form Input
 ---------------*/
 
 /* This adjusts the default form input across all elements */
-@inputHorizontalPadding : 0;
+@inputHorizontalPadding: 0;
 
 /* Input Text Color */
-@inputPlaceholderColor: #B8C6C8;
-
+@inputPlaceholderColor: #b8c6c8;
 
 /*-------------------
     Focused Input
 --------------------*/
-
 
 /*-------------------
         Sizes
@@ -83,44 +76,37 @@
   This ensures these "ratios" remain constant despite changes in EM
 */
 
-@bigSize         : (19 / 14);
-@hugeSize        : (22 / 14);
-@massiveSize     : (26 / 14);
-
+@bigSize: (19 / 14);
+@hugeSize: (22 / 14);
+@massiveSize: (26 / 14);
 
 /*-------------------
         Page
 --------------------*/
 
-@pageBackground      : @white;
-
+@pageBackground: @white;
 
 /*-------------------
       Paragraph
 --------------------*/
 
-
 /*-------------------
        Links
 --------------------*/
 
-@linkColor           : @blue;
-
+@linkColor: @blue;
 
 /*-------------------
     Scroll Bars
 --------------------*/
 
-
 /*-------------------
   Highlighted Text
 --------------------*/
 
-
 /*-------------------
        Loader
 --------------------*/
-
 
 /*-------------------
         Grid
@@ -132,78 +118,73 @@
      Transitions
 --------------------*/
 
-
 /*-------------------
       Site Colors
 --------------------*/
 
 /*---  Theme colors  ---*/
 
-@lightGreen       : #6fb22c;
-@darkGreen        : #168130;
-@darkerGreen      : #005c30;
-@darkBrown        : #8e4313;
-@darkOrange       : #b94d1f;
-@fiseGreen        : #007B6C;
-@fiseDarkGreen    : #005248;
+@lightGreen: #6fb22c;
+@darkGreen: #168130;
+@darkerGreen: #005c30;
+@darkBrown: #8e4313;
+@darkOrange: #b94d1f;
+@fiseGreen: #007b6c;
+@fiseDarkGreen: #005248;
 
 // @textColor        : #002200;
-@textColor: #494e13;
+@textColor: #3d5265;
 
 /*---  Colors  ---*/
-@orange           : #FA5C2A; // Palette: reddishOrange
-@yellow           : #F6A800; // Palette: goldenRod
-@green            : #168130; // Palette: darkPastelGreen
-@teal             : #5893a9; // Palette: slate
-@blue             : #5893a9; // Palette: Plone (tealBlue/cerulean)
-@pink             : #e63d5c; // Palette: darkHotPink
-@brown            : #8e4313; // Palette: reddishGrey
-@grey             : #9cc7d2; // Palette: blueishGrey
-@black            : #252525; // Palette: darkishGrey
+@orange: #fa5c2a; // Palette: reddishOrange
+@yellow: #f6a800; // Palette: goldenRod
+@green: #168130; // Palette: darkPastelGreen
+@teal: #5893a9; // Palette: slate
+@blue: #5893a9; // Palette: Plone (tealBlue/cerulean)
+@pink: #e63d5c; // Palette: darkHotPink
+@brown: #8e4313; // Palette: reddishGrey
+@grey: #9cc7d2; // Palette: blueishGrey
+@black: #252525; // Palette: darkishGrey
 
 /*---  Light Colors  ---*/
-@lightOlive       : #bed492; // Palette: lightSage
-@lightGrey        : #A6A6A6;
+@lightOlive: #bed492; // Palette: lightSage
+@lightGrey: #a6a6a6;
 
 /*---   Neutrals  ---*/
-@fullBlack        : #000000;
-@offWhite         : #F9FAFB;
-@darkWhite        : #F3F4F5;
-@midWhite         : #DCDDDE;
-@white            : #FFFFFF;
+@fullBlack: #000000;
+@offWhite: #f9fafb;
+@darkWhite: #f3f4f5;
+@midWhite: #dcddde;
+@white: #ffffff;
 
 /*--- Colored Backgrounds ---*/
-@redBackground    : #FDE7DC; // Palette: alertError
-@tealBackground   : #EDF1F2; // Palette: Breadcrumbs
-@blueBackground   : #F2F6F8;
-@purpleBackground : #B8C6C8; // Dublin Core Summary
+@redBackground: #fde7dc; // Palette: alertError
+@tealBackground: #edf1f2; // Palette: Breadcrumbs
+@blueBackground: #f2f6f8;
+@purpleBackground: #b8c6c8; // Dublin Core Summary
 
 /*--- Colored Headers ---*/
 
 /*--- Colored Text ---*/
-@tealTextColor   : @teal;
+@tealTextColor: @teal;
 
 /*--- Colored Border ---*/
 // Pastanaga custom borders colors
-@greyBorderColor      : #C7D5D8; // breadcrumbs border
-@lightGreyBorderColor : #D9D9D9; // breadcrumbs background
+@greyBorderColor: #c7d5d8; // breadcrumbs border
+@lightGreyBorderColor: #d9d9d9; // breadcrumbs background
 @blocksBorderGreen: #168130;
-
 
 /*-------------------
      Alpha Colors
 --------------------*/
 
-
 /*-------------------
        Accents
 --------------------*/
 
-
 /*******************************
            Power-User
 *******************************/
-
 
 /*-------------------
     Emotive Colors
@@ -212,19 +193,17 @@
 /* Positive */
 
 /* Negative */
-@negativeBackgroundColor : rgb(253, 231, 220);
-@negativeHeaderColor     : @black;
-@negativeTextColor       : @black;
+@negativeBackgroundColor: rgb(253, 231, 220);
+@negativeHeaderColor: @black;
+@negativeTextColor: @black;
 
 /* Info */
 
 /* Warning */
 
-
 /*-------------------
         Paths
 --------------------*/
-
 
 /*-------------------
        Em Sizes
@@ -234,39 +213,34 @@
 
 /* rem */
 
-
 /*-------------------
        Icons
 --------------------*/
-
 
 /*-------------------
      Neutral Text
 --------------------*/
 
-@selectedTextColor           : @lightGrey;
-@inverteditemlinkcolor       : @white;
+@selectedTextColor: @lightGrey;
+@inverteditemlinkcolor: @white;
 
 /*-------------------
      Brand Colors
 --------------------*/
 
-@youtubeColor    : #CC181E;
-
+@youtubeColor: #cc181e;
 
 /*-------------------
       Borders
 --------------------*/
 
-@borderColor               : @greyBorderColor;
-
+@borderColor: @greyBorderColor;
 
 /*-------------------
     Derived Values
 --------------------*/
 
 /* Loaders Position Offset */
-
 
 /* Rendered Scrollbar Width */
 
@@ -277,7 +251,6 @@
 /* Header Spacing */
 
 /* Minimum Mobile Width */
-
 
 /* Positive / Negative Dupes */
 
@@ -296,7 +269,6 @@
 
 /* Columns */
 
-
 /*******************************
              States
 *******************************/
@@ -304,7 +276,6 @@
 /*-------------------
       Disabled
 --------------------*/
-
 
 /*-------------------
         Hover
@@ -322,7 +293,6 @@
 
 /*---  Light Tones  ---*/
 
-
 /*-------------------
         Focus
 --------------------*/
@@ -337,7 +307,6 @@
 
 /*---  Light Tones  ---*/
 
-
 /*-------------------
     Down (:active)
 --------------------*/
@@ -351,7 +320,6 @@
 /*---  Dark Tones  ---*/
 
 /*---  Light Tones  ---*/
-
 
 /*-------------------
         Active
