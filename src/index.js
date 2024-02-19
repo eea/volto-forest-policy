@@ -191,6 +191,7 @@ export default function applyConfig(config) {
       },
     ],
     logoTargetUrl: '/',
+    organisationName: 'Forest Information System for Europe',
   };
 
   config.settings.eea.footerOpts.managedBy[1] = {
