@@ -1,4 +1,4 @@
-export ClassicPortlet from './ClassicPortlet';
-export NavigationPortlet from './NavigationPortlet';
-export PortletManagerRenderer from './PortletManagerRenderer';
-export DefaultPortlet from './DefaultPortlet';
+export { default as ClassicPortlet } from './ClassicPortlet';
+export { default as NavigationPortlet } from './NavigationPortlet';
+export { default as PortletManagerRenderer } from './PortletManagerRenderer';
+export { default as DefaultPortlet } from './DefaultPortlet';
