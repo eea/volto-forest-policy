@@ -35,7 +35,7 @@
     "@eeacms/volto-datablocks": "*",
     "@eeacms/volto-eea-design-system": "*",
     "@eeacms/volto-eea-map": "*",
-    "@eeacms/volto-eea-website-theme": "github:eea/volto-eea-website-theme#volto-17",
+    "@eeacms/volto-eea-website-theme": "*",
     "@eeacms/volto-embed": "*",
     "@eeacms/volto-globalsearch": "*",
     "@eeacms/volto-matomo": "*",
@@ -70,11 +70,11 @@
     "@plone/scripts": "*",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "cypress-fail-fast": "^5.0.1",
+    "dotenv": "^16.3.2",
     "husky": "^8.0.3",
     "lint-staged": "^14.0.1",
     "md5": "^2.3.0",
-    "postcss-less": "6.0.0",
-    "dotenv": "^16.3.2"
+    "postcss-less": "6.0.0"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json}": [
