@@ -92,8 +92,9 @@ const PopupMap = ({ rowData, provider_data, mapData }) => {
   };
 
   if (!provider_data) {
-    return 'Loading..';
+    return 'Loading...';
   }
+
   return (
     <div className="map-container">
       {selectedData.length > 0 ? (
