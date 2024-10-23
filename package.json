@@ -18,7 +18,8 @@
   },
   "resolutions": {
     "d3-array": "^2.12.1",
-    "@elastic/search-ui": "1.21.2"
+    "@elastic/search-ui": "1.21.2",
+    "@elastic/react-search-ui-views": "1.20.2"
   },
   "addons": [
     "@eeacms/volto-eea-map",
@@ -44,6 +45,7 @@
     "@eeacms/volto-plotlycharts": "^8.2.0",
     "@eeacms/volto-searchlib": "^0.6.7",
     "@elastic/search-ui": "1.21.2",
+    "@elastic/react-search-ui-views": "1.20.2",
     "@sentry/browser": "7.17.3",
     "d3-array": "^2.12.1",
     "dompurify": "^2.0.12",
