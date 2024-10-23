@@ -42,6 +42,7 @@
     "@eeacms/volto-openlayers-map": "0.1.4",
     "@eeacms/volto-plotlycharts": "^8.2.0",
     "@eeacms/volto-searchlib": "^0.6.7",
+    "@elastic/search-ui": "1.21.2",
     "@sentry/browser": "7.17.3",
     "d3-array": "^2.12.1",
     "dompurify": "^2.0.12",
