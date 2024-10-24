@@ -210,8 +210,8 @@ export default function applyConfig(config) {
     ...config.views,
     errorViews: {
       ...config.views.errorViews,
-      '403': Forbidden,
-      '401': Unauthorized,
+      403: Forbidden,
+      401: Unauthorized,
     },
   };
 

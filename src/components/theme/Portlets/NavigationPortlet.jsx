@@ -40,7 +40,7 @@ function renderNode(node) {
   );
 }
 
-export default ({ portlet }) => {
+const NavigationPortlet = ({ portlet }) => {
   const items =
     (portlet && portlet.navigationportlet && portlet.navigationportlet.items) ||
     [];
@@ -63,3 +63,5 @@ export default ({ portlet }) => {
     ''
   );
 };
+
+export default NavigationPortlet;

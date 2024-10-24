@@ -2,7 +2,7 @@ import React from 'react';
 import config from '@plone/volto/registry';
 import { matchPath } from 'react-router';
 
-export default (props) => {
+const ViewletsRender = (props) => {
   const { pathname } = props;
   const active = config.viewlets?.filter((viewlet) =>
     matchPath(pathname, viewlet.path) ? true : false,
@@ -15,3 +15,5 @@ export default (props) => {
     }) || null
   );
 };
+
+export default ViewletsRender;
