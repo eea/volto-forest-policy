@@ -16,12 +16,6 @@
     "type": "git",
     "url": "git@github.com:eea/volto-forest-policy.git"
   },
-  "resolutions": {
-    "d3-array": "^2.12.1",
-    "@elastic/search-ui": "1.21.2",
-    "@elastic/react-search-ui": "1.20.2",
-    "@elastic/react-search-ui-views": "1.20.2"
-  },
   "addons": [
     "@eeacms/volto-eea-map",
     "@eeacms/volto-plotlycharts",
@@ -44,10 +38,10 @@
     "@eeacms/volto-matomo": "*",
     "@eeacms/volto-openlayers-map": "0.1.4",
     "@eeacms/volto-plotlycharts": "^8.2.0",
-    "@eeacms/volto-searchlib": "^0.6.7",
-    "@elastic/search-ui": "1.21.2",
+    "@eeacms/volto-searchlib": "2.0.2",
     "@elastic/react-search-ui": "1.20.2",
     "@elastic/react-search-ui-views": "1.20.2",
+    "@elastic/search-ui": "1.21.2",
     "@sentry/browser": "7.17.3",
     "d3-array": "^2.12.1",
     "dompurify": "^2.0.12",
