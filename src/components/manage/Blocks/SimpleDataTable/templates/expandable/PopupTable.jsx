@@ -41,7 +41,7 @@ const PopupTable = ({ rowData, providerUrl, provider_data, tableColumns }) => {
   }, [provider_data]);
 
   if (!provider_data) {
-    return 'Loading..';
+    return 'Loading...';
   }
 
   return (
@@ -66,7 +66,7 @@ const PopupTable = ({ rowData, providerUrl, provider_data, tableColumns }) => {
               .map((_, i) => {
                 return (
                   <Table.Row key={i}>
-                    {tableColumns.map((col, j) => (
+                    {tableColumns?.map((col, j) => (
                       <Table.Cell
                         textAlign={getAlignmentOfColumn(col, j)}
                         key={j}
