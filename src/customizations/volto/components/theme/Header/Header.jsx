@@ -9,7 +9,12 @@ import { connect, useDispatch, useSelector } from 'react-redux';
 
 import { withRouter } from 'react-router-dom';
 import { UniversalLink } from '@plone/volto/components';
-import { getBaseUrl, hasApiExpander, BodyClass } from '@plone/volto/helpers';
+import {
+  BodyClass,
+  getBaseUrl,
+  hasApiExpander,
+  flattenToAppURL,
+} from '@plone/volto/helpers';
 import { getNavigation } from '@plone/volto/actions';
 import { Header, Logo } from '@eeacms/volto-eea-design-system/ui';
 import { usePrevious } from '@eeacms/volto-eea-design-system/helpers';
