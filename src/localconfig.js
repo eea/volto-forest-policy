@@ -176,26 +176,6 @@ export function applyConfig(config) {
     { cssClass: 'yellow-circle text-circle', label: 'Yellow circle' },
     { cssClass: 'grey-circle text-circle', label: 'Grey circle' },
     { cssClass: 'black-text', label: 'Black text' },
-    {
-      cssClass: 'uwwt-empty-box blue-uwwt-background',
-      label: 'UWWT blue empty box',
-    },
-    {
-      cssClass: 'uwwt-empty-box green-uwwt-background',
-      label: 'UWWT green empty box',
-    },
-    {
-      cssClass: 'uwwt-empty-box yellow-uwwt-background',
-      label: 'UWWT yellow empty box',
-    },
-    {
-      cssClass: 'uwwt-empty-box orange-uwwt-background',
-      label: 'UWWT orange empty box',
-    },
-    {
-      cssClass: 'uwwt-empty-box red-uwwt-background',
-      label: 'UWWT red empty box',
-    },
   ];
   // config.settings.search_portal_types = [
   //   'Event',
