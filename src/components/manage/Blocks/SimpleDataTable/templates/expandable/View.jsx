@@ -180,8 +180,8 @@ const View = (props) => {
         striped={data?.striped}
         className={`unstackable ${data?.bordered ? 'no-borders' : ''}
           ${data?.compact_table ? 'compact-table' : ''} ${
-          data?.celled ? 'celled' : ''
-        }`}
+            data?.celled ? 'celled' : ''
+          }`}
       >
         {show_header ? (
           <Table.Header>

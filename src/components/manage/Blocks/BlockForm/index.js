@@ -1,1 +1,1 @@
-export BlockEditForm from './BlockEditForm';
+export { default as BlockEditForm } from './BlockEditForm';
