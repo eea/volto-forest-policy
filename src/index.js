@@ -206,6 +206,15 @@ export default function applyConfig(config) {
     },
   };
 
+  // API expanders
+  config.settings.apiExpanders = [
+    ...config.settings.apiExpanders,
+    {
+      match: '/',
+      GET_CONTENT: ['siblings'],
+    },
+  ];
+
   config.views = {
     ...config.views,
     errorViews: {
@@ -283,6 +292,12 @@ export default function applyConfig(config) {
   ];
 
   slate.htmlTagsToSlate.A = linkDeserializer;
+
+  (config.settings.apiExpanders || []).forEach((item) => {
+    if (item.GET_CONTENT.includes('navigation')) {
+      item.GET_CONTENT.splice(item.GET_CONTENT.indexOf('navigation', 1));
+    }
+  });
 
   config.settings.eea.footerOpts.contacts = [];
   config.settings.eea.footerOpts.social = [];
