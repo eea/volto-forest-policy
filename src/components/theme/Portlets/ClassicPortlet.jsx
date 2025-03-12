@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default ({ portlet }) => {
+const ClassicPortlet = ({ portlet }) => {
   return (
     <div
       dangerouslySetInnerHTML={{
@@ -9,3 +9,5 @@ export default ({ portlet }) => {
     />
   );
 };
+
+export default ClassicPortlet;

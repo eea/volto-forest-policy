@@ -4,6 +4,8 @@ import TokenWidget from '@plone/volto/components/manage/Widgets/TokenWidget';
 
 import ForestMetadata from '@eeacms/volto-forest-policy/components/theme/Viewlets/ForestMetadata';
 
+import './slate-styles.less';
+
 // import { uniqBy } from 'lodash';
 
 defineMessages({
@@ -158,10 +160,22 @@ export function applyConfig(config) {
   config.settings.slate.styleMenu = config.settings.slate.styleMenu || {};
   config.settings.slate.styleMenu.inlineStyles = [
     ...(config.settings.slate.styleMenu?.inlineStyles || []),
-    {
-      cssClass: 'source-formating',
-      label: 'Source formatting',
-    },
+    { cssClass: 'large-text', label: 'Large text' },
+    { cssClass: 'primary-big-text', label: 'Big text' },
+    { cssClass: 'medium-text', label: 'Medium text' },
+    { cssClass: 'small-text', label: 'Small text' },
+    { cssClass: 'blue-text', label: 'Blue text' },
+    { cssClass: 'blue-chart-text', label: 'Blue plot-chart text' },
+    { cssClass: 'green-chart-text', label: 'Green plot-chart text' },
+    { cssClass: 'yellow-chart-text', label: 'Yellow plot-chart text' },
+    { cssClass: 'orange-chart-text', label: 'Orange plot-chart text' },
+    { cssClass: 'red-chart-text', label: 'Red plot-chart text' },
+    { cssClass: 'blue-circle text-circle', label: 'Blue circle' },
+    { cssClass: 'green-circle text-circle', label: 'Green circle' },
+    { cssClass: 'orange-circle text-circle', label: 'Orange circle' },
+    { cssClass: 'yellow-circle text-circle', label: 'Yellow circle' },
+    { cssClass: 'grey-circle text-circle', label: 'Grey circle' },
+    { cssClass: 'black-text', label: 'Black text' },
   ];
   // config.settings.search_portal_types = [
   //   'Event',
