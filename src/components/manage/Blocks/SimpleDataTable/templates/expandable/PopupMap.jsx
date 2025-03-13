@@ -14,7 +14,13 @@ const getProviderDataLength = (provider_data) => {
     : 0;
 };
 
-const PopupMap = ({ rowData, provider_data, mapData }) => {
+const PopupMap = ({
+  rowData,
+  providerUrl,
+  provider_data,
+  data_providers,
+  mapData,
+}) => {
   const [mapRendered, setMapRendered] = React.useState(false);
   const [mapCenter, setMapCenter] = React.useState([9, 45]);
   const mapRef = React.useRef();
@@ -91,8 +97,12 @@ const PopupMap = ({ rowData, provider_data, mapData }) => {
     });
   };
 
+  if (!providerUrl) {
+    return null;
+  }
+
   if (!provider_data) {
-    return 'Loading...';
+    return data_providers?.loading ? 'Loading...' : null;
   }
 
   return (
