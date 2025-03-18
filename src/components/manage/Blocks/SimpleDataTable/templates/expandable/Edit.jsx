@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { compose } from 'redux';
+import { injectIntl } from 'react-intl';
 import { SidebarPortal } from '@plone/volto/components'; // EditBlock
 import InlineForm from '@plone/volto/components/manage/Form/InlineForm';
 
@@ -17,7 +18,11 @@ class Edit extends Component {
       config.blocks.blocksConfig.simpleDataConnectedTable?.templates?.[template]
         ?.schema || {};
 
-    const schema = SimpleDataTableSchema(config, templateSchema(config));
+    const schema = SimpleDataTableSchema(
+      config,
+      templateSchema(config),
+      this.props.intl,
+    );
 
     const provider_url = this.props.data?.provider_url;
     const provider_data = provider_url
@@ -111,6 +116,7 @@ class Edit extends Component {
 }
 
 export default compose(
+  injectIntl,
   connectToMultipleProviders((props) => {
     const { provider_url, popup_map_provider_url, popup_table_provider_url } =
       props.data;
