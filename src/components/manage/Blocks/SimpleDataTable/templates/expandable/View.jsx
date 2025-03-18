@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
+import { withRouter } from 'react-router-dom';
 
 import _ from 'lodash';
 import qs from 'querystring';
@@ -336,6 +337,7 @@ const View = (props) => {
 };
 
 export default compose(
+  withRouter,
   // extra connectors
   connect((state) => ({
     search: state.table_search || {},
