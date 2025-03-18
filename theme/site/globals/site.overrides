@@ -7,3 +7,39 @@
     color: #e6e6e6 !important;
   }
 }
+
+body.custom-page-header {
+  #page-header {
+    .column-blocks-wrapper,
+    .content-box {
+      margin-bottom: 0;
+    }
+  }
+}
+
+body.custom-page-header .breadcrumbs {
+  background-color: #e6e7e8 !important;
+
+  .ui.breadcrumb ol li {
+    vertical-align: middle;
+  }
+
+  .ui.breadcrumb a.section {
+    vertical-align: text-bottom;
+  }
+
+  .ui.breadcrumb .section.active {
+    vertical-align: text-bottom;
+  }
+}
+
+#page-header .styled-group.has--useAsPageHeader--true {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+//fix copyright color: TODO fix in volto-eea-design-system
+.eea.copyright .wrapper {
+  --text-color: #F9F9F9;
+}

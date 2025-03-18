@@ -18,7 +18,13 @@ const getAlignmentOfColumn = (col, idx) => {
     : 'right';
 };
 
-const PopupTable = ({ rowData, providerUrl, provider_data, tableColumns }) => {
+const PopupTable = ({
+  rowData,
+  providerUrl,
+  provider_data,
+  data_providers,
+  tableColumns,
+}) => {
   const [tableData, setTableData] = React.useState([]);
 
   React.useEffect(() => {
@@ -40,8 +46,12 @@ const PopupTable = ({ rowData, providerUrl, provider_data, tableColumns }) => {
     /* eslint-disable-next-line */
   }, [provider_data]);
 
+  if (!providerUrl) {
+    return null;
+  }
+
   if (!provider_data) {
-    return 'Loading...';
+    return data_providers?.loading ? 'Loading...' : null;
   }
 
   return (

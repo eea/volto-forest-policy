@@ -9,7 +9,7 @@ pipeline {
   environment {
     GIT_NAME = "volto-forest-policy"
     NAMESPACE = "@eeacms"
-    SONARQUBE_TAGS = "volto.eea.europa.eu"
+    SONARQUBE_TAGS = "volto.eea.europa.eu,forest.eea.europa.eu"
     DEPENDENCIES = ""
     BACKEND_PROFILES = "eea.kitkat:testing"
     BACKEND_ADDONS = ""
