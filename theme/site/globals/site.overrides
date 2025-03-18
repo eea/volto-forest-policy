@@ -38,3 +38,8 @@ body.custom-page-header .breadcrumbs {
   margin-right: auto;
   width: 100%;
 }
+
+//fix copyright color: TODO fix in volto-eea-design-system
+.eea.copyright .wrapper {
+  --text-color: #F9F9F9;
+}
