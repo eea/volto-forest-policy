@@ -324,5 +324,5 @@ export default function applyConfig(config) {
   config = installLinkEditor(config);
 
   return compose(installSearchEngine)(config);
-  return config;
+  // return config;
 }
