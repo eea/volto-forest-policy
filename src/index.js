@@ -3,6 +3,8 @@ import Unauthorized from '@plone/volto/components/theme/Unauthorized/Unauthorize
 
 import installAppExtras from '@eeacms/volto-forest-policy/components/theme/AppExtras';
 
+import { compose } from 'redux';
+
 import { applyConfig as installFiseFrontend } from './localconfig';
 import installDiscodataConnectorBlock from '@eeacms/volto-forest-policy/components/manage/Blocks/DiscodataConnectorBlock';
 import installExpandableDataTable from './components/manage/Blocks/SimpleDataTable';
@@ -28,6 +30,8 @@ import HiddenWidget from '@eeacms/volto-forest-policy/components/manage/Widgets/
 // import PickObject from './PickObject';
 
 import AlignBlockWidget from '@eeacms/volto-forest-policy/components/manage/Widgets/Align';
+
+import installSearchEngine from './search';
 
 import ecLogo from '@eeacms/volto-forest-policy/../theme/site/assets/images/Header/logo-ec.svg';
 
@@ -319,5 +323,6 @@ export default function applyConfig(config) {
   const [installLinkEditor] = makeInlineElementPlugin(opts);
   config = installLinkEditor(config);
 
+  return compose(installSearchEngine)(config);
   return config;
 }
