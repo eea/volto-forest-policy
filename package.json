@@ -34,7 +34,7 @@
     "@eeacms/volto-eea-map": "*",
     "@eeacms/volto-eea-website-theme": "*",
     "@eeacms/volto-embed": "*",
-    "@eeacms/volto-globalsearch": "2.0.11",
+    "@eeacms/volto-globalsearch": "2.1.0",
     "@eeacms/volto-matomo": "*",
     "@eeacms/volto-openlayers-map": "*",
     "@eeacms/volto-plotlycharts": "*",
