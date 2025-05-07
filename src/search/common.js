@@ -39,10 +39,8 @@ export const include_archived = booleanFacet(() => ({
   id: 'IncludeArchived',
   showInFacetsList: false,
   showInSecondaryFacetsList: true,
-  isFilter: true, // filters don't need facet options to show up
+  isFilter: true,
 
-  // we want this to be applied by default
-  // when the facet is checked, then apply the `on` key:
   off: {
     constant_score: {
       filter: {
