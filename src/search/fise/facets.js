@@ -11,8 +11,6 @@ const countries = {
   isFilterable: false,
   show: 10000,
   isMulti: true,
-  // sortOn: 'custom',
-  // sortOnCustomLabel: 'Alphabetical',
   alwaysVisible: true,
 };
 
@@ -25,24 +23,9 @@ const updateFrequency = {
   isFilterable: false,
   show: 10000,
   isMulti: true,
-  // sortOn: 'custom',
-  // sortOnCustomLabel: 'Alphabetical',
   alwaysVisible: true,
 };
 
-// const publicationYearForResource = {
-//   field: 'publicationYear.keyword',
-//   factory: 'MultiTermFacet',
-//   label: 'Publication Year',
-//   showInFacetsList: true,
-//   filterType: 'any',
-//   isFilterable: false,
-//   show: 10000,
-//   isMulti: true,
-//   // sortOn: 'custom',
-//   // sortOnCustomLabel: 'Alphabetical',
-//   alwaysVisible: true,
-// };
 const publicationYearHistogram = {
   field: 'publicationYear.keyword',
   factory: 'HistogramFacet',
@@ -60,9 +43,6 @@ const publicationYearHistogram = {
   }),
   step: 10,
   aggs_script: 'def vals = doc["publicationYear"]; return vals;',
-
-  // sortOn: 'custom',
-  // sortOnCustomLabel: 'Alphabetical',
   alwaysVisible: true,
 };
 
@@ -72,7 +52,6 @@ const facets = [
   objectProvides,
   countries,
   updateFrequency,
-  // publicationYearForResource,
   publicationYearHistogram,
   issued_date,
 ];

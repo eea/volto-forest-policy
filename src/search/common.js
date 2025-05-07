@@ -1,4 +1,3 @@
-// import { eea_languages } from '@eeacms/volto-cca-policy/constants';
 import { booleanFacet } from '@eeacms/search';
 import { getTodayWithTime } from './utils';
 
@@ -9,14 +8,6 @@ const messages = defineMessages({
     id: 'Countries',
     defaultMessage: 'Countries',
   },
-  climateImpacts: {
-    id: 'Climate Impacts',
-    defaultMessage: 'Climate Impacts',
-  },
-  adaptationSectors: {
-    id: 'Adaptation Sectors',
-    defaultMessage: 'Adaptation Sectors',
-  },
   includeArchivedContent: {
     id: 'Include archived content',
     defaultMessage: 'Include archived content',
@@ -24,10 +15,6 @@ const messages = defineMessages({
   typeOfItem: {
     id: 'Type of item',
     defaultMessage: 'Type of item',
-  },
-  language: {
-    id: 'Language',
-    defaultMessage: 'Language',
   },
   Published: {
     id: 'Published',
@@ -39,28 +26,6 @@ export const geographic_countries = {
   field: 'cca_geographic_countries.keyword',
   factory: 'MultiTermFacet',
   label: messages.countries,
-  showInFacetsList: true,
-  filterType: 'any',
-  isFilterable: false,
-  show: 10000,
-  isMulti: true,
-};
-
-export const cca_climate_impacts = {
-  field: 'cca_climate_impacts.keyword',
-  factory: 'MultiTermFacet',
-  label: messages.climateImpacts,
-  showInFacetsList: true,
-  filterType: 'any',
-  isFilterable: false,
-  show: 10000,
-  isMulti: true,
-};
-
-export const cca_adaptation_sectors = {
-  field: 'cca_adaptation_sectors.keyword',
-  factory: 'MultiTermFacet',
-  label: messages.adaptationSectors,
   showInFacetsList: true,
   filterType: 'any',
   isFilterable: false,
@@ -174,63 +139,3 @@ export const issued_date = {
     type: 'any',
   },
 };
-
-// export const language = {
-//   field: 'language',
-//   factory: 'MultiTermFacet',
-//   label: messages.language,
-//   showInFacetsList: false,
-//   filterType: 'any',
-//   isFilterable: false,
-//   show: 10000,
-//   isMulti: true,
-//   default: (options) => {
-//     const { language } = options || {};
-//     // console.log('options', options);
-
-//     return {
-//       values: [language || 'en'],
-//       type: 'any',
-//     };
-//   },
-//   facetValues: eea_languages.map(({ code }) => code),
-//   sortOn: 'custom',
-//   sortOnCustomLabel: 'Alphabetical',
-// };
-
-// [
-//     'de',
-//     'en',
-//     'es',
-//     'fr',
-//     'it',
-//     'pl',
-//     // 'ar',
-//     // 'bg',
-//     // 'bs',
-//     // 'cs',
-//     // 'da',
-//     // 'el',
-//     // 'et',
-//     // 'fi',
-//     // 'ga',
-//     // 'hr',
-//     // 'hu',
-//     // 'is',
-//     // 'lt',
-//     // 'lv',
-//     // 'mk',
-//     // 'mt',
-//     // 'nl',
-//     // 'no',
-//     // 'pt',
-//     // 'ro',
-//     // 'ru',
-//     // 'sh',
-//     // 'sk',
-//     // 'sl',
-//     // 'sq',
-//     // 'sr',
-//     // 'sv',
-//     // 'tr',
-//   ]

@@ -19,24 +19,20 @@ export default function installFiseSearch(config) {
   envConfig.app_name = pjson.name;
   envConfig.app_version = pjson.version;
 
-  // debugger;
   config.searchui.fiseSearch = {
     ...mergeConfig(envConfig, config.searchui.globalsearchbase),
     elastic_index: '_es/fiseSearch',
     index_name: 'fise_sdi_searchui',
     host: process.env.RAZZLE_ES_PROXY_ADDR || 'http://localhost:3000',
     runtime_mappings: cca_build_runtime_mappings,
-    // ...vocabs,
   };
 
   config.searchui.fiseSearch.download_fields = [
-    // { field: 'cca_uid', name: 'UID' },
     { field: 'about', name: 'About' },
     { field: 'title', name: 'Title' },
     { field: 'created', name: 'Creation Date' },
     { field: 'issued', name: 'Publication Date' },
     { field: 'creators', name: 'Creator' },
-    // { field: 'fulltext', name: 'Description' },
   ];
 
   const { fiseSearch } = config.searchui;
