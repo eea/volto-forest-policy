@@ -49,7 +49,7 @@ const PopupMap = ({
       setMapCenter([centerLong, centerLat]);
       centerToPosition({ longitude: centerLong, latitude: centerLat }, 5);
     }
-  }, [selectedData, mapData]);
+  }, [selectedData, mapData, centerToPosition]);
 
   React.useEffect(() => {
     const { long, lat } = mapData;
