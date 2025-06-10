@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { compose } from 'redux';
 import { connectToProviderData } from '@eeacms/volto-datablocks/hocs';
 import { Map } from '@eeacms/volto-openlayers-map/Map';
@@ -30,6 +30,18 @@ const PopupMap = ({
   const [featuresData, setFeaturesData] = React.useState([]);
 
   const { proj, source, style } = ol;
+
+  const centerToPosition = useCallback(
+    (position, zoom) => {
+      const { proj } = ol;
+      return mapRef.current.getView().animate({
+        center: proj.fromLonLat([position.longitude, position.latitude]),
+        duration: 1000,
+        zoom,
+      });
+    },
+    [ol],
+  );
 
   React.useEffect(() => {
     const { long, lat } = mapData;
@@ -86,15 +98,6 @@ const PopupMap = ({
   //     : '';
 
   //const uniqueCountries = [...new Set(countries)];
-
-  const centerToPosition = (position, zoom) => {
-    const { proj } = ol;
-    return mapRef.current.getView().animate({
-      center: proj.fromLonLat([position.longitude, position.latitude]),
-      duration: 1000,
-      zoom,
-    });
-  };
 
   if (!providerUrl) {
     return null;
