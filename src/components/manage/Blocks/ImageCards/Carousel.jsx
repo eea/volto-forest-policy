@@ -17,14 +17,14 @@ class Carousel extends Component {
   renderSlide = (card) => {
     const preview = getImageScaleParams(
       card.attachedimage,
-      this.props.data?.image_scale || 'preview'
+      this.props.data?.image_scale || 'preview',
     );
     return (
-      <div className='slider-slide'>
+      <div className="slider-slide">
         <LazyLoadImage
-          className='slide-img'
+          className="slide-img"
           height={600}
-          effect='blur'
+          effect="blur"
           style={{ backgroundImage: `url(${preview?.download})` }}
           width={'100%'}
           visibleByDefault={true}
@@ -34,11 +34,11 @@ class Carousel extends Component {
             </Placeholder>
           }
         />
-        <div className='slide-overlay' />
-        <div className='slide-body'>
-          <div className='slide-title'>{card.title || ''}</div>
+        <div className="slide-overlay" />
+        <div className="slide-body">
+          <div className="slide-title">{card.title || ''}</div>
           <div
-            className='slide-description'
+            className="slide-description"
             dangerouslySetInnerHTML={{ __html: card.text?.data || '' }}
           />
         </div>
@@ -72,7 +72,7 @@ class Carousel extends Component {
           {
             center: !Boolean(data.align),
           },
-          data.align
+          data.align,
         )}
       >
         <div
@@ -80,9 +80,9 @@ class Carousel extends Component {
             'full-width': data.align === 'full',
           })}
         >
-          <div className='slider-wrapper'>
+          <div className="slider-wrapper">
             <ImageGallery
-              className='mainSlider'
+              className="mainSlider"
               items={images}
               showFullscreenButton={false}
               showPlayButton={false}
