@@ -1,32 +1,32 @@
-import cx from "classnames";
-import React, { Component } from "react";
+import cx from 'classnames';
+import React, { Component } from 'react';
 
-import { Placeholder } from "semantic-ui-react";
+import { Placeholder } from 'semantic-ui-react';
 
-import ImageGallery from "react-image-gallery";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import { getImageScaleParams } from "@eeacms/volto-object-widget/helpers";
+import ImageGallery from 'react-image-gallery';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { getImageScaleParams } from '@eeacms/volto-object-widget/helpers';
 
-import "react-image-gallery/styles/css/image-gallery.css";
+import 'react-image-gallery/styles/css/image-gallery.css';
 
 class Carousel extends Component {
   componentDidMount() {
-    require("./css/carousel.less");
+    require('./css/carousel.less');
   }
 
   renderSlide = (card) => {
     const preview = getImageScaleParams(
       card.attachedimage,
-      this.props.data?.image_scale || "preview"
+      this.props.data?.image_scale || 'preview'
     );
     return (
-      <div className="slider-slide">
+      <div className='slider-slide'>
         <LazyLoadImage
-          className="slide-img"
+          className='slide-img'
           height={600}
-          effect="blur"
+          effect='blur'
           style={{ backgroundImage: `url(${preview?.download})` }}
-          width={"100%"}
+          width={'100%'}
           visibleByDefault={true}
           placeholder={
             <Placeholder>
@@ -34,12 +34,12 @@ class Carousel extends Component {
             </Placeholder>
           }
         />
-        <div className="slide-overlay" />
-        <div className="slide-body">
-          <div className="slide-title">{card.title || ""}</div>
+        <div className='slide-overlay' />
+        <div className='slide-body'>
+          <div className='slide-title'>{card.title || ''}</div>
           <div
-            className="slide-description"
-            dangerouslySetInnerHTML={{ __html: card.text?.data || "" }}
+            className='slide-description'
+            dangerouslySetInnerHTML={{ __html: card.text?.data || '' }}
           />
         </div>
       </div>
@@ -68,7 +68,7 @@ class Carousel extends Component {
     return (
       <div
         className={cx(
-          "block align imagecards-block",
+          'block align imagecards-block',
           {
             center: !Boolean(data.align),
           },
@@ -77,12 +77,12 @@ class Carousel extends Component {
       >
         <div
           className={cx({
-            "full-width": data.align === "full",
+            'full-width': data.align === 'full',
           })}
         >
-          <div className="slider-wrapper">
+          <div className='slider-wrapper'>
             <ImageGallery
-              className="mainSlider"
+              className='mainSlider'
               items={images}
               showFullscreenButton={false}
               showPlayButton={false}

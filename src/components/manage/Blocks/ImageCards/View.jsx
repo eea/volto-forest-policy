@@ -1,6 +1,5 @@
 import React from 'react';
 import cx from 'classnames';
-import config from '@plone/volto/registry';
 import DefaultImageSVG from '@plone/volto/components/manage/Blocks/Listing/default-image.svg';
 import { Card, Message } from 'semantic-ui-react';
 import { serializeNodes } from '@plone/volto-slate/editor/render';
@@ -18,7 +17,6 @@ const alignmentTypes = {
   center: 'centered',
   full: 'left',
 };
-
 
 const Cards = (props) => {
   const { data, editable, history } = props;
