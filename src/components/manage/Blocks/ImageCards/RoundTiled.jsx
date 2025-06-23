@@ -1,18 +1,10 @@
 import cx from 'classnames';
 import { Link } from 'react-router-dom';
-import config from '@plone/volto/registry';
-import { flattenToAppURL } from '@plone/volto/helpers';
 import React, { useEffect } from 'react';
-
-export const getPath = (url) => new URL(url).pathname;
+import { getImageScaleParams } from '@eeacms/volto-object-widget/helpers';
 
 // TODO: the approach for the URL path generation is not correct, it does not
 // work on local;
-
-export const thumbUrl = (url) =>
-  (url || '').includes(config.settings.apiPath)
-    ? `${flattenToAppURL(url)}/@@images/image/preview`
-    : `${url}/@@images/image/preview`;
 
 export const Card = (props) => {
   const { title, link, attachedimage } = props; // text,
@@ -21,12 +13,19 @@ export const Card = (props) => {
     require('./css/roundtiled.less');
   });
 
+  const preview = getImageScaleParams(attachedimage, 'preview');
+
   return (
     <div className="card">
       {link ? (
         <>
           <Link to={link}>
-            <img src={thumbUrl(getPath(attachedimage))} alt={title} />
+            <img
+              src={preview?.download}
+              alt={title}
+              width={preview?.width}
+              height={preview?.height}
+            />
           </Link>
           <h5>
             <Link to={link}>{title}</Link>
@@ -34,7 +33,12 @@ export const Card = (props) => {
         </>
       ) : (
         <>
-          <img src={thumbUrl(getPath(attachedimage))} alt={title} />
+          <img
+            src={preview?.download}
+            alt={title}
+            width={preview?.width}
+            height={preview?.height}
+          />
           <h5>{title}</h5>
         </>
       )}
