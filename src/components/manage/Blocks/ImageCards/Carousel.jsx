@@ -5,6 +5,7 @@ import { Placeholder } from 'semantic-ui-react';
 
 import ImageGallery from 'react-image-gallery';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { getImageScaleParams } from '@eeacms/volto-object-widget/helpers';
 
 import 'react-image-gallery/styles/css/image-gallery.css';
 
@@ -14,13 +15,17 @@ class Carousel extends Component {
   }
 
   renderSlide = (card) => {
+    const preview = getImageScaleParams(
+      card.attachedimage,
+      this.props.data?.image_scale || 'preview',
+    );
     return (
       <div className="slider-slide">
         <LazyLoadImage
           className="slide-img"
           height={600}
           effect="blur"
-          style={{ backgroundImage: `url(${card.attachedimage})` }}
+          style={{ backgroundImage: `url(${preview?.download})` }}
           width={'100%'}
           visibleByDefault={true}
           placeholder={
