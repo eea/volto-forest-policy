@@ -37,7 +37,7 @@
     "@eeacms/volto-embed": "*",
     "@eeacms/volto-globalsearch": "2.1.2",
     "@eeacms/volto-matomo": "*",
-    "@eeacms/volto-object-widget": "eea/volto-object-widget#develop",
+    "@eeacms/volto-object-widget": "8.0.0",
     "@eeacms/volto-openlayers-map": "*",
     "@eeacms/volto-plotlycharts": "*",
     "@eeacms/volto-searchlib": "2.1.5",
