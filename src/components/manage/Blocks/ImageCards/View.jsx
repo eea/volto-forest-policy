@@ -1,6 +1,5 @@
 import React from 'react';
 import cx from 'classnames';
-import config from '@plone/volto/registry';
 import DefaultImageSVG from '@plone/volto/components/manage/Blocks/Listing/default-image.svg';
 import { Card, Message } from 'semantic-ui-react';
 import { serializeNodes } from '@plone/volto-slate/editor/render';
@@ -8,6 +7,7 @@ import { compose } from 'redux';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { withRouter } from 'react-router-dom';
 import { injectIntl } from 'react-intl';
+import { getImageScaleParams } from '@eeacms/volto-object-widget/helpers';
 
 import './styles.less';
 
@@ -17,11 +17,6 @@ const alignmentTypes = {
   center: 'centered',
   full: 'left',
 };
-
-export const getScaleUrl = (url, size) =>
-  (url || '').includes(config.settings.apiPath)
-    ? `${flattenToAppURL(url.replace('/api', ''))}/@@images/image/${size}`
-    : `${url.replace('/api', '')}/@@images/image/${size}`;
 
 const Cards = (props) => {
   const { data, editable, history } = props;
@@ -35,17 +30,16 @@ const Cards = (props) => {
 
   const makeImage = (item) => {
     const { attachedimage } = item;
+    const preview = getImageScaleParams(
+      attachedimage,
+      image_scale || 'preview',
+    );
     return (
       <img
         className="cards-tile-image"
-        src={
-          attachedimage
-            ? getScaleUrl(
-                flattenToAppURL(attachedimage),
-                image_scale || 'preview',
-              )
-            : DefaultImageSVG
-        }
+        src={preview?.download || DefaultImageSVG}
+        width={preview?.width}
+        height={preview?.height}
         alt={item.title}
       />
     );
