@@ -40,7 +40,7 @@
     "@eeacms/volto-object-widget": "8.0.0",
     "@eeacms/volto-openlayers-map": "*",
     "@eeacms/volto-plotlycharts": "*",
-    "@eeacms/volto-searchlib": "2.1.7",
+    "@eeacms/volto-searchlib": "2.1.8",
     "@elastic/react-search-ui": "1.20.2",
     "@elastic/react-search-ui-views": "1.20.2",
     "@elastic/search-ui": "1.21.2",
