@@ -27,7 +27,8 @@
     "@eeacms/volto-eea-website-theme",
     "@eeacms/volto-globalsearch",
     "@eeacms/volto-searchlib",
-    "@eeacms/volto-object-widget"
+    "@eeacms/volto-object-widget",
+    "@plone-collective/volto-authomatic"
   ],
   "dependencies": {
     "@eeacms/volto-datablocks": "*",
@@ -40,9 +41,10 @@
     "@eeacms/volto-object-widget": "8.0.0",
     "@eeacms/volto-openlayers-map": "*",
     "@eeacms/volto-plotlycharts": "*",
-    "@eeacms/volto-searchlib": "2.1.5",
+    "@eeacms/volto-searchlib": "2.1.8",
     "@elastic/react-search-ui": "1.20.2",
     "@elastic/react-search-ui-views": "1.20.2",
+    "@plone-collective/volto-authomatic": "2.0.1",
     "@elastic/search-ui": "1.21.2",
     "d3-array": "^2.12.1",
     "draft-js-alignment-plugin": "^2.0.6",
