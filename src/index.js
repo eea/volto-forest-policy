@@ -13,6 +13,8 @@ import installImageCards from './components/manage/Blocks/ImageCards';
 import fiseLogo from '@eeacms/volto-forest-policy/../theme/site/assets/images/Header/fise-logo.svg';
 import fiseWhiteLogo from '@eeacms/volto-forest-policy/../theme/site/assets/images/Header/fise-logo-white.svg';
 
+import FiseCardItem from './components/Result/FiseCardItem';
+
 import ObjectListInlineWidget from './components/manage/Widgets/ObjectListInlineWidget';
 import reducers from '@eeacms/volto-forest-policy/reducers';
 
@@ -234,6 +236,11 @@ export default function applyConfig(config) {
   //   homepage_view: HomePageView,
   //   homepage_inverse_view: HomePageInverseView,
   // };
+
+  // Custom results
+  config.settings.searchlib.resolve.FiseCardItem = {
+    component: FiseCardItem,
+  };
 
   config.widgets = {
     ...config.widgets,
