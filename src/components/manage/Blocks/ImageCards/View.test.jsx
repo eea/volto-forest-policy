@@ -11,7 +11,13 @@ const mockStore = configureStore();
 describe('View', () => {
   it('should render the component', () => {
     const data = {
-      attachedimage: '/my-test-image-href',
+      align: 'left',
+      cards: [
+        {
+          title: 'Test image',
+          link: '/my-test-image-href',
+        },
+      ],
     };
 
     const store = mockStore({
