@@ -1,7 +1,7 @@
 import React from 'react';
 import { Label } from 'semantic-ui-react';
 import {
-  SegmentedBreadcrumb,
+  // SegmentedBreadcrumb,
   StringList,
   DateTime,
 } from '@eeacms/search/components';
