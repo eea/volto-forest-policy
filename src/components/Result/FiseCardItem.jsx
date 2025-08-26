@@ -1,10 +1,6 @@
 import React from 'react';
 import { Label } from 'semantic-ui-react';
-import {
-  // SegmentedBreadcrumb,
-  StringList,
-  DateTime,
-} from '@eeacms/search/components';
+import { StringList, DateTime } from '@eeacms/search/components';
 import { useAppConfig } from '@eeacms/search/lib/hocs';
 import { firstWords, getTermDisplayValue } from '@eeacms/search/lib/utils';
 
@@ -15,12 +11,10 @@ import { FormattedMessage } from 'react-intl';
 
 const ExtraContent = (props) => {
   const { result, vocab } = props;
-  // console.log('ExtraContent', result.href);
   return (
     <div>
       <div className="result-bottom">
         <div className="result-info">
-          {/* <span className="result-info-title">Published: </span> */}
           <DateTime format="DATE_MED" value={result.issued} />
         </div>
         <div className="result-info">
@@ -32,26 +26,6 @@ const ExtraContent = (props) => {
       </div>
       <div>
         <div className="result-info result-source">
-          {/* <span className="result-info-title">
-            <FormattedMessage id="Source:" defaultMessage="Source:" />{' '}
-          </span>
-          <ExternalLink href={result.href}>
-            <strong title={result.source} className="source">
-              {firstWords(
-                getTermDisplayValue({
-                  vocab,
-                  field: 'cluster_name',
-                  term: result.source,
-                }),
-                8,
-              )}
-            </strong>
-            { <SegmentedBreadcrumb
-              href={result.href}
-              short={true}
-              maxChars={40}
-            /> }
-          </ExternalLink> */}
           <ExternalLink href={result.href}>
             <strong title="Go to source" className="source">
               {firstWords(
@@ -63,11 +37,6 @@ const ExtraContent = (props) => {
                 8,
               )}
             </strong>
-            {/* <SegmentedBreadcrumb
-              href={result.href}
-              short={true}
-              maxChars={40}
-            /> */}
           </ExternalLink>
         </div>
       </div>
@@ -113,28 +82,3 @@ const FiseCardItem = (props) => {
 };
 
 export default FiseCardItem;
-
-// import MoreLikeThisTrigger from './MoreLikeThisTrigger';
-// const { width } = useWindowDimensions();
-// const isSmallScreen = width < 1000;
-// {/*{showControls && !isSmallScreen && (
-//               <MoreLikeThisTrigger
-//                 view={Button}
-//                 className="mlt"
-//                 compact
-//                 color="green"
-//                 size="mini"
-//                 result={result}
-//               >
-//                 more like this
-//               </MoreLikeThisTrigger>
-//             )}*/}
-//             {/*{showControls && isSmallScreen && (
-//               <Dropdown icon="ellipsis vertical">
-//                 <Dropdown.Menu className="mlt">
-//                   <MoreLikeThisTrigger result={result} view={Dropdown.Item}>
-//                     More like this
-//                   </MoreLikeThisTrigger>
-//                 </Dropdown.Menu>
-//               </Dropdown>
-//             )}*/}
