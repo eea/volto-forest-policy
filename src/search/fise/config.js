@@ -22,7 +22,7 @@ export default function installFiseSearch(config) {
   config.searchui.fiseSearch = {
     ...mergeConfig(envConfig, config.searchui.globalsearchbase),
     elastic_index: '_es/fiseSearch',
-    index_name: 'fise_sdi_searchui',
+    index_name: 'fise_sdi_searchui_prod',
     host: process.env.RAZZLE_ES_PROXY_ADDR || 'http://localhost:3000',
     runtime_mappings: cca_build_runtime_mappings,
   };
