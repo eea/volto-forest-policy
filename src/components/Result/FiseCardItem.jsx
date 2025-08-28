@@ -24,22 +24,6 @@ const ExtraContent = (props) => {
           <StringList value={result.tags} />
         </div>
       </div>
-      <div>
-        <div className="result-info result-source">
-          <ExternalLink href={result.href}>
-            <strong title="Go to source" className="source">
-              {firstWords(
-                getTermDisplayValue({
-                  vocab,
-                  field: 'cluster_name',
-                  term: 'Go to source',
-                }),
-                8,
-              )}
-            </strong>
-          </ExternalLink>
-        </div>
-      </div>
     </div>
   );
 };
