@@ -2,7 +2,6 @@ import React from 'react';
 import { Label } from 'semantic-ui-react';
 import { StringList, DateTime } from '@eeacms/search/components';
 import { useAppConfig } from '@eeacms/search/lib/hocs';
-import { firstWords, getTermDisplayValue } from '@eeacms/search/lib/utils';
 
 import ExternalLink from '@eeacms/search/components/Result/ExternalLink';
 import ResultContext from '@eeacms/search/components/Result/ResultContext';
@@ -10,7 +9,7 @@ import ContentClusters from '@eeacms/search/components/Result/ContentClusters';
 import { FormattedMessage } from 'react-intl';
 
 const ExtraContent = (props) => {
-  const { result, vocab } = props;
+  const { result } = props;
   return (
     <div>
       <div className="result-bottom">
@@ -22,22 +21,6 @@ const ExtraContent = (props) => {
             <FormattedMessage id="Topics:" defaultMessage="Topics:" />{' '}
           </span>
           <StringList value={result.tags} />
-        </div>
-      </div>
-      <div>
-        <div className="result-info result-source">
-          <ExternalLink href={result.href}>
-            <strong title="Go to source" className="source">
-              {firstWords(
-                getTermDisplayValue({
-                  vocab,
-                  field: 'cluster_name',
-                  term: 'Go to source',
-                }),
-                8,
-              )}
-            </strong>
-          </ExternalLink>
         </div>
       </div>
     </div>
