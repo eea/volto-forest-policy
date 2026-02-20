@@ -3,16 +3,16 @@
 [![Releases](https://img.shields.io/github/v/release/eea/volto-forest-policy)](https://github.com/eea/volto-forest-policy/releases)
 
 [![Pipeline](https://ci.eionet.europa.eu/buildStatus/icon?job=volto-addons%2Fvolto-forest-policy%2Fmaster&subject=master)](https://ci.eionet.europa.eu/view/Github/job/volto-addons/job/volto-forest-policy/job/master/display/redirect)
-[![Lines of Code](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-forest-policy-master&metric=ncloc)](https://sonarqube.eea.europa.eu/dashboard?id=volto-forest-policy-master)
-[![Coverage](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-forest-policy-master&metric=coverage)](https://sonarqube.eea.europa.eu/dashboard?id=volto-forest-policy-master)
-[![Bugs](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-forest-policy-master&metric=bugs)](https://sonarqube.eea.europa.eu/dashboard?id=volto-forest-policy-master)
-[![Duplicated Lines (%)](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-forest-policy-master&metric=duplicated_lines_density)](https://sonarqube.eea.europa.eu/dashboard?id=volto-forest-policy-master)
+[![Lines of Code](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-forest-policy&metric=ncloc)](https://sonarqube.eea.europa.eu/dashboard?id=volto-forest-policy)
+[![Coverage](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-forest-policy&metric=coverage)](https://sonarqube.eea.europa.eu/dashboard?id=volto-forest-policy)
+[![Bugs](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-forest-policy&metric=bugs)](https://sonarqube.eea.europa.eu/dashboard?id=volto-forest-policy)
+[![Duplicated Lines (%)](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-forest-policy&metric=duplicated_lines_density)](https://sonarqube.eea.europa.eu/dashboard?id=volto-forest-policy)
 
 [![Pipeline](https://ci.eionet.europa.eu/buildStatus/icon?job=volto-addons%2Fvolto-forest-policy%2Fdevelop&subject=develop)](https://ci.eionet.europa.eu/view/Github/job/volto-addons/job/volto-forest-policy/job/develop/display/redirect)
-[![Lines of Code](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-forest-policy-develop&metric=ncloc)](https://sonarqube.eea.europa.eu/dashboard?id=volto-forest-policy-develop)
-[![Coverage](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-forest-policy-develop&metric=coverage)](https://sonarqube.eea.europa.eu/dashboard?id=volto-forest-policy-develop)
-[![Bugs](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-forest-policy-develop&metric=bugs)](https://sonarqube.eea.europa.eu/dashboard?id=volto-forest-policy-develop)
-[![Duplicated Lines (%)](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-forest-policy-develop&metric=duplicated_lines_density)](https://sonarqube.eea.europa.eu/dashboard?id=volto-forest-policy-develop)
+[![Lines of Code](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-forest-policy&branch=develop&metric=ncloc)](https://sonarqube.eea.europa.eu/dashboard?id=volto-forest-policy&branch=develop)
+[![Coverage](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-forest-policy&branch=develop&metric=coverage)](https://sonarqube.eea.europa.eu/dashboard?id=volto-forest-policy&branch=develop)
+[![Bugs](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-forest-policy&branch=develop&metric=bugs)](https://sonarqube.eea.europa.eu/dashboard?id=volto-forest-policy&branch=develop)
+[![Duplicated Lines (%)](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-forest-policy&branch=develop&metric=duplicated_lines_density)](https://sonarqube.eea.europa.eu/dashboard?id=volto-forest-policy&branch=develop)
 
 
 [Volto](https://github.com/plone/volto) add-on
