@@ -34,7 +34,7 @@ const PopupMap = ({
   const centerToPosition = useCallback(
     (position, zoom) => {
       const { proj } = ol;
-      
+
       if (!mapRef.current) {
         pendingCenter.current = { position, zoom };
         return;
