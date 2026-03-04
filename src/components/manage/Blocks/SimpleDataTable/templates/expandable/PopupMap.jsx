@@ -1,7 +1,7 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import { compose } from 'redux';
 import { connectToProviderData } from '@eeacms/volto-datablocks/hocs';
-import { Map } from '@eeacms/volto-openlayers-map/Map';
+import { Map, MapContext } from '@eeacms/volto-openlayers-map/Map';
 import { Layers, Layer } from '@eeacms/volto-openlayers-map/Layers';
 import { withOpenLayers } from '@eeacms/volto-openlayers-map';
 
@@ -14,34 +14,39 @@ const getProviderDataLength = (provider_data) => {
     : 0;
 };
 
+const MapAnimator = ({ pendingCenter, ol }) => {
+  const { map } = React.useContext(MapContext);
+
+  React.useEffect(() => {
+    if (map && pendingCenter.current) {
+      const { position, zoom } = pendingCenter.current;
+      const { proj } = ol;
+      pendingCenter.current = null;
+      map.getView().animate({
+        center: proj.fromLonLat([position.longitude, position.latitude]),
+        duration: 1000,
+        zoom,
+      });
+    }
+  }, [map, pendingCenter, ol]);
+
+  return null;
+};
+
 const PopupMap = ({
-  rowData,
   providerUrl,
   provider_data,
   data_providers,
   mapData,
   ol,
 }) => {
-  const [mapRendered, setMapRendered] = React.useState(false);
   const [mapCenter, setMapCenter] = React.useState([9, 45]);
-  const mapRef = React.useRef();
+  const pendingCenter = React.useRef(null);
 
   const [selectedData, setSelectedData] = React.useState([]);
   const [featuresData, setFeaturesData] = React.useState([]);
 
   const { proj, source, style } = ol;
-
-  const centerToPosition = useCallback(
-    (position, zoom) => {
-      const { proj } = ol;
-      return mapRef.current.getView().animate({
-        center: proj.fromLonLat([position.longitude, position.latitude]),
-        duration: 1000,
-        zoom,
-      });
-    },
-    [ol],
-  );
 
   React.useEffect(() => {
     const { long, lat } = mapData;
@@ -59,9 +64,16 @@ const PopupMap = ({
 
     if (centerLat && centerLong) {
       setMapCenter([centerLong, centerLat]);
-      centerToPosition({ longitude: centerLong, latitude: centerLat }, 5);
+
+      pendingCenter.current = {
+        position: {
+          longitude: centerLong,
+          latitude: centerLat,
+        },
+        zoom: 5,
+      };
     }
-  }, [selectedData, mapData, centerToPosition]);
+  }, [selectedData, mapData]);
 
   React.useEffect(() => {
     const { long, lat } = mapData;
@@ -92,13 +104,6 @@ const PopupMap = ({
     /* eslint-disable-next-line */
   }, [provider_data, mapData]);
 
-  // const countries =
-  //   provider_data && provider_data[mapData.country]
-  //     ? provider_data[mapData.country]
-  //     : '';
-
-  //const uniqueCountries = [...new Set(countries)];
-
   if (!providerUrl) {
     return null;
   }
@@ -111,12 +116,6 @@ const PopupMap = ({
     <div className="map-container">
       {selectedData.length > 0 ? (
         <Map
-          ref={(data) => {
-            mapRef.current = data?.map;
-            if (data?.mapRendered && !mapRendered) {
-              setMapRendered(true);
-            }
-          }}
           view={{
             center: proj.fromLonLat(mapCenter),
             showFullExtent: true,
@@ -124,10 +123,8 @@ const PopupMap = ({
             zoom: 2,
           }}
           renderer="webgl"
-          // onPointermove={this.onPointermove}
-          // onClick={this.onClick}
-          // onMoveend={this.onMoveend}
         >
+          <MapAnimator pendingCenter={pendingCenter} ol={ol} />
           <Layers>
             <Layer.Tile
               source={

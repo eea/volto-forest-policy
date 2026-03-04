@@ -163,7 +163,7 @@ class EditSlider extends Component {
     this.setState({ uploading: true });
     acceptedFiles.forEach((file) => {
       readAsDataURL(file).then((data) => {
-        const fields = data.match(/^data:(.*);(.*),(.*)$/);
+        const fields = data.match(/^data:([^;]*);([^,]*),(.*)$/);
 
         this.props.createAttachment(
           `${getBaseUrl(this.props.pathname)}/@attachments`,
