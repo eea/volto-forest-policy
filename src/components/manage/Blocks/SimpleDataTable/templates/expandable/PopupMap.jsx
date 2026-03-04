@@ -47,7 +47,7 @@ const PopupMap = ({
   const [featuresData, setFeaturesData] = React.useState([]);
 
   const { proj, source, style } = ol;
-  
+
   React.useEffect(() => {
     const { long, lat } = mapData;
     const allLong =
@@ -68,9 +68,9 @@ const PopupMap = ({
       pendingCenter.current = {
         position: {
           longitude: centerLong,
-          latitude: centerLat
+          latitude: centerLat,
         },
-        zoom: 5
+        zoom: 5,
       };
     }
   }, [selectedData, mapData]);
