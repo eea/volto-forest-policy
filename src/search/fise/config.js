@@ -1,5 +1,6 @@
 import { mergeConfig } from '@eeacms/search';
 import { getClientProxyAddress } from '../utils';
+import { build_runtime_mappings } from '@eeacms/volto-globalsearch/utils';
 
 import facets from './facets';
 import views from './views';
@@ -9,7 +10,11 @@ const fiseConfig = {
   ...views,
 };
 
-const cca_build_runtime_mappings = {};
+const clusters = {
+  name: 'op_cluster',
+  field: 'objectProvides',
+  clusters: [],
+};
 
 export default function installFiseSearch(config) {
   const envConfig = fiseConfig;
@@ -25,8 +30,9 @@ export default function installFiseSearch(config) {
     index_name:
       process.env.RAZZLE_RESOURCE_CATALOG_INDEX || 'fise_sdi_searchui_prod',
     host: process.env.RAZZLE_ES_PROXY_ADDR || 'http://localhost:3000',
-    runtime_mappings: cca_build_runtime_mappings,
+    runtime_mappings: build_runtime_mappings(clusters),
   };
+
 
   config.searchui.fiseSearch.download_fields = [
     { field: 'about', name: 'About' },
