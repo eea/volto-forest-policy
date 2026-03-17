@@ -33,7 +33,6 @@ export default function installFiseSearch(config) {
     runtime_mappings: build_runtime_mappings(clusters),
   };
 
-
   config.searchui.fiseSearch.download_fields = [
     { field: 'about', name: 'About' },
     { field: 'title', name: 'Title' },

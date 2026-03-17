@@ -1,9 +1,6 @@
 import { objectProvides } from '../common';
 
-import {
-  makeRange,
-  multiTermFacet,
-} from '@eeacms/search';
+import { makeRange, multiTermFacet } from '@eeacms/search';
 
 import globalSearchBaseConfig from '@eeacms/volto-globalsearch/config/global-search-base-config.js';
 
@@ -65,17 +62,19 @@ const publicationYearHistogram = {
 objectProvides['alwaysVisible'] = true;
 
 const cluster = multiTermFacet({
-    field: 'op_cluster',
-    isFilterable: true,
-    isMulti: true,
-    label: 'Section',
-    show: 10000,
-    showInFacetsList: false,
-    ignoreNLPWhenActive: true,
-  });
+  field: 'op_cluster',
+  isFilterable: true,
+  isMulti: true,
+  label: 'Section',
+  show: 10000,
+  showInFacetsList: false,
+  ignoreNLPWhenActive: true,
+});
 
 const facets = [
-   ...globalSearchBaseConfig.facets.filter((facet) => !excludedFields.has(facet.field)),
+  ...globalSearchBaseConfig.facets.filter(
+    (facet) => !excludedFields.has(facet.field),
+  ),
   cluster,
   objectProvides,
   countries,
@@ -87,10 +86,13 @@ if (timeCoverageIdx !== -1) {
   facets[timeCoverageIdx].alwaysVisible = true;
   facets.push(...facets.splice(timeCoverageIdx, 1));
 }
- 
+
 const issuedFacet = facets.find((f) => f.field === 'issued.date');
 if (issuedFacet) {
-  issuedFacet.default = { ...(issuedFacet.default || {}), values: ['All time'] };
+  issuedFacet.default = {
+    ...(issuedFacet.default || {}),
+    values: ['All time'],
+  };
 }
 
 export default facets;
