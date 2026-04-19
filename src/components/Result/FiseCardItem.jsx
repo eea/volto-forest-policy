@@ -8,6 +8,14 @@ import ResultContext from '@eeacms/search/components/Result/ResultContext';
 import ContentClusters from '@eeacms/search/components/Result/ContentClusters';
 import { FormattedMessage } from 'react-intl';
 
+const toStringArray = (value) => {
+  if (!value) return [];
+  if (Array.isArray(value))
+    return value.map((v) => (typeof v === 'object' ? v.raw : v));
+  if (typeof value === 'object') return [value.raw];
+  return [value];
+};
+
 const ExtraContent = (props) => {
   const { result } = props;
   return (
@@ -18,9 +26,23 @@ const ExtraContent = (props) => {
         </div>
         <div className="result-info">
           <span className="result-info-title">
+            <FormattedMessage id="Type:" defaultMessage="Type:" />{' '}
+          </span>
+          <StringList
+            value={toStringArray(result._original._source.objectProvides)}
+          />
+        </div>
+        <div className="result-info">
+          <span className="result-info-title">
             <FormattedMessage id="Topics:" defaultMessage="Topics:" />{' '}
           </span>
           <StringList value={result.tags} />
+        </div>
+        <div className="result-info">
+          <span className="result-info-title">
+            <FormattedMessage id="Country:" defaultMessage="Country:" />{' '}
+          </span>
+          <StringList value={toStringArray(result.country)} />
         </div>
       </div>
     </div>
