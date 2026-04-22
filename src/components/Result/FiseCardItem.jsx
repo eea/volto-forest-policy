@@ -1,6 +1,6 @@
 import React from 'react';
 import { Label } from 'semantic-ui-react';
-import { StringList, DateTime } from '@eeacms/search/components';
+import { StringList } from '@eeacms/search/components';
 import { useAppConfig } from '@eeacms/search/lib/hocs';
 
 import ExternalLink from '@eeacms/search/components/Result/ExternalLink';
