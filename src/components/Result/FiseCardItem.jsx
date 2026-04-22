@@ -23,7 +23,10 @@ const ExtraContent = (props) => {
       <div className="result-bottom">
         <div className="result-info">
           <span className="result-info-title">
-            <FormattedMessage id="Publishing year:" defaultMessage="Publishing year:" />{' '}
+            <FormattedMessage
+              id="Publishing year:"
+              defaultMessage="Publishing year:"
+            />{' '}
           </span>
           <StringList
             value={result._original._source.publicationYear || ' - '}
