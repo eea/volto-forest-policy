@@ -1,6 +1,6 @@
 import React from 'react';
 import { Label } from 'semantic-ui-react';
-import { StringList, DateTime } from '@eeacms/search/components';
+import { StringList } from '@eeacms/search/components';
 import { useAppConfig } from '@eeacms/search/lib/hocs';
 
 import ExternalLink from '@eeacms/search/components/Result/ExternalLink';
@@ -22,7 +22,15 @@ const ExtraContent = (props) => {
     <div>
       <div className="result-bottom">
         <div className="result-info">
-          <DateTime format="DATE_MED" value={result.issued} />
+          <span className="result-info-title">
+            <FormattedMessage
+              id="Publishing year:"
+              defaultMessage="Publishing year:"
+            />{' '}
+          </span>
+          <StringList
+            value={result._original._source.publicationYear || ' - '}
+          />
         </div>
         <div className="result-info">
           <span className="result-info-title">

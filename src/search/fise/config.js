@@ -38,6 +38,7 @@ export default function installFiseSearch(config) {
     { field: 'title', name: 'Title' },
     { field: 'created', name: 'Creation Date' },
     { field: 'issued', name: 'Publication Date' },
+    { field: 'publicationYear', name: 'Publishing year' },
     { field: 'creators', name: 'Creator' },
   ];
 
