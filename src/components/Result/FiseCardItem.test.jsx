@@ -53,7 +53,7 @@ describe('FiseCardItem', () => {
       isExpired: false,
       clusterInfo: {},
       hasImage: false,
-      issued: '2025-08-26T10:00:00Z',
+      publicationYear: '2025',
       objectProvides: ['Report'],
       tags: ['tag1', 'tag2'],
       country: ['Austria'],
