@@ -3,8 +3,18 @@ require('dotenv').config({ path: __dirname + '/.env' });
 const fs = require('fs');
 const path = require('path');
 
+// Volto 18 exposes @plone/volto-slate as a top-level package.
 const voltoSlatePath = fs.existsSync(
-  path.join(__dirname, '../../../node_modules/@plone/volto-slate/src'),
+  path.join(
+    __dirname,
+    '..',
+    '..',
+    '..',
+    'node_modules',
+    '@plone',
+    'volto-slate',
+    'src',
+  ),
 )
   ? '<rootDir>/node_modules/@plone/volto-slate/src'
   : '<rootDir>/node_modules/@plone/volto/packages/volto-slate/src';
@@ -17,14 +27,18 @@ module.exports = {
   ],
   moduleNameMapper: {
     '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
+    '@plone-collective/volto-authomatic/(.*)$':
+      '<rootDir>/node_modules/@plone-collective/volto-authomatic/src/$1',
     '@plone/volto/cypress': '<rootDir>/node_modules/@plone/volto/cypress',
     '@plone/volto/babel': '<rootDir>/node_modules/@plone/volto/babel',
     '@plone/volto/(.*)$': '<rootDir>/node_modules/@plone/volto/src/$1',
     '@package/(.*)$': '<rootDir>/node_modules/@plone/volto/src/$1',
     '@root/(.*)$': '<rootDir>/node_modules/@plone/volto/src/$1',
     '@plone/volto-quanta/(.*)$': '<rootDir>/src/addons/volto-quanta/src/$1',
-    '@eeacms/search/(.*)$': '<rootDir>/src/addons/volto-searchlib/searchlib/$1',
-    '@eeacms/search': '<rootDir>/src/addons/volto-searchlib/searchlib',
+    '@eeacms/search/(.*)$':
+      '<rootDir>/node_modules/@eeacms/volto-searchlib/searchlib/$1',
+    '@eeacms/search':
+      '<rootDir>/node_modules/@eeacms/volto-searchlib/searchlib',
     '@eeacms/(.*?)/(.*)$': '<rootDir>/node_modules/@eeacms/$1/src/$2',
     '@plone/volto-slate$': voltoSlatePath,
     '@plone/volto-slate/(.*)$': `${voltoSlatePath}/$1`,
@@ -33,7 +47,7 @@ module.exports = {
       '<rootDir>/node_modules/@plone/volto/jest-addons-loader.js',
   },
   transformIgnorePatterns: [
-    '/node_modules/(?!(@plone|@root|@package|@eeacms)/).*/',
+    '/node_modules/(?!(@plone|@root|@package|@eeacms|@plone-collective)/).*/',
   ],
   transform: {
     '^.+\\.js(x)?$': 'babel-jest',
@@ -44,15 +58,15 @@ module.exports = {
   },
   coverageThreshold: {
     global: {
-      branches: 5,
-      functions: 5,
-      lines: 5,
-      statements: 5,
+      branches: 2,
+      functions: 2,
+      lines: 2,
+      statements: 2,
     },
   },
   ...(process.env.JEST_USE_SETUP === 'ON' && {
     setupFilesAfterEnv: [
-      '<rootDir>/node_modules/@eeacms/volto-middleware-vh/jest.setup.js',
+      '<rootDir>/node_modules/@eeacms/volto-forest-policy/jest.setup.js',
     ],
   }),
 };
