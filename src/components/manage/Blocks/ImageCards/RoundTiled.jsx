@@ -66,8 +66,8 @@ const RoundTiled = ({ data }) => {
         <div className="roundtiled">
           <h2>{title}</h2>
           <div className="cards">
-            {(cards || []).map((card) => (
-              <Card {...card} />
+            {(cards || []).map((card, index) => (
+              <Card key={index} {...card} />
             ))}
           </div>
         </div>
