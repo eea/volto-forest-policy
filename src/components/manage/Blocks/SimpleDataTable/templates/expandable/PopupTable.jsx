@@ -14,8 +14,8 @@ const getAlignmentOfColumn = (col, idx) => {
   return typeof col !== 'string' && col.textAlign
     ? col.textAlign
     : idx === 0
-    ? 'left'
-    : 'right';
+      ? 'left'
+      : 'right';
 };
 
 const PopupTable = ({
