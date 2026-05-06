@@ -1,5 +1,4 @@
 import { getBaseUrl, flattenToAppURL } from '@plone/volto/helpers/Url/Url';
-import redraft from 'redraft';
 import compact from 'lodash/compact';
 import concat from 'lodash/concat';
 import isArray from 'lodash/isArray';
@@ -95,14 +94,4 @@ export function useCorsproxy(targetUrl) {
       : `/cors-proxy/${targetUrl}`;
   // console.log('url is', nextUrl, parsed.host, allowed_cors_destinations);
   return nextUrl;
-}
-
-export function renderDraft(draftValue) {
-  return draftValue
-    ? redraft(
-        draftValue,
-        config.settings.ToHTMLRenderers,
-        config.settings.ToHTMLOptions,
-      )
-    : '';
 }
