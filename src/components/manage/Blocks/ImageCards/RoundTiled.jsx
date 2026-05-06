@@ -2,7 +2,7 @@ import cx from 'classnames';
 import { Link } from 'react-router-dom';
 import React, { useEffect } from 'react';
 import { getImageScaleParams } from '@eeacms/volto-object-widget/helpers';
-
+import Image from '@plone/volto/components/theme/Image/Image';
 // TODO: the approach for the URL path generation is not correct, it does not
 // work on local;
 
@@ -20,7 +20,7 @@ export const Card = (props) => {
       {link ? (
         <>
           <Link to={link}>
-            <img
+            <Image
               src={preview?.download}
               alt={title}
               width={preview?.width}
@@ -33,7 +33,7 @@ export const Card = (props) => {
         </>
       ) : (
         <>
-          <img
+          <Image
             src={preview?.download}
             alt={title}
             width={preview?.width}

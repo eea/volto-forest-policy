@@ -6,6 +6,7 @@ import { serializeNodes } from '@plone/volto-slate/editor/render';
 import { compose } from 'redux';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { withRouter } from 'react-router-dom';
+import Image from '@plone/volto/components/theme/Image/Image';
 import { injectIntl } from 'react-intl';
 import { getImageScaleParams } from '@eeacms/volto-object-widget/helpers';
 
@@ -35,7 +36,7 @@ const Cards = (props) => {
       image_scale || 'preview',
     );
     return (
-      <img
+      <Image
         className="cards-tile-image"
         src={preview?.download || DefaultImageSVG}
         width={preview?.width}

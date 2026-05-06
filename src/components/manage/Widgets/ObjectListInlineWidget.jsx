@@ -1,7 +1,7 @@
 import { Accordion, Button, Segment, Modal } from 'semantic-ui-react';
 
 import React, { useState } from 'react';
-import Icon from '@plone/volto/components/theme/Icon/Icon';
+import VoltoIcon from '@plone/volto/components/theme/Icon/Icon';
 import FormFieldWrapper from '@plone/volto/components/manage/Widgets/FormFieldWrapper';
 import DragDropList from '@plone/volto/components/manage/DragDropList/DragDropList';
 import ObjectWidget from './ObjectWidget';

@@ -14,8 +14,8 @@ const getAlignmentOfColumn = (col, idx) => {
   return typeof col !== 'string' && col.textAlign
     ? col.textAlign
     : idx === 0
-      ? 'left'
-      : 'right';
+    ? 'left'
+    : 'right';
 };
 
 const PopupTable = ({
@@ -62,7 +62,10 @@ const PopupTable = ({
             {tableColumns &&
               tableColumns.length > 0 &&
               tableColumns.map((col, i) => (
-                <Table.HeaderCell textAlign={getAlignmentOfColumn(col, i)}>
+                <Table.HeaderCell
+                  key={i}
+                  textAlign={getAlignmentOfColumn(col, i)}
+                >
                   {col.title ? col.title : col.column}
                 </Table.HeaderCell>
               ))}
