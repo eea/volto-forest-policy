@@ -3,7 +3,7 @@ import { compose } from 'redux';
 import _uniqueId from 'lodash/uniqueId';
 import { v4 as uuid } from 'uuid';
 import View from './View';
-import { SidebarPortal } from '@plone/volto/components';
+import SidebarPortal from '@plone/volto/components/manage/Sidebar/SidebarPortal';
 import InlineForm from '@plone/volto/components/manage/Form/InlineForm';
 import { connectToMultipleProviders } from '@eeacms/volto-datablocks/hocs';
 

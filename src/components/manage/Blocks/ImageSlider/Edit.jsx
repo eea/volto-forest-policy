@@ -5,7 +5,7 @@ import Editor from '@plone/volto/components/manage/Blocks/Text/Edit';
 import React, { Component } from 'react';
 import ReactDOMServer from 'react-dom/server';
 import { Grid, Button, Item, Dimmer, Loader, Message } from 'semantic-ui-react';
-import { Icon as VoltoIcon } from '@plone/volto/components';
+import VoltoIcon from '@plone/volto/components/theme/Icon/Icon';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import {
@@ -14,7 +14,7 @@ import {
   updateAttachment,
   deleteAttachment,
 } from '@eeacms/volto-forest-policy/actions';
-import { flattenToAppURL, getBaseUrl } from '@plone/volto/helpers';
+import { flattenToAppURL, getBaseUrl } from '@plone/volto/helpers/Url/Url';
 import config from '@plone/volto/registry';
 import { withRouter } from 'react-router-dom';
 

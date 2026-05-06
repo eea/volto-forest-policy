@@ -1,5 +1,5 @@
 import React from 'react';
-import { SidebarPortal } from '@plone/volto/components'; // EditBlock
+import SidebarPortal from '@plone/volto/components/manage/Sidebar/SidebarPortal';
 import { BlockEditForm } from '@eeacms/volto-forest-policy/components/manage/Blocks/BlockForm';
 import ImageCardsView from './ImageCardsView';
 

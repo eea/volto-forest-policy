@@ -1,5 +1,5 @@
 import React from 'react';
-import { Field } from '@plone/volto/components';
+import Field from '@plone/volto/components/manage/Form/Field';
 
 // TODO: handle more then the default schema?
 

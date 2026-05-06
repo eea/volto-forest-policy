@@ -3,7 +3,7 @@ import { Button } from 'semantic-ui-react';
 import circleLeft from '@plone/volto/icons/circle-left.svg';
 import circleRight from '@plone/volto/icons/circle-right.svg';
 import check from '@plone/volto/icons/check.svg';
-import { Icon } from '@plone/volto/components';
+import Icon from '@plone/volto/components/theme/Icon/Icon';
 
 function PositionToolbar({ data, onChangeBlock, block }) {
   return (

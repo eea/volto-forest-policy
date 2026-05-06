@@ -4,7 +4,7 @@ import DefaultImageSVG from '@plone/volto/components/manage/Blocks/Listing/defau
 import { Card, Message } from 'semantic-ui-react';
 import { serializeNodes } from '@plone/volto-slate/editor/render';
 import { compose } from 'redux';
-import { flattenToAppURL } from '@plone/volto/helpers';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { withRouter } from 'react-router-dom';
 import { injectIntl } from 'react-intl';
 import { getImageScaleParams } from '@eeacms/volto-object-widget/helpers';

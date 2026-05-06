@@ -1,4 +1,4 @@
-import { flattenToAppURL } from '@plone/volto/helpers';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { GET_CONTENT } from '@plone/volto/constants/ActionTypes';
 
 import {
@@ -28,7 +28,13 @@ import {
   GET_RESOURCES,
 } from '@eeacms/volto-forest-policy/constants/ActionTypes';
 
-import { compact, concat, isArray, join, map, pickBy, toPairs } from 'lodash';
+import compact from 'lodash/compact';
+import concat from 'lodash/concat';
+import isArray from 'lodash/isArray';
+import join from 'lodash/join';
+import map from 'lodash/map';
+import pickBy from 'lodash/pickBy';
+import toPairs from 'lodash/toPairs';
 import { dataToQueryString } from '../helpers';
 
 export function setCurrentVersion(payload) {

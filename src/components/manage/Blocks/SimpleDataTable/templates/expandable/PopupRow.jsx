@@ -4,7 +4,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 
-import { Icon } from '@plone/volto/components';
+import Icon from '@plone/volto/components/theme/Icon/Icon';
 import expandSVG from '@plone/volto/icons/fullscreen.svg';
 
 import { Button, Modal } from 'semantic-ui-react';

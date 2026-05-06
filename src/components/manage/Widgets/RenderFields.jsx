@@ -1,12 +1,10 @@
 import React from 'react';
 import { Portal } from 'react-portal';
 import { Segment, Button } from 'semantic-ui-react';
-import {
-  Field,
-  SidebarPortal,
-  SchemaWidget,
-  TextWidget,
-} from '@plone/volto/components';
+import Field from '@plone/volto/components/manage/Form/Field';
+import SidebarPortal from '@plone/volto/components/manage/Sidebar/SidebarPortal';
+import SchemaWidget from '@plone/volto/components/manage/Widgets/SchemaWidget';
+import TextWidget from '@plone/volto/components/manage/Widgets/TextWidget';
 import AddLinkForm from './AddLinkForm';
 
 const RenderFields = (props) => {

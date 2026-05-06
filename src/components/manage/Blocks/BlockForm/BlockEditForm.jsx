@@ -1,6 +1,7 @@
 import React from 'react';
-import { keys, map } from 'lodash';
-import { Field } from '@plone/volto/components';
+import keys from 'lodash/keys';
+import map from 'lodash/map';
+import Field from '@plone/volto/components/manage/Form/Field';
 import { Segment, Message } from 'semantic-ui-react';
 
 const BlockEditForm = ({

@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import { Portal } from 'react-portal';
 
 import { Link } from 'react-router-dom';
-import { Icon } from '@plone/volto/components';
+import Icon from '@plone/volto/components/theme/Icon/Icon';
 import penSVG from '@plone/volto/icons/envelope.svg';
-import { getBaseUrl } from '@plone/volto/helpers';
+import { getBaseUrl } from '@plone/volto/helpers/Url/Url';
 
 class EditSliderButton extends Component {
   render() {

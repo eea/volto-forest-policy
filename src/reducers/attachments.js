@@ -2,7 +2,7 @@ import {
   GET_ALL_ATTACHMENTS,
   CREATE_ATTACHMENT,
 } from '@eeacms/volto-forest-policy/constants/ActionTypes';
-import { flattenToAppURL } from '@plone/volto/helpers';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 
 const initialState = {
   error: null,
