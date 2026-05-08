@@ -2,8 +2,8 @@ import React from 'react';
 import { List, Image } from 'semantic-ui-react';
 import { Link as RouterLink } from 'react-router-dom';
 import cx from 'classnames';
-import { flattenToAppURL } from '@plone/volto/helpers';
-import { Icon } from '@plone/volto/components';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
+import Icon from '@plone/volto/components/theme/Icon/Icon';
 
 import leftIcon from '@plone/volto/icons/left-key.svg';
 

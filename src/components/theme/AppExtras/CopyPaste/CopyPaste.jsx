@@ -4,9 +4,10 @@ import { compose } from 'redux';
 import { Portal } from 'react-portal';
 import { toast } from 'react-toastify';
 import { Button } from 'semantic-ui-react';
-import { getBaseUrl } from '@plone/volto/helpers';
-import { updateContent } from '@plone/volto/actions';
-import { Icon, Toast } from '@plone/volto/components';
+import { getBaseUrl } from '@plone/volto/helpers/Url/Url';
+import { updateContent } from '@plone/volto/actions/content/content';
+import Icon from '@plone/volto/components/theme/Icon/Icon';
+import Toast from '@plone/volto/components/manage/Toast/Toast';
 import copySVG from '@plone/volto/icons/copy.svg';
 import pasteSVG from '@plone/volto/icons/paste.svg';
 

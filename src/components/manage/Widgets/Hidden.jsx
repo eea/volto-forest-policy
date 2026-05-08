@@ -1,6 +1,6 @@
 import React from 'react';
 import { Form, Grid, Input, Label } from 'semantic-ui-react';
-import { map } from 'lodash';
+import map from 'lodash/map';
 import './Hidden.css';
 
 const HiddenWidget = ({

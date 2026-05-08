@@ -1,4 +1,4 @@
-import { map } from 'lodash';
+import map from 'lodash/map';
 import {
   Button,
   Form,
@@ -11,7 +11,7 @@ import {
   Segment,
 } from 'semantic-ui-react';
 import React, { Fragment, useState } from 'react';
-import { Icon as VoltoIcon } from '@plone/volto/components';
+import VoltoIcon from '@plone/volto/components/theme/Icon/Icon';
 import deleteSVG from '@plone/volto/icons/delete.svg';
 import penSVG from '@plone/volto/icons/pen.svg';
 

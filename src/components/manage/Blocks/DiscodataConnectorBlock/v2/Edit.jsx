@@ -1,6 +1,6 @@
 import React from 'react';
 import { compose } from 'redux';
-import { SidebarPortal } from '@plone/volto/components';
+import SidebarPortal from '@plone/volto/components/manage/Sidebar/SidebarPortal';
 import InlineForm from '@plone/volto/components/manage/Form/InlineForm';
 import { connectToMultipleProviders } from '@eeacms/volto-datablocks/hocs';
 import getSchema from './schema';

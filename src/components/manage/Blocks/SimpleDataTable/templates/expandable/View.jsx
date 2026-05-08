@@ -3,9 +3,10 @@ import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { withRouter } from 'react-router-dom';
 
-import _ from 'lodash';
+import escapeRegExp from 'lodash/escapeRegExp';
+import filter from 'lodash/filter';
 import qs from 'querystring';
-import { Icon } from '@plone/volto/components';
+import Icon from '@plone/volto/components/theme/Icon/Icon';
 import { Table, Pagination, Search } from 'semantic-ui-react';
 import RenderComponent from '@eeacms/volto-datablocks/components/manage/Blocks/SimpleDataTable/components';
 
@@ -77,7 +78,7 @@ const View = (props) => {
           props.dispatch({ type: 'TABLE_CLEAN_QUERY' });
           return;
         }
-        const re = new RegExp(_.escapeRegExp(data.value), 'i');
+        const re = new RegExp(escapeRegExp(data.value), 'i');
 
         const searchableCols =
           props.data && props.data.popupTitle
@@ -94,7 +95,7 @@ const View = (props) => {
         };
         props.dispatch({
           type: 'TABLE_FINISH_SEARCH',
-          results: _.filter(filteredTableData, isMatch),
+          results: filter(filteredTableData, isMatch),
         });
       }, time);
     },

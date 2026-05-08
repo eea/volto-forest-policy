@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import FiseCardItem from './FiseCardItem';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 
 jest.mock('@eeacms/search/lib/hocs', () => ({
   useAppConfig: () => ({

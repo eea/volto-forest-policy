@@ -4,7 +4,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 
-import { Icon } from '@plone/volto/components';
+import Icon from '@plone/volto/components/theme/Icon/Icon';
+import Image from '@plone/volto/components/theme/Image/Image';
 import expandSVG from '@plone/volto/icons/fullscreen.svg';
 
 import { Button, Modal } from 'semantic-ui-react';
@@ -36,7 +37,7 @@ const ValidImage = ({ imageUrl }) => {
   }, [imageUrl]);
 
   return imageUrl && isValidImg ? (
-    <img
+    <Image
       className="expand-row-img"
       src={imageUrl}
       alt={imageUrl}
@@ -223,7 +224,7 @@ const PopupRow = ({
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <img
+                  <Image
                     src={popupSchema.logo}
                     alt={popupSchema.logo}
                     className="popup-logo"

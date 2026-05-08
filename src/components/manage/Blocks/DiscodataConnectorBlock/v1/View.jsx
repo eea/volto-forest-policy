@@ -38,7 +38,7 @@ const bulletListView = (items) => (
   <div className="ui bulleted list">
     {items &&
       Object.entries(items).map(([key, item]) => (
-        <div className="item">
+        <div className="item" key={key}>
           {item.leftText}
           <span className="float-right">{item.rightText}</span>
         </div>

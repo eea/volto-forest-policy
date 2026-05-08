@@ -3,8 +3,8 @@
  * @module reducers/search/search
  */
 
-import { omit } from 'lodash';
-import { flattenToAppURL } from '@plone/volto/helpers';
+import omit from 'lodash/omit';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 
 import {
   QUICK_RESET_SEARCH_CONTENT,

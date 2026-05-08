@@ -2,12 +2,12 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { Dropdown } from 'semantic-ui-react';
 
-import { flattenToAppURL } from '@plone/volto/helpers';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import PreviewImage from '@eeacms/volto-listing-block/PreviewImage';
 
 import countryNames from '@eeacms/volto-datablocks/components/manage/Blocks/CountryFlag/data/countries';
 import withQuerystringResults from '@eeacms/volto-datablocks/components/manage/Blocks/CountryFlag/withQuerystringResults';
-
+import Image from '@plone/volto/components/theme/Image/Image';
 import '@eeacms/volto-datablocks/components/manage/Blocks/CountryFlag/styles.less';
 
 const MaybeDropdown = ({ children, countries, value, dropdown = false }) => {
@@ -91,7 +91,7 @@ export const CountryFlagView = (props) => {
 
   const countryFlag =
     (countryCode && show_flag && flag && (
-      <img alt={countryNames[countryCode]} src={flag} />
+      <Image alt={countryNames[countryCode]} src={flag} />
     )) ||
     (contentData?.preview_image ? (
       <PreviewImage item={contentData} preview_image_url={previewImageUrl} />

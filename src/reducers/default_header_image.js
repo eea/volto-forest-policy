@@ -3,7 +3,7 @@
  * @module reducers/frontpage_slides
  */
 
-import { map } from 'lodash';
+import map from 'lodash/map';
 
 import { GET_DEFAULT_HEADER_IMAGE } from '@eeacms/volto-forest-policy/constants/ActionTypes';
 

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { getPortlets } from '@eeacms/volto-forest-policy/actions';
 import config from '@plone/volto/registry';
 import { normalize } from './utils';
-import { getBaseUrl } from '@plone/volto/helpers';
+import { getBaseUrl } from '@plone/volto/helpers/Url/Url';
 
 export function renderPortlet(portlet, props) {
   const portlets = config.settings.portlets;
