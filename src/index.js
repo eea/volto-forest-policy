@@ -186,14 +186,19 @@ export default function applyConfig(config) {
     },
     headerSearchBox: [
       {
-        isDefault: true,
-        // to replace search path change path to whatever you want and match with the page in volto website
+        type: 'search-input',
         path: '/advanced-search',
         placeholder: 'Search FISE...',
-        description:
+      },
+      {
+        type: 'info',
+        content:
           'Looking for more information? Try searching the full EEA website content',
-        buttonTitle: 'Go to advanced search',
-        buttonUrl: 'https://www.eea.europa.eu/en/advanced-search',
+      },
+      {
+        type: 'button-link',
+        title: 'Go to advanced search',
+        url: 'https://www.eea.europa.eu/en/advanced-search',
       },
     ],
     logoTargetUrl: '/',
