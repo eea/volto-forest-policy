@@ -195,12 +195,12 @@ export default function applyConfig(config) {
       {
         type: 'info',
         content:
-          'Looking for more information? Try searching the full FISE website content',
+          'Looking for more information? Try searching the full EEA website content',
       },
       {
         type: 'button-link',
         title: 'Go to advanced search',
-        url: 'https://forest.eea.europa.eu/advanced-search',
+        url: 'https://www.eea.europa.eu/en/advanced-search',
       },
     ],
     logoTargetUrl: '/',
