@@ -195,7 +195,7 @@ export default function applyConfig(config) {
       {
         type: 'info',
         content:
-          'Looking for more information? Try searching the full EEA website content',
+          'Looking for more information? Try searching the full FISE website content',
       },
       {
         type: 'button-link',
