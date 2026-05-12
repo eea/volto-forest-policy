@@ -187,8 +187,6 @@ export default function applyConfig(config) {
     headerSearchBox: [
       {
         type: 'search-input',
-        isDefault: true,
-        // to replace search path change path to whatever you want and match with the page in volto website
         path: '/advanced-search',
         placeholder: 'Search FISE...',
       },
