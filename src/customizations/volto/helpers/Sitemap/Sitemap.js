@@ -180,9 +180,9 @@ export const generateSitemap = (_req, start = 0, size = undefined) =>
     );
     request.set('Accept', 'application/json');
     request.use(addHeadersFactory(_req));
-    const authToken = _req.universalCookies.get('auth_token');
-    if (authToken) {
-      request.set('Authorization', `Bearer ${authToken}`);
+    const token = _req.universalCookies.get('auth_token');
+    if (token) {
+      request.set('Authorization', `Bearer ${token}`);
     }
     request.end((error, { body } = {}) => {
       if (error) {
@@ -221,9 +221,9 @@ export const generateSitemapIndex = (_req, gzip = false) =>
       `${apiPath}${APISUFIX}/@search?metadata_fields=modified&b_size=0&use_site_search_settings=1`,
     );
     request.set('Accept', 'application/json');
-    const authToken = _req.universalCookies.get('auth_token');
-    if (authToken) {
-      request.set('Authorization', `Bearer ${authToken}`);
+    const token = _req.universalCookies.get('auth_token');
+    if (token) {
+      request.set('Authorization', `Bearer ${token}`);
     }
     request.end((error, { body } = {}) => {
       if (error) {
